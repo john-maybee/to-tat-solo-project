@@ -73,11 +73,11 @@ After running the login route above, you can try any other route you've created 
 
 ## Production Build
 
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
+[X] Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
 
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm start`
-- Navigate to `localhost:5001`
+- [X] Start postgres if not running already by using `brew services start postgresql`
+- [X] Run `npm start`
+- [X] Navigate to `localhost:5001`
 
 ## Lay of the Land
 
