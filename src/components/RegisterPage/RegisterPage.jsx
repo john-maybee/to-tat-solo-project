@@ -26,3 +26,7 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
+
+// Page where you can register a new user.
+// Imports this ability through the RegisterForm component.
+// Includes a button that, when clicked, will take you to the login page.

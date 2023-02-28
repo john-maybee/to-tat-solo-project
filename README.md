@@ -100,13 +100,13 @@ This code is also heavily commented. We recommend reading through the comments, 
   - [X] App/App
   - [X] Footer/Footer
   - [X] Nav/Nav
-  - AboutPage/AboutPage
-  - InfoPage/InfoPage
-  - UserPage/UserPage
-  - LoginPage/LoginPage
-  - RegisterPage/RegisterPage
-  - LogOutButton/LogOutButton
-  - ProtectedRoute/ProtectedRoute
+  - [X] AboutPage/AboutPage
+  - [X] InfoPage/InfoPage
+  - [X] UserPage/UserPage
+  - [X] LoginPage/LoginPage
+  - [X] RegisterPage/RegisterPage
+  - [X] LogOutButton/LogOutButton
+  - [X] ProtectedRoute/ProtectedRoute
 
 ## Deployment
 
@@ -125,8 +125,8 @@ This code is also heavily commented. We recommend reading through the comments, 
 Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 
 ## APP Milestones and Schedule
-- [] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | to-do
-- [] Create the Index.js start | estimated hours: 2 | Due: 3/1 | Base | to-do
+- [X] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | Complete with questions
+- [X] Create the Index.js start | estimated hours: 2 | Due: 3/1 | Base | Complete with questions
 - [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete with questions
 - [] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | to-do
 - [] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | to-do

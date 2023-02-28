@@ -16,3 +16,6 @@ function UserPage() {
 
 // this allows us to use <App /> in index.js
 export default UserPage;
+
+// is this where we are supposed to enter in the home page information?
+// Or do I need a seperate component for the home page?

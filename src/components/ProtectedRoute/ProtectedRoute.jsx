@@ -40,3 +40,8 @@ function ProtectedRoute({ component, children, ...props }) {
 }
 
 export default ProtectedRoute;
+
+// This allows a logged in user to access the protected component.
+// If user isn't logged in, they will be redirected to the LoginPage.
+// Not the page that makes sure the user is authenticated, but it does act as a route for the authenticated.
+// Need to make sure the authenticated users are still parsed through within the SERVER in order to protect the app information/code.

@@ -17,3 +17,7 @@ function LogOutButton(props) {
 }
 
 export default LogOutButton;
+
+// This appears on multiple components throughout the application.
+// Styling changes depending on the component it is used in.
+// Allows user to logout.

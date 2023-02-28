@@ -14,3 +14,7 @@ function InfoPage() {
 }
 
 export default InfoPage;
+
+// Questions:
+// What do we need to include in the InfoPage, and how is this different from the AboutPage?
+// Is this just where we are supposed to display all of the data that is in the database?
