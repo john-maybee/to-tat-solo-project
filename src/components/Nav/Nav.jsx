@@ -45,3 +45,6 @@ function Nav() {
 }
 
 export default Nav;
+
+
+// Check class notes on authorization and authentication to make sure this file is correct.

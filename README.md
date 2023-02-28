@@ -52,7 +52,7 @@ CREATE TABLE "user" (
 
 ![VSCode Toolbar](documentation/images/vscode-toolbar.png)
 
-[S] Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
+[X] Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
 
 ![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
 

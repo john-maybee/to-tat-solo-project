@@ -11,3 +11,5 @@ function Footer() {
 }
 
 export default Footer;
+
+// are we supposed to change the footer, or are we supposed to keep prime digital academy's copyright mark?
