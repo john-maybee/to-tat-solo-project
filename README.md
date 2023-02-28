@@ -97,9 +97,9 @@ Directory Structure:
 This code is also heavily commented. We recommend reading through the comments, getting a lay of the land, and becoming comfortable with how the code works before you start making too many changes. If you're wondering where to start, consider reading through component file comments in the following order:
 
 - src/components
-  - App/App
-  - Footer/Footer
-  - Nav/Nav
+  - [X] App/App
+  - [X] Footer/Footer
+  - [X] Nav/Nav
   - AboutPage/AboutPage
   - InfoPage/InfoPage
   - UserPage/UserPage
@@ -120,4 +120,30 @@ This code is also heavily commented. We recommend reading through the comments, 
 
 ## Update Documentation
 
+
+
 Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+
+## APP Milestones and Schedule
+- [] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | to-do
+- [] Create the Index.js start | estimated hours: 2 | Due: 3/1 | Base | to-do
+- [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete with questions
+- [] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | to-do
+- [] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | to-do
+- [] Home onClick (follows App title header) | estimated hours: 1 | Due: 3/7 | Base | to-do
+- [] POST - tattoo idea to database onClick of post/save button | estimated hours: 3 | Due: 3/7 | Base | to-do
+- [] Import material-ui/icons | estimated hours: 3 | Due: 3/7 | Base | to-do
+- [] Insert Index.js updates to utilize sagas and to create store for the reducers | estimated hours: 3 | Due: 3/8 | Base | to-do
+- [] DELETE - ability to remove idea | estimated hours: 2 | Due: 3/9 | Base | to-do
+- [] LOGIN/SIGN-UP page | estimated hours: 6 | Due: 3/10 | Base | to-do
+- [] PUT - edit idea button brings you back to the add idea page | estimated hours: 4 | Due: 3/13 | Base | to-do
+- [] Styling via CSS | estimated hours: 20 | Due: 3/20 | Base | to-do
+
+## STRETCH Milestones
+- [] DELETE - ability to remove artist | estimated hours: 2 | Stretch | to-do
+- [] POST - artist added to database onClick of post/save button | estimated hours: 2 | Stretch | to-do
+- [] PUT - Edit artist button brings you back to the add artist page | estimated hours: 4 | Stretch | to-do
+- [] PUT - completed idea button changes the tatted field to completed | estimated hours: 4 | Stretch | to-do
+- [] API - utilize google Maps, so the tattoo shop locations can be mapped | estimated hours: 5 | Stretch | to-do
+- [] Link artist style to tattoo idea style - make a joiner table that links the tattoo idea style with the artist style. | estimated hours: 4 | Stretch | to-do
+- [] Create an input field on the Add Tattoo Idea page that allows users to store a URL that links to an image for idea reinforcement. If this goal is reached, an 8th property would be added to the ideas table. This property would be named image. | estimated hours: 4 | Stretch | to-do
