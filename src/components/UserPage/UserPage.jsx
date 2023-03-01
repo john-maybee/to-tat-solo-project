@@ -14,7 +14,7 @@ function UserPage() {
       <button>Tattoo Idea</button>
       <br />
       <p>View</p>
-      <Link className="link" to="/ideas"><button>Tattoo Ideas</button></Link>
+      <Link to="/ideas"><button className="link">Tattoo Ideas</button></Link>
       <br />
       <br />
       <LogOutButton className="btn" />
