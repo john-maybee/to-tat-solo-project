@@ -1,4 +1,6 @@
 
+-- database titled "to_tat"
+
 -- USER is a reserved keyword with Postgres
 -- You must use double quotes in every query that user is in:
 -- ex. SELECT * FROM "user";
@@ -20,7 +22,7 @@ CREATE TABLE "ideas" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INT REFERENCES "user",
     "name" VARCHAR (80) NOT NULL,
-    "details" VARCHAR (1000) NOT NULL,
-    "style" VARCHAR (100) NOT NULL,
-    "placement" VARCHAR (100) NOT NULL
+    "details" VARCHAR (1000),
+    "style" VARCHAR (100),
+    "placement" VARCHAR (100)
 ); -- added
