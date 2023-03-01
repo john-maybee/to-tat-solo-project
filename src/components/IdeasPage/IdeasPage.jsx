@@ -18,10 +18,12 @@ function IdeasPage() {
   return (
     <div className="container">
       <h2>{user.username}'s Tattoo Ideas</h2>
-      {JSON.stringify(ideas)}
+      <section className="idea-container">
+        {JSON.stringify(ideas)}
+      </section> 
     </div>
   );
-}
+} // the section holding the json stringify will be altered to map out the users ideas
 
 export default IdeasPage;
 
