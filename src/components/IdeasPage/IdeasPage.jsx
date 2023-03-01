@@ -10,13 +10,14 @@ function IdeasPage() {
   const dispatch = useDispatch();
 
   const ideas = useSelector(store => store.ideas);
+  const user = useSelector((store) => store.user);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
   }, [dispatch]);
   return (
     <div className="container">
-      <p>Ideas Page</p>
+      <h2>{user.username}'s Tattoo Ideas</h2>
       {JSON.stringify(ideas)}
     </div>
   );
