@@ -128,8 +128,8 @@ Customize this ReadMe and the code comments in this project to read less like a 
 - [X] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | Complete with questions
 - [X] Create the Index.js start | estimated hours: 2 | Due: 3/1 | Base | Complete with questions
 - [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete with questions
-- [] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | to-do
-- [] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | to-do
+- [X] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | Complete will rewatch the end of a lecture from 2/28 to check
+- [X] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | Complete with work to add for other pools
 - [] Home onClick (follows App title header) | estimated hours: 1 | Due: 3/7 | Base | to-do
 - [] POST - tattoo idea to database onClick of post/save button | estimated hours: 3 | Due: 3/7 | Base | to-do
 - [] Import material-ui/icons | estimated hours: 3 | Due: 3/7 | Base | to-do

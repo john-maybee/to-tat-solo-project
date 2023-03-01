@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux';
 function IdeasPage() {
   const dispatch = useDispatch();
 
-  // const user = useSelector(store => store.user);
+  const ideas = useSelector(store => store.ideas);
 
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
@@ -17,6 +17,7 @@ function IdeasPage() {
   return (
     <div className="container">
       <p>Ideas Page</p>
+      {JSON.stringify(ideas)}
     </div>
   );
 }
