@@ -1,5 +1,6 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
+import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
 function UserPage() {
@@ -13,7 +14,7 @@ function UserPage() {
       <button>Tattoo Idea</button>
       <br />
       <p>View</p>
-      <button>Tattoo Ideas</button>
+      <Link className="link" to="/ideas"><button>Tattoo Ideas</button></Link>
       <br />
       <br />
       <LogOutButton className="btn" />

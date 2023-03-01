@@ -5,7 +5,7 @@ import './Nav.css';
 import { useSelector } from 'react-redux';
 
 function Nav() {
-  const user = useSelector((store) => store.user);
+  const user = useSelector((store) => store.user); // const representing the store.user to help with navigation depending on whether there is a user or not.
 
   return (
     <div className="nav">
@@ -33,7 +33,7 @@ function Nav() {
             </Link>
 
             <Link className="navLink" to="/ideas">
-              Ideas Page
+              Tattoo Ideas
             </Link>
 
             <LogOutButton className="navLink" />
@@ -52,4 +52,5 @@ export default Nav;
 
 
 // Check class notes on authorization and authentication to make sure this file is correct.
-// Is this where I should import the material-ui Icons that link to different pages?
+// Is this where I should import the material-ui Icons that link to different pages? Yes
+// Once working on the styling, make sure to insert the home icon on this page, along with the logout icon.

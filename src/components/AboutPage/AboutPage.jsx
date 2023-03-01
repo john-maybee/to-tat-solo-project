@@ -8,7 +8,7 @@ import React from 'react';
 function AboutPage() {
   return (
     <div className="container">
-      <h2>About To Tat:</h2>
+      <h2>About "To Tat":</h2>
       <div>
         <p>This application will help you keep track of, and expand upon, your own tattoo design ideas. 
         There will also be a place to record the names of tattoo artists and shops you hear about (upcoming). 
