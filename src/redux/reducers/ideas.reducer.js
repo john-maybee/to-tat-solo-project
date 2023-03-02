@@ -1,5 +1,5 @@
 const ideasReducer = (state = [], action) => {
-  console.log(action.payload);
+  console.log("in reducer: ", action.payload);
   switch (action.type) {
     case 'SET_IDEAS':
       return action.payload;

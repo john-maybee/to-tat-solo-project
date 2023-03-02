@@ -130,6 +130,7 @@ Customize this ReadMe and the code comments in this project to read less like a 
 - [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete with questions
 - [X] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | Complete will rewatch the end of a lecture from 2/28 to check
 - [X] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | Complete with work to add for other pools
+- [] Research correct names for tattoo styles | estimated hours: 1 | Due: 3/1 | Base | to-do
 - [] Home onClick (follows App title header) | estimated hours: 1 | Due: 3/7 | Base | to-do
 - [] POST - tattoo idea to database onClick of post/save button | estimated hours: 3 | Due: 3/7 | Base | to-do
 - [] Import material-ui/icons | estimated hours: 3 | Due: 3/7 | Base | to-do
@@ -147,3 +148,29 @@ Customize this ReadMe and the code comments in this project to read less like a 
 - [] API - utilize google Maps, so the tattoo shop locations can be mapped | estimated hours: 5 | Stretch | to-do
 - [] Link artist style to tattoo idea style - make a joiner table that links the tattoo idea style with the artist style. | estimated hours: 4 | Stretch | to-do
 - [] Create an input field on the Add Tattoo Idea page that allows users to store a URL that links to an image for idea reinforcement. If this goal is reached, an 8th property would be added to the ideas table. This property would be named image. | estimated hours: 4 | Stretch | to-do
+
+
+## Tattoo styles to include:
+
+- Undecided (default this one)
+- American Traditional (most common)
+- Black and Grey (most common)
+- Neo-Traditional (most common)
+- Realism (most common)
+- New School (most common)
+- Fine Line (most common)
+- Japanese Traditional(most common)
+- Tribal (most common)
+- Illustrative (most common)
+- Ornamental (most common)
+- Abstract
+- Blackwork
+- Cartoon/Anime
+- Chicano
+- Continuous Line Contour
+- Geometric
+- Script/Lettering
+- Surrealism
+- Trash Polka
+- Watercolor
+- Embroidery (not including to start)

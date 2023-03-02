@@ -14,7 +14,8 @@ function IdeasPage() {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
-  }, [dispatch]);
+  }, []); // do I need to write dispatch within the empty array?
+  
   return (
     <div className="container">
       <h2>{user.username}'s Tattoo Ideas</h2>

@@ -9,13 +9,12 @@ router.get('/', (req, res) => {
   // GET route code here
   console.log('in the server GET ideas', req.user);
   let queryText = 'SELECT * FROM "ideas" WHERE "user_id" = $1;';
-  pool
-    .query(queryText, [req.params])
+  pool.query(queryText, [req.user.id])
     .then((result) => {
+      console.log(result.rows);
       res.send(result.rows);
-    })
-    .catch((err) => {
-      console.log('User registration failed: ', err);
+    }).catch((err) => {
+      console.log('error with get ideas request: ', err);
       res.sendStatus(500);
     });
 });
