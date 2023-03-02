@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import './IdeasPage.css';
+
 // This is one of our simplest components
 // It doesn't have local state
 // It doesn't dispatch any redux actions or display any part of redux state
@@ -15,19 +17,45 @@ function IdeasPage() {
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
   }, []); // do I need to write dispatch within the empty array?
-  
+
   return (
     <div className="container">
       <h2>{user.username}'s Tattoo Ideas</h2>
-      <section className="idea-container">
-        {JSON.stringify(ideas)}
+      <section className="ideas-container">
+
+        {ideas.map(idea => {
+          return(
+            <div key={idea.id} className="thisIdea">
+              <section className="thisIdeaHeader">
+                <button>edit</button>
+                <h3>"{idea.name}"</h3>
+                <button>delete</button>
+              </section>
+              <section className="thisIdeaDetails">
+                <h4>Details: (change colon to icon or tat gun)</h4>
+                <p>{idea.details}</p>
+              </section>
+              <section className="thisIdeaStyle">
+                <h4>Style:</h4>
+                <p>{idea.style}</p>
+              </section>
+              <section className="thisIdeaPlacement">
+                <h4>On my: </h4>
+                <p>{idea.placement}</p>
+              </section>
+            </div>
+          );
+        })}
+
       </section> 
     </div>
   );
-} // the section holding the json stringify will be altered to map out the users ideas
+}; // the section holding the json stringify will be altered to map out the users ideas
 
 export default IdeasPage;
 
 // Questions:
 // What do we need to include in the InfoPage, and how is this different from the AboutPage?
 // Is this just where we are supposed to display all of the data that is in the database?
+
+// Tools utilized:  {JSON.stringify(ideas)}

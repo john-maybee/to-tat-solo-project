@@ -1,0 +1,7 @@
+.thisIdea{
+    border: 1px solid black;
+}
+
+.thisIdeaHeader{
+    display: flex;
+}
