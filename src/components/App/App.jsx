@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import IdeasPage from '../IdeasPage/IdeasPage';
+import CreateIdeaPage from '../CreateIdeaPage/CreateIdeaPage';
 
 import './App.css';
 
@@ -75,6 +76,14 @@ function App() {
             path="/ideas"
           >
             <IdeasPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows ideas Page else shows LoginPage
+            exact
+            path="/create"
+          >
+            <CreateIdeaPage />
           </ProtectedRoute>
 
           <Route

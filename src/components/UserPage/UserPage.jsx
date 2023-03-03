@@ -11,7 +11,7 @@ function UserPage() {
       <h2>{user.username}'s Ink Pad</h2>
       <p>ID: {user.id}</p>
       <p>Create</p>
-      <button>Tattoo Idea</button>
+      <Link to="/create"><button>Enter New Idea</button></Link>
       <br />
       <p>View</p>
       <Link to="/ideas"><button className="link">Tattoo Ideas</button></Link>

@@ -130,7 +130,7 @@ Customize this ReadMe and the code comments in this project to read less like a 
 - [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete with questions
 - [X] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | Complete will rewatch the end of a lecture from 2/28 to check
 - [X] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | Complete with work to add for other pools
-- [] Research correct names for tattoo styles | estimated hours: 1 | Due: 3/1 | Base | to-do
+- [X] Research correct names for tattoo styles | estimated hours: 1 | Due: 3/1 | Base | to-do
 - [] Home onClick (follows App title header) | estimated hours: 1 | Due: 3/7 | Base | to-do
 - [] POST - tattoo idea to database onClick of post/save button | estimated hours: 3 | Due: 3/7 | Base | to-do
 - [] Import material-ui/icons | estimated hours: 3 | Due: 3/7 | Base | to-do
