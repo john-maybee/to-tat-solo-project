@@ -22,10 +22,26 @@ router.get('/', (req, res) => {
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
+router.post('/create', (req, res) => {
   // POST route code here
-  console.log(req.body);
-  res.sendStatus(200); // might be able to delete this line once I have the correct information in here being posted
+  const name = req.body.name;
+  const details = req.body.details;
+  const style = req.body.style;
+  const placement = req.body.placement;
+
+
+  console.log('in the server POST ideas', req.user);
+  console.log(req.body.params);
+  const queryText = `
+  INSERT INTO "ideas" (name, details, style, placement)
+  VALUES ($1, $2, $3, $4);`; // do I need to add a RETURNING statement here?
+  pool
+    .query(queryText, [name, details, style, placement])
+    .then(() => res.sendStatus(201))
+    .catch((err) => {
+      console.log('POST idea error: ', err);
+      res.sendStatus(500);
+    });
 });
 
 module.exports = router;
