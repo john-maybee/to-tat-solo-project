@@ -1,49 +1,57 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector} from 'react-redux'; // id I end up including the useSelector for the user store, then keep the useSelector here.
 import { useHistory } from 'react-router-dom';
 
+
 function CreateIdeaForm() {
-  const history = useHistory();
+  
   const [name, setName] = useState('');
   const [details, setDetails] = useState('');
   const [style, setStyle] = useState('');
   const [placement, setPlacement] = useState('');
-
+  // const user = useSelector((store) => store.user);
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const postIdea = (event) => {
     event.preventDefault();
-
+    const newIdea = {
+      name,
+      details,
+      style,
+      placement
+    }
+    // console.log('newIdeassssss:', newIdea);
     dispatch({
-      type: 'POSTIDEA',
-      payload: {
-        name: name,
-        details: details,
-        style: style,
-        placement: placement,
-      },
-    });
+      type: 'POST_IDEA',
+      payload: {newIdea}
+    }); // do I need to pass user.id as part of the payload?
+    // setName('');
+    // setDetails('');
+    // setStyle('');
+    // setPlacement('');
+    
+    history.push('/ideas');
   }; // end postIdea
 
   return (
+    <>
     <form className="idea-form" onSubmit={postIdea}>
-      
-      <div>
+        {/* <section className="new-idea-header">
+          <h2>{user.username}'s New Tattoo Idea</h2>
+        </section> */}
         <section className="new-idea-name">
-          <input value={name} name="name" id="name" placeholder="Tattoo Name" onChange={(event) => setName(event.target.value)}></input>
+          <input value={name} id="name" placeholder="Tattoo Name" onChange={(event) => setName(event.target.value)} />
         </section>
-      </div>
 
-      <div>
         <section className="new-idea-details">
-            <input value={details} name="details" id="details" placeholder="Tattoo Details" onChange={(event) => setDetails(event.target.value)}></input>
+            <input value={details} id="details" placeholder="Tattoo Details" onChange={(event) => setDetails(event.target.value)} />
         </section>
-      </div>
 
-      <div>
         <section className="new-idea-style">
-            <label for="style">Style [choose one]:</label>
-            <select value={style} name="style" id="style" onChange={(event) => setStyle(event.target.value)}>
+            <label htmlFor="style">Style [choose one]:</label>
+            &nbsp; &nbsp;
+            <select onChange={(event) => setStyle(event.target.value)}>
                 <option value="Undecided">Undecided</option>
                 <option value="American Traditional">American Traditional</option>
                 <option value="Black and Grey">Black and Grey</option>
@@ -66,12 +74,11 @@ function CreateIdeaForm() {
                 <option value="Watercolor">Watercolor</option>
             </select>
         </section>
-      </div>
 
-      <div>
         <section className="new-idea-placement">
-            <label for="placement">Desired Placement [choose one]:</label>
-            <select value={placement} name="placement" id="placement" onChange={(event) => setPlacement(event.target.value)}>
+            <label htmlFor="placement">Desired Placement [choose one]:</label>
+            &nbsp; &nbsp;
+            <select onChange={(event) => setPlacement(event.target.value)}>
                 <option value="Undecided">Undecided</option>
                 <option value="Upper Arm - Right">Upper Arm - Right</option>
                 <option value="Upper Arm - Left">Upper Arm - Left</option>
@@ -96,18 +103,18 @@ function CreateIdeaForm() {
                 <option value="Head">Head</option>
             </select>
         </section>
-      </div>
-      <div>
-        <input className="btn" type="submit" name="submit" value="Submit Idea" 
-          onClick={() => {
-            history.push('/ideas');
-          }}
-        />
-      </div>
+        <br />
+        
+        <button className="submit-button" type="submit">Save Idea</button>
 
-</form>
+    </form>
+    </>
   );
 }
 
 export default CreateIdeaForm;
 
+// {id ? <h2>Edit Idea</h2> : <h2>Add Idea</h2> } If I decide to allow an edit on this whole page, then I will add an if/else statement that determines the header.
+// could also have both of these include the user.username.
+
+// if I add the edit function to this page, then I will need to add useEffect from 'react' and i'll have to import axios from 'axios'

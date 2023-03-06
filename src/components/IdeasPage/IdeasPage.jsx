@@ -51,6 +51,7 @@ function IdeasPage() {
     </div>
   );
 }; // the section holding the json stringify will be altered to map out the users ideas
+// also add a link to the CreateIdeaPage
 
 export default IdeasPage;
 

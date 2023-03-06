@@ -1,5 +1,11 @@
 import axios from 'axios';
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest, takeEvery } from 'redux-saga/effects';
+
+
+function* ideasSaga() {
+  yield takeLatest('FETCH_IDEAS', fetchIdeas);
+  yield takeEvery('POST_IDEA', postIdea);
+}
 
 // worker Saga: will be fired on "FETCH_IDEAS" actions
 function* fetchIdeas() {
@@ -14,7 +20,7 @@ function* fetchIdeas() {
     // If a user is logged in, this will return their information
     // from the server session (req.user)
     const response = yield axios.get('/api/ideas', config);
-    console.log('response', response.data);
+    console.log('get all: ', response.data);
     // now that the session has given us a user object
     // with an id and username set the client-side user object to let
     // the client-side code know the user is logged in
@@ -24,8 +30,25 @@ function* fetchIdeas() {
   }
 }
 
-function* ideasSaga() {
-  yield takeLatest('FETCH_IDEAS', fetchIdeas);
+
+
+function* postIdea(action) {
+  console.log('new idea: ', action.payload);
+  try {
+
+    // passes the name, details, style, and placement from the payload to the server
+    yield axios.post(`/api/ideas`, action.payload);
+    // console.log('newIdea: ', newIdea);
+    // if (action.history) {
+    //   action.history.push('/ideas');
+    // }
+
+    yield fetchIdeas({ type: 'FETCH_IDEAS', payload: action.payload}); 
+  
+  }
+  catch (error) {
+    console.log('Error with postIdea:', error);
+  }
 }
 
 export default ideasSaga;

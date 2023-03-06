@@ -2,49 +2,65 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
+// GET all ideas
 router.get('/', (req, res) => {
   // GET route code here
-  console.log('in the server GET ideas', req.user);
-  let queryText = 'SELECT * FROM "ideas" WHERE "user_id" = $1;';
-  pool.query(queryText, [req.user.id])
-    .then((result) => {
-      console.log(result.rows);
-      res.send(result.rows);
-    }).catch((err) => {
-      console.log('error with get ideas request: ', err);
-      res.sendStatus(500);
-    });
+  console.log('is authenticated: ', req.isAuthenticated());
+  console.log('in the server GET ideas router');
+  console.log('user is: ', req.user);
+  if (req.isAuthenticated()) {
+    const queryText = `SELECT * FROM "ideas" WHERE "user_id" = $1 ORDER BY "id" DESC;`; // changed this to order by the id to show newest ideas at the top of the list. changed back
+    pool.query(queryText, [req.user.id])
+      .then((result) => {
+        res.send(result.rows);
+      }).catch((error) => {
+        res.sendStatus(500);
+      });
+  } else {
+    res.sendStatus(403); // forbidden status code
+  }  
 });
 
 /**
  * POST route template
  */
-router.post('/create', (req, res) => {
+router.post('/', (req, res) => {
   // POST route code here
-  const name = req.body.name;
-  const details = req.body.details;
-  const style = req.body.style;
-  const placement = req.body.placement;
-
-
-  console.log('in the server POST ideas', req.user);
-  console.log(req.body.params);
-  const queryText = `
-  INSERT INTO "ideas" (name, details, style, placement)
-  VALUES ($1, $2, $3, $4);`; // do I need to add a RETURNING statement here?
-  pool
-    .query(queryText, [name, details, style, placement])
-    .then(() => res.sendStatus(201))
-    .catch((err) => {
-      console.log('POST idea error: ', err);
-      res.sendStatus(500);
-    });
+  
+  const details = req.body.newIdea.details;
+  const style = req.body.newIdea.style;
+  const placement = req.body.newIdea.placement;
+  const user_id = req.user.id;
+  console.log('req.body', req.body);
+  // console.log('new idea name:', name);
+  console.log('in the server POST ideas for: ', req.user);
+  console.log('is authenticated: ', req.isAuthenticated());
+  // RETURNING "id" will give you back the id of the new idea
+  // only allow this POST if the user is authenticated
+  if (req.isAuthenticated()){
+    const queryText = `
+    INSERT INTO "ideas" ("user_id", "name", "details", "style", "placement")
+    VALUES ($1, $2, $3, $4, $5)
+    RETURNING "id";` // RETURNING "id" will give you back the id of the new idea // Need to also insert the user_id somehow. Was using ${req.user.id} as a value and "user_id" as the item I was inserting it into
+    pool
+      .query(queryText, [user_id, req.body.newIdea.name, details, style, placement]) //, user_id removed this when the other user_id fields were removed. Trying to get back to the state that at least sent the other information. Should I replace that with req.user.id here? That's how it's done above.
+      .then(result => {
+        console.log('New idea id: ', result.rows[0].id)
+        res.send({id: result.rows[0].id});
+        // res.sendStatus(201) Is this really where it was messed up?
+      })
+      .catch(err => {
+        console.log('router.post idea error: ', err);
+        res.sendStatus(500);
+      });
+  } else {
+    res.sendStatus(403); // forbidden status code
+  }
 });
 
 module.exports = router;
 
 
 // information on how to complete this get request would be in the last lecture from the 2/28 class
+
+// could use number 7 from the sql-joins-syntax-basics-heroes assignment

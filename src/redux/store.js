@@ -27,3 +27,5 @@ const store = createStore(
 sagaMiddleware.run(rootSaga);
 
 export default store;
+
+// do I need to do something with the depreciated createStore?
