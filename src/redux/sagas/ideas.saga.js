@@ -5,6 +5,7 @@ import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 function* ideasSaga() {
   yield takeLatest('FETCH_IDEAS', fetchIdeas);
   yield takeEvery('POST_IDEA', postIdea);
+  yield takeEvery('DELETE_IDEA', deleteIdea);
 }
 
 // worker Saga: will be fired on "FETCH_IDEAS" actions
@@ -13,7 +14,7 @@ function* fetchIdeas() {
     const config = {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
-    };
+    }; // do I need to add action into the fetchIdeas function?
 
     // the config includes credentials which
     // allow the server session to recognize the user
@@ -31,7 +32,7 @@ function* fetchIdeas() {
 }
 
 
-
+// worker Saga: fired off on "POST_IDEA" action
 function* postIdea(action) {
   console.log('new idea: ', action.payload);
   try {
@@ -48,6 +49,17 @@ function* postIdea(action) {
   }
   catch (error) {
     console.log('Error with postIdea:', error);
+  }
+}
+
+// worker Saga: fired off on "DELETE_IDEA" action
+function* deleteIdea(action) {
+  console.log('idea being deleted: ', action.payload);
+  try {
+    yield axios.delete(`/api/ideas/${action.payload}`);
+    yield fetchIdeas({ type: 'FETCH_IDEAS'});
+  } catch (error) {
+    console.log('Error deleting idea', error);
   }
 }
 
