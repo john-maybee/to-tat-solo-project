@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useHistory } from 'react-router-dom';
 
 import './IdeasPage.css';
 
@@ -13,10 +14,22 @@ function IdeasPage() {
 
   const ideas = useSelector(store => store.ideas);
   const user = useSelector((store) => store.user);
+  const{ id } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
   }, []); // do I need to write dispatch within the empty array?
+
+  const deleteIdea = (event) => {
+    event.preventDefault();
+    dispatch({
+      type: 'DELETE_IDEA',
+      payload: id
+    });
+    // do I need a history.push here if I want to stay on the same page but have the idea removed.
+    // if so, then include history.push("/ideas");
+  }
 
   return (
     <div className="container">
@@ -29,7 +42,7 @@ function IdeasPage() {
               <section className="thisIdeaHeader">
                 <button>edit</button>
                 <h3>"{idea.name}"</h3>
-                <button>delete</button>
+                <button onClick={deleteIdea}>delete</button>
               </section>
               <section className="thisIdeaDetails">
                 <h4>Details: (change colon to icon or tat gun)</h4>
