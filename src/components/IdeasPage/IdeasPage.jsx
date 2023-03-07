@@ -50,7 +50,7 @@ function IdeasPage() {
           return(
             <div key={idea.id} className="thisIdea">
               <section className="thisIdeaHeader">
-                <button onClick={() => editIdea(idea)}>update</button>
+                <button onClick={() => editIdea(idea)}>edit</button>
                 <h3>"{idea.name}"</h3>
                 <button onClick={() => deleteIdea(idea)}>delete</button>
               </section>
