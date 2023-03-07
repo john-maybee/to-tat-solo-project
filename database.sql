@@ -29,6 +29,10 @@ CREATE TABLE "ideas" (
 
 
 -- artists table entered into PosticoSQL:
+-- Stretch additions:
+-- create a join table for the artists and the ideas table that links the styles together.
+-- would then utilize this new joiner table to create a dropdown to see which artists are
+-- linked to the same style as a specific idea.
 CREATE TABLE "artists" (
 	"id" SERIAL PRIMARY KEY,
     "user_id" INT REFERENCES "user",

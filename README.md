@@ -125,22 +125,24 @@ This code is also heavily commented. We recommend reading through the comments, 
 Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 
 ## APP Milestones and Schedule
-- [X] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | Complete with questions
-- [X] Create the Index.js start | estimated hours: 2 | Due: 3/1 | Base | Complete with questions
-- [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete with questions
-- [X] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | Complete will rewatch the end of a lecture from 2/28 to check
+- [X] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | Complete
+- [X] Create the Index.js start | estimated hours: 2 | Due: 3/1 | Base | Complete
+- [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete
+- [X] LOGIN/SIGN-UP page | estimated hours: 2 | Due: 3/2 | Base | Complete
+- [X] GET - Info from db | estimated hours: 1 | Due: 3/2 | Base | Complete
 - [X] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | Complete with work to add for other pools
-- [X] Research correct names for tattoo styles | estimated hours: 1 | Due: 3/1 | Base | to-do
-- [X] Home onClick (follows App title header) | estimated hours: 1 | Due: 3/7 | Base | to-do
-- [X] POST - tattoo idea to database onClick of post/save button | estimated hours: 12 | Due: 3/7 | Base | to-do
+- [X] Research correct names for tattoo styles | estimated hours: 1 | Due: 3/1 | Base | Complete
+- [X] Home onClick (follows App title header) | estimated hours: 1 | Due: 3/7 | Base | Complete
+- [X] POST - tattoo idea to database onClick of post/save button | estimated hours: 12 | Due: 3/7 | Base | Complete
+- [X] Create an edit component | estimated hours: 2 | Due: 3/7 | Base | Complete
+- [X] DELETE - ability to remove idea | estimated hours: 3 | Due: 3/7 | Base | Complete
+- [] PUT - edit idea button brings you back to the add idea page | estimated hours: 4 | Due: 3/7 | Base | to-do
 - [] Import material-ui/icons | estimated hours: 3 | Due: 3/7 | Base | to-do
-- [] Insert Index.js updates to utilize sagas and to create store for the reducers | estimated hours: 3 | Due: 3/8 | Base | to-do
-- [X] DELETE - ability to remove idea | estimated hours: 3 | Due: 3/9 | Base | to-do
-- [] LOGIN/SIGN-UP page | estimated hours: 6 | Due: 3/10 | Base | to-do
-- [] PUT - edit idea button brings you back to the add idea page | estimated hours: 4 | Due: 3/13 | Base | to-do
-- [] Styling via CSS | estimated hours: 20 | Due: 3/20 | Base | to-do
+- [X] Insert Index.js updates to utilize sagas and to create store for the reducers | estimated hours: 3 | Due: 3/8 | Base | Complete
+- [] Styling via CSS | estimated hours: 30 | Due: 3/20 | Base | to-do
 
 ## STRETCH Milestones
+- [X] Create a new table in postico to hold the artists | estimated hours: .5 | Stretch | Complete
 - [] DELETE - ability to remove artist | estimated hours: 2 | Stretch | to-do
 - [] POST - artist added to database onClick of post/save button | estimated hours: 2 | Stretch | to-do
 - [] PUT - Edit artist button brings you back to the add artist page | estimated hours: 4 | Stretch | to-do
