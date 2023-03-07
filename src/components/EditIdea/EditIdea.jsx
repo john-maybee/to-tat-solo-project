@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 function EditIdea() {
@@ -11,22 +11,30 @@ function EditIdea() {
     const [details, setDetails] = useState(idea.details);
     const [style, setStyle] = useState(idea.style); // should I be putting this getter value somwhere in the return?
     const [placement, setPlacement] = useState(idea.placement); // should I be putting this getter value somwhere in the return?
+    const { thisIdea } = useParams();
 
     const dispatch = useDispatch();
     const history = useHistory();
 
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_THIS_IDEA',
+            payload: thisIdea
+        })
+    })
+
     const submitUpdate = (event) => {
         event.preventDefault();
-        const updatedIdea = {
-            name,
-            details,
-            style,
-            placement
-          }
+        // const updatedIdea = {
+        //     name,
+        //     details,
+        //     style,
+        //     placement
+        //   }
           // console.log('newIdeassssss:', newIdea);
           dispatch({
             type: 'EDIT_IDEA',
-            payload: {updatedIdea}
+            payload: {id, name, details, style, placement}
           }); 
           // history.push back to the ideas page
           history.push('/ideas');

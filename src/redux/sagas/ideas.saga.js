@@ -7,6 +7,7 @@ function* ideasSaga() {
   yield takeEvery('POST_IDEA', postIdea);
   yield takeEvery('DELETE_IDEA', deleteIdea);
   yield takeEvery('EDIT_IDEA', editIdea);
+  yield takeEvery('FETCH_THIS_IDEA', fetchThisIdea);
 }
 
 // worker Saga: will be fired on "FETCH_IDEAS" actions
@@ -31,6 +32,19 @@ function* fetchIdeas() {
     console.log('Ideas get request failed: ', error);
   }
 } // end of fetchIdeas function
+
+function* fetchThisIdea(action) {
+  console.log('This idea: ', action.payload);
+  const id = action.payload.idea.id;
+  console.log('this is the const', id);
+  try {
+    const target = yield axios.get(`/api/ideas/${id}`);
+
+    yield put({ type: 'SET_THIS_IDEA', payload: target});
+  } catch (error) {
+    console.log('This Idea get request failed: ', error);
+  }
+} 
 
 
 // worker Saga: fired off on "POST_IDEA" action
@@ -69,11 +83,11 @@ function* deleteIdea(action) {
 // worker Saga: fired off on "EDIT_IDEA" action
 function* editIdea(action) {
   console.log('idea being edited: ', action.payload);
-  const id = action.payload.id;
+  // const id = action.payload.id;
   try {
-    yield axios.put(`/api/ideas/edit/${id}`, action.payload);
+    yield axios.put(`/api/ideas`, action.payload);
 
-    yield put({ type: 'FETCH_IDEAS'});
+    yield fetchIdeas({ type: 'FETCH_IDEAS'}); // if this doesn't work, add a payload of `${action.payload.id}`
   } catch (error) {
     console.log('Error editing idea', error);
   }

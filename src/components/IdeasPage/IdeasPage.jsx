@@ -29,16 +29,16 @@ function IdeasPage() {
     })
   }
 
-  const editIdea = (ideaToUpdate) => {
-    // dispatch({
-    //   type: 'EDIT_IDEA',
-    //   payload: {
-    //     idea
-    //   }
-    // });
+  const editIdea = (idea) => {
+    dispatch({
+      type: 'FETCH_THIS_IDEA',
+      payload: {
+        idea
+      }
+    })
     
     // send the ideaToUpdate to the edit page
-    history.push(`/edit/${ideaToUpdate.id}`);
+    history.push(`/edit/${idea.id}`);
     // will need to add a history.push to the edit page once I create an edit page.
   }
 
