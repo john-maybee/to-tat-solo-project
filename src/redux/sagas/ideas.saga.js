@@ -39,10 +39,6 @@ function* postIdea(action) {
 
     // passes the name, details, style, and placement from the payload to the server
     yield axios.post(`/api/ideas`, action.payload);
-    // console.log('newIdea: ', newIdea);
-    // if (action.history) {
-    //   action.history.push('/ideas');
-    // }
 
     yield fetchIdeas({ type: 'FETCH_IDEAS', payload: action.payload}); 
   
@@ -55,13 +51,13 @@ function* postIdea(action) {
 // worker Saga: fired off on "DELETE_IDEA" action
 function* deleteIdea(action) {
   console.log('idea being deleted: ', action.payload);
-  // const id = action.payload;
+  const id = action.payload.id;
   try {
     const config = {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
     };
-    const response = yield axios.delete(`/api/ideas/${action.payload.id}`, config);
+    yield axios.delete(`/api/ideas/${id}`, config);
     yield put({ type: 'FETCH_IDEAS'});
   } catch (error) {
     console.log('Error deleting idea', error);
