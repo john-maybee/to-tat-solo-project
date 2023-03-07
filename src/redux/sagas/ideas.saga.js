@@ -6,6 +6,7 @@ function* ideasSaga() {
   yield takeLatest('FETCH_IDEAS', fetchIdeas);
   yield takeEvery('POST_IDEA', postIdea);
   yield takeEvery('DELETE_IDEA', deleteIdea);
+  yield takeEvery('EDIT_IDEA', editIdea);
 }
 
 // worker Saga: will be fired on "FETCH_IDEAS" actions
@@ -58,10 +59,24 @@ function* deleteIdea(action) {
       withCredentials: true,
     };
     yield axios.delete(`/api/ideas/${id}`, config);
+
     yield put({ type: 'FETCH_IDEAS'});
   } catch (error) {
     console.log('Error deleting idea', error);
   }
 } // end of deleteIdea function
+
+// worker Saga: fired off on "EDIT_IDEA" action
+function* editIdea(action) {
+  console.log('idea being edited: ', action.payload);
+  const id = action.payload.id;
+  try {
+    yield axios.put(`/api/ideas/edit/${id}`, action.payload);
+
+    yield put({ type: 'FETCH_IDEAS'});
+  } catch (error) {
+    console.log('Error editing idea', error);
+  }
+}
 
 export default ideasSaga;

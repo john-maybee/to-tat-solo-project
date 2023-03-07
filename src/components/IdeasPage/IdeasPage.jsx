@@ -36,6 +36,7 @@ function IdeasPage() {
     //     idea
     //   }
     // });
+    
     // send the ideaToUpdate to the edit page
     history.push(`/edit/${ideaToUpdate.id}`);
     // will need to add a history.push to the edit page once I create an edit page.
