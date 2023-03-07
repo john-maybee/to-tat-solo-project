@@ -11,10 +11,10 @@ import './IdeasPage.css';
 
 function IdeasPage() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const ideas = useSelector(store => store.ideas);
   const user = useSelector((store) => store.user);
-  const history = useHistory();
 
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
@@ -26,16 +26,18 @@ function IdeasPage() {
       payload: {
         id: idea.id
       }
-    });
+    })
   }
 
-  const editIdea = (idea) => {
-    dispatch({
-      type: 'EDIT_IDEA',
-      payload: {
-        id: idea.id
-      }
-    });
+  const editIdea = (ideaToUpdate) => {
+    // dispatch({
+    //   type: 'EDIT_IDEA',
+    //   payload: {
+    //     idea
+    //   }
+    // });
+    // send the ideaToUpdate to the edit page
+    history.push(`/edit/${ideaToUpdate.id}`);
     // will need to add a history.push to the edit page once I create an edit page.
   }
 
@@ -48,7 +50,7 @@ function IdeasPage() {
           return(
             <div key={idea.id} className="thisIdea">
               <section className="thisIdeaHeader">
-                <button onClick={() => editIdea(idea)}>edit</button>
+                <button onClick={() => editIdea(idea)}>update</button>
                 <h3>"{idea.name}"</h3>
                 <button onClick={() => deleteIdea(idea)}>delete</button>
               </section>
