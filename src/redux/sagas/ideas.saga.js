@@ -29,7 +29,7 @@ function* fetchIdeas() {
   } catch (error) {
     console.log('Ideas get request failed: ', error);
   }
-}
+} // end of fetchIdeas function
 
 
 // worker Saga: fired off on "POST_IDEA" action
@@ -50,17 +50,22 @@ function* postIdea(action) {
   catch (error) {
     console.log('Error with postIdea:', error);
   }
-}
+} // end of postIdea function
 
 // worker Saga: fired off on "DELETE_IDEA" action
 function* deleteIdea(action) {
   console.log('idea being deleted: ', action.payload);
+  // const id = action.payload;
   try {
-    yield axios.delete(`/api/ideas/${action.payload}`);
-    yield fetchIdeas({ type: 'FETCH_IDEAS'});
+    const config = {
+      headers: { 'Content-Type': 'application/json' },
+      withCredentials: true,
+    };
+    const response = yield axios.delete(`/api/ideas/${action.payload.id}`, config);
+    yield put({ type: 'FETCH_IDEAS'});
   } catch (error) {
     console.log('Error deleting idea', error);
   }
-}
+} // end of deleteIdea function
 
 export default ideasSaga;

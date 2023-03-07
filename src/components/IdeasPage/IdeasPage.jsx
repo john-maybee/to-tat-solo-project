@@ -14,18 +14,18 @@ function IdeasPage() {
 
   const ideas = useSelector(store => store.ideas);
   const user = useSelector((store) => store.user);
-  const{ id } = useParams();
   const history = useHistory();
 
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
   }, []); // do I need to write dispatch within the empty array?
 
-  const deleteIdea = (event) => {
-    event.preventDefault();
+  const deleteIdea = (idea) => {
     dispatch({
       type: 'DELETE_IDEA',
-      payload: id
+      payload: {
+        id: idea.id
+      }
     });
     // do I need a history.push here if I want to stay on the same page but have the idea removed.
     // if so, then include history.push("/ideas");
@@ -42,7 +42,7 @@ function IdeasPage() {
               <section className="thisIdeaHeader">
                 <button>edit</button>
                 <h3>"{idea.name}"</h3>
-                <button onClick={deleteIdea}>delete</button>
+                <button onClick={() => deleteIdea(idea)}>delete</button>
               </section>
               <section className="thisIdeaDetails">
                 <h4>Details: (change colon to icon or tat gun)</h4>

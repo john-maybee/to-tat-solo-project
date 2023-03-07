@@ -21,11 +21,8 @@ router.get('/', (req, res) => {
   }  
 });
 
-/**
- * POST route template
- */
+// POST route code here:
 router.post('/', (req, res) => {
-  // POST route code here
   
   const details = req.body.newIdea.details;
   const style = req.body.newIdea.style;
@@ -55,6 +52,30 @@ router.post('/', (req, res) => {
       });
   } else {
     res.sendStatus(403); // forbidden status code
+  }
+});
+
+// DELETE route code here:
+router.delete('/:id', (req, res) => {
+  console.log('req.body', req.params.id);
+  // allow to DELETE if the user is authenticated
+  if (req.isAuthenticated()){
+    let id = req.params.id;
+    const queryText = `
+    DELETE FROM "ideas"
+    WHERE id = $1;`;
+    pool
+      .query(queryText, [id])
+      .then((result) => {
+        console.log('Delete result: ', result);
+        res.sendStatus(202);
+      })
+      .catch((error) => {
+        console.log('router.delete idea error: ', error);
+        res.sendStatus(500);
+      })
+  } else {
+    res.sendStatus(403);
   }
 });
 
