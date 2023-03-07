@@ -27,8 +27,16 @@ function IdeasPage() {
         id: idea.id
       }
     });
-    // do I need a history.push here if I want to stay on the same page but have the idea removed.
-    // if so, then include history.push("/ideas");
+  }
+
+  const editIdea = (idea) => {
+    dispatch({
+      type: 'EDIT_IDEA',
+      payload: {
+        id: idea.id
+      }
+    });
+    // will need to add a history.push to the edit page once I create an edit page.
   }
 
   return (
@@ -40,7 +48,7 @@ function IdeasPage() {
           return(
             <div key={idea.id} className="thisIdea">
               <section className="thisIdeaHeader">
-                <button>edit</button>
+                <button onClick={() => editIdea(idea)}>edit</button>
                 <h3>"{idea.name}"</h3>
                 <button onClick={() => deleteIdea(idea)}>delete</button>
               </section>
