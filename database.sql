@@ -26,3 +26,15 @@ CREATE TABLE "ideas" (
     "style" VARCHAR (100),
     "placement" VARCHAR (100)
 ); -- added
+
+
+-- artists table entered into PosticoSQL:
+CREATE TABLE "artists" (
+	"id" SERIAL PRIMARY KEY,
+    "user_id" INT REFERENCES "user",
+    "name" VARCHAR (80),
+	"shop" VARCHAR (100),
+	"city" VARCHAR (80),
+	"style" VARCHAR (100),
+	"details" VARCHAR (1000)
+);

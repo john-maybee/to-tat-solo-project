@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import IdeasPage from '../IdeasPage/IdeasPage';
 import CreateIdeaPage from '../CreateIdeaPage/CreateIdeaPage';
+import EditIdea from '../EditIdea/EditIdea';
 
 import './App.css';
 
@@ -79,11 +80,19 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows ideas Page else shows LoginPage
+            // logged in shows create Page else shows LoginPage
             exact
             path="/create"
           >
             <CreateIdeaPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows edit Page else shows LoginPage
+            exact
+            path="/edit"
+          >
+            <EditIdea />
           </ProtectedRoute>
 
           <Route
