@@ -12,10 +12,10 @@ const EditIdea = () =>{
     const thisIdea = useSelector((store) => store.thisIdea);
     
     const { id } = useParams();
-    const [name, setName] = useState([{name:''}]);
-    const [details, setDetails] = useState([{details:''}]);
-    const [style, setStyle] = useState([{style:''}]); // should I be putting this getter value somwhere in the return?
-    const [placement, setPlacement] = useState([{placement:''}]); // should I be putting this getter value somwhere in the return?
+    const [name, setName] = useState({name:''});
+    const [details, setDetails] = useState({details:''});
+    const [style, setStyle] = useState({style:''}); // should I be putting this getter value somwhere in the return?
+    const [placement, setPlacement] = useState({placement:''}); // should I be putting this getter value somwhere in the return?
 
     console.log('asdfghjdfghjdfghj', id);
 
@@ -34,34 +34,35 @@ const EditIdea = () =>{
     }, [thisIdea]);
 
     const updateTattooIdea = () => {
-        const nameUpdate = [...name, {name: ''}];
-        const detailsUpdate = [...details, {details: ''}];
-        const styleUpdate = [...style, {style: ''}];
-        const placementUpdate = [...placement, {placement: ''}];
+        const nameUpdate = name;
+        const detailsUpdate = details;
+        const styleUpdate = style;
+        const placementUpdate = placement;
         setName(nameUpdate);
         setDetails(detailsUpdate);
         setStyle(styleUpdate);
         setPlacement(placementUpdate);
-    }
+    } // do I need the ... before the params?
 
     const submitUpdate = (event) => {
         event.preventDefault();
-        console.log('submitting the payload: ', id, name, details, style, placement);
+        console.log('submitting the payload: ', name, details, style, placement, id);
         const editedIdea = {
-            id,
             name,
             details,
             style,
             placement,
+            id,
         }
+        console.log('editedIdea const: ', editedIdea);
           dispatch({
             type: "EDIT_IDEA",
             payload: editedIdea
           });
-          setName([{name: ''}]);
-          setDetails([{details: ''}]);
-          setStyle([{style: ''}]);
-          setPlacement([{placement: ''}]);
+          setName({name: ''});
+          setDetails({details: ''});
+          setStyle({style: ''});
+          setPlacement({placement: ''});
           // should I set each param back to ''? 
           // or does clicking the edit idea button on the ideas page change this page on load anyway?
           // history.back to the ideas page/previous page
@@ -77,11 +78,11 @@ const EditIdea = () =>{
             </section>
 
             <section className="edit-idea-container">
-                        <div className="edit-idea">
+                        {/* <div className="edit-idea"> */}
                             <form onSubmit={submitUpdate}>
                                   
-                            {thisIdea.map((thisIdea) => {
-                                return (
+                            {thisIdea.map(thisIdea => {
+                                return(
                                     <div key={thisIdea.id} className="edit-idea">
                                             <label htmlFor="name">Tattoo Name: {thisIdea.name}</label><br/>
                                             <input 
@@ -187,7 +188,7 @@ const EditIdea = () =>{
                                 </button>
 
                             </form>  
-                        </div>
+                        {/* </div> */}
             </section>
         </div>
       );

@@ -21,6 +21,7 @@ router.get('/', (req, res) => {
   }  
 });
 
+// route for GET thisIdea for editing
 router.get('/:id', (req,res) => {
   if (req.isAuthenticated()) {
     console.log('get idea id:', req.params.id);
@@ -31,6 +32,7 @@ router.get('/:id', (req,res) => {
     pool
       .query(queryText, [id])
       .then(result => {
+
         res.send(result.rows);
       })
       .catch((error) => {
@@ -77,31 +79,34 @@ router.post('/', (req, res) => {
   }
 });
 
-router.put('/', (req, res) => {
+
+// route for PUT thisIdea after submitting the edit request
+router.put('/:id', (req, res) => {
   console.log('req.body of PUT request: ', req.body);
   if (req.isAuthenticated()) {
+    const id = req.params.id;
     const queryText = `
     UPDATE "ideas"
     SET
-    "name" = $2,
-    "details" = $3,
-    "style" = $4,
-    "placement" = $5
-    WHERE "id" = $1;`;
+    "name" = $1,
+    "details" = $2,
+    "style" = $3,
+    "placement" = $4
+    WHERE "id" = $5;`;
     pool
       .query(queryText, [
-        req.body.id,
         req.body.name,
         req.body.details,
         req.body.style,
-        req.body.placement
+        req.body.placement,
+        req.body.id
       ])
-      .then ((result) => {
+      .then (result => {
         console.log('result from PUT: ', result);
         res.sendStatus(204);
       })
-      .catch((error) => {
-        console.log('error in PUT: ', error);
+      .catch(error => {
+        console.log('error updating in router.PUT: ', error);
         res.sendStatus(500);
       })
   } else {
@@ -110,7 +115,7 @@ router.put('/', (req, res) => {
 });
 
 
-// DELETE route code here:
+// DELETE thisIdea route code here:
 router.delete('/:id', (req, res) => {
   console.log('req.body', req.params.id);
   // allow to DELETE if the user is authenticated
