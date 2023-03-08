@@ -35,12 +35,11 @@ function* fetchIdeas() {
 
 function* fetchThisIdea(action) {
   console.log('This idea: ', action.payload);
-  const id = action.payload.idea.id;
-  console.log('this is the const', id);
+  const id = action.payload;
   try {
-    const target = yield axios.get(`/api/ideas/${id}`);
+    const thisIdea = yield axios.get(`/api/ideas/${id}`);
 
-    yield put({ type: 'SET_THIS_IDEA', payload: target});
+    yield put({ type: 'SET_THIS_IDEA', payload: thisIdea.data});
   } catch (error) {
     console.log('This Idea get request failed: ', error);
   }

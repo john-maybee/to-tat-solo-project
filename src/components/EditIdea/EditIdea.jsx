@@ -4,24 +4,26 @@ import React, { useState, useEffect } from 'react';
 
 function EditIdea() {
     const user = useSelector((store) => store.user);
-    const idea = useSelector((store) => store.ideas);
+    const idea = useSelector((store) => store.thisIdea);
 
-    const id = idea.id;
+
+    const item = idea.id;
     const [name, setName] = useState(idea.name);
     const [details, setDetails] = useState(idea.details);
     const [style, setStyle] = useState(idea.style); // should I be putting this getter value somwhere in the return?
     const [placement, setPlacement] = useState(idea.placement); // should I be putting this getter value somwhere in the return?
-    const { thisIdea } = useParams();
+    const { id } = useParams();
 
     const dispatch = useDispatch();
     const history = useHistory();
+    console.log('asdfghjdfghjdfghj', id);
 
     useEffect(() => {
         dispatch({
             type: 'FETCH_THIS_IDEA',
-            payload: thisIdea
-        })
-    })
+            payload: id
+        });
+    }, []);
 
     const submitUpdate = (event) => {
         event.preventDefault();
@@ -34,7 +36,7 @@ function EditIdea() {
           // console.log('newIdeassssss:', newIdea);
           dispatch({
             type: 'EDIT_IDEA',
-            payload: {id, name, details, style, placement}
+            payload: {item, name, details, style, placement}
           }); 
           // history.push back to the ideas page
           history.push('/ideas');

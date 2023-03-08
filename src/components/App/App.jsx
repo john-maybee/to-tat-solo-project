@@ -90,7 +90,7 @@ function App() {
           <ProtectedRoute
             // logged in shows edit Page else shows LoginPage
             exact
-            path="/edit"
+            path="/edit/:id"
           >
             <EditIdea />
           </ProtectedRoute>

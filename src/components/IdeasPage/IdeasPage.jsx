@@ -30,15 +30,14 @@ function IdeasPage() {
   }
 
   const editIdea = (idea) => {
+    console.log(idea);
     dispatch({
-      type: 'FETCH_THIS_IDEA',
+      type: 'SET_THIS_IDEA',
       payload: {
         idea
       }
-    })
-    
-    // send the ideaToUpdate to the edit page
-    history.push(`/edit/${idea.id}`);
+    });
+    history.push(`/edit/${idea}`);
     // will need to add a history.push to the edit page once I create an edit page.
   }
 
@@ -51,7 +50,7 @@ function IdeasPage() {
           return(
             <div key={idea.id} className="thisIdea">
               <section className="thisIdeaHeader">
-                <button onClick={() => editIdea(idea)}>edit</button>
+                <button onClick={() => editIdea(idea.id)}>edit</button>
                 <h3>"{idea.name}"</h3>
                 <button onClick={() => deleteIdea(idea)}>delete</button>
               </section>

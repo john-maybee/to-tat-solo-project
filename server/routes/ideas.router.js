@@ -21,9 +21,31 @@ router.get('/', (req, res) => {
   }  
 });
 
+router.get('/:id', (req,res) => {
+  if (req.isAuthenticated()) {
+    console.log('get idea id:', req.params.id);
+    const id = req.params.id;
+    const queryText = `
+    SELECT * FROM "ideas"
+    WHERE "id" = $1;`;
+    pool
+      .query(queryText, [id])
+      .then(result => {
+        res.send(result.rows);
+      })
+      .catch((error) => {
+        console.log('router.post idea error: ', error);
+        res.sendStatus(500);
+      });
+  } else {
+    res.sendStatus(403); // forbidden status code
+  }
+});
+
 // POST route code here:
 router.post('/', (req, res) => {
   
+  const name = req.body.newIdea.name;
   const details = req.body.newIdea.details;
   const style = req.body.newIdea.style;
   const placement = req.body.newIdea.placement;
@@ -40,7 +62,7 @@ router.post('/', (req, res) => {
     VALUES ($1, $2, $3, $4, $5)
     RETURNING "id";` // RETURNING "id" will give you back the id of the new idea // Need to also insert the user_id somehow. Was using ${req.user.id} as a value and "user_id" as the item I was inserting it into
     pool
-      .query(queryText, [user_id, req.body.newIdea.name, details, style, placement]) //, user_id removed this when the other user_id fields were removed. Trying to get back to the state that at least sent the other information. Should I replace that with req.user.id here? That's how it's done above.
+      .query(queryText, [user_id, name, details, style, placement]) //, user_id removed this when the other user_id fields were removed. Trying to get back to the state that at least sent the other information. Should I replace that with req.user.id here? That's how it's done above.
       .then(result => {
         console.log('New idea id: ', result.rows[0].id)
         res.send({id: result.rows[0].id});
