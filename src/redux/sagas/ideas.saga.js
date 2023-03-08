@@ -30,8 +30,8 @@ function* fetchIdeas() {
     yield put({ type: 'SET_IDEAS', payload: response.data });
   } catch (error) {
     console.log('Ideas get request failed: ', error);
-  }
-} // end of fetchIdeas function
+  };
+}; // end of fetchIdeas function
 
 function* fetchThisIdea(action) {
   console.log('This idea: ', action.payload);
@@ -42,8 +42,8 @@ function* fetchThisIdea(action) {
     yield put({ type: 'SET_THIS_IDEA', payload: thisIdea.data});
   } catch (error) {
     console.log('This Idea get request failed: ', error);
-  }
-} 
+  };
+};
 
 
 // worker Saga: fired off on "POST_IDEA" action
@@ -59,8 +59,8 @@ function* postIdea(action) {
   }
   catch (error) {
     console.log('Error with postIdea:', error);
-  }
-} // end of postIdea function
+  };
+}; // end of postIdea function
 
 // worker Saga: fired off on "DELETE_IDEA" action
 function* deleteIdea(action) {
@@ -76,20 +76,19 @@ function* deleteIdea(action) {
     yield put({ type: 'FETCH_IDEAS'});
   } catch (error) {
     console.log('Error deleting idea', error);
-  }
-} // end of deleteIdea function
+  };
+}; // end of deleteIdea function
 
 // worker Saga: fired off on "EDIT_IDEA" action
+// send the updated information for thisIdea to the server
 function* editIdea(action) {
-  console.log('idea being edited: ', action.payload);
-  // const id = action.payload.id;
+  console.log('idea being edited: ', action.payload.id);
+  const id = action.payload.id;
   try {
-    yield axios.put(`/api/ideas/${action.payload.id}`, action.payload);
-
-    yield fetchIdeas({ type: 'FETCH_IDEAS'}); // if this doesn't work, add a payload of `${action.payload.id}`
+    const editedIdea = yield axios.put(`/api/edit/${id}`, action.payload);
   } catch (error) {
     console.log('Error editing idea', error);
-  }
-}
+  };
+};
 
 export default ideasSaga;

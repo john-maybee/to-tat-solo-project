@@ -14,7 +14,7 @@ const EditIdea = () =>{
     const { id } = useParams();
     const [name, setName] = useState([{name:''}]);
     const [details, setDetails] = useState([{details:''}]);
-    const [style, setStyle] = useState([{styel:''}]); // should I be putting this getter value somwhere in the return?
+    const [style, setStyle] = useState([{style:''}]); // should I be putting this getter value somwhere in the return?
     const [placement, setPlacement] = useState([{placement:''}]); // should I be putting this getter value somwhere in the return?
 
     console.log('asdfghjdfghjdfghj', id);
@@ -47,10 +47,21 @@ const EditIdea = () =>{
     const submitUpdate = (event) => {
         event.preventDefault();
         console.log('submitting the payload: ', id, name, details, style, placement);
+        const editedIdea = {
+            id,
+            name,
+            details,
+            style,
+            placement,
+        }
           dispatch({
             type: "EDIT_IDEA",
-            payload: {id, name, details, style, placement}
+            payload: editedIdea
           });
+          setName([{name: ''}]);
+          setDetails([{details: ''}]);
+          setStyle([{style: ''}]);
+          setPlacement([{placement: ''}]);
           // should I set each param back to ''? 
           // or does clicking the edit idea button on the ideas page change this page on load anyway?
           // history.back to the ideas page/previous page

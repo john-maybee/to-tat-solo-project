@@ -1,5 +1,6 @@
 const thisIdeaReducer = (state = [], action) => {
-    switch (action.type) {
+  console.log('thisIdeaReducer action: ', action);  
+  switch (action.type) {
       case 'SET_THIS_IDEA':
         return action.payload;
       default:
