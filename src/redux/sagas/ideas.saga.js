@@ -84,7 +84,7 @@ function* editIdea(action) {
   console.log('idea being edited: ', action.payload);
   // const id = action.payload.id;
   try {
-    yield axios.put(`/api/ideas`, action.payload);
+    yield axios.put(`/api/ideas/${action.payload.id}`, action.payload);
 
     yield fetchIdeas({ type: 'FETCH_IDEAS'}); // if this doesn't work, add a payload of `${action.payload.id}`
   } catch (error) {

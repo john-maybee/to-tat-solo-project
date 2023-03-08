@@ -77,6 +77,38 @@ router.post('/', (req, res) => {
   }
 });
 
+router.put('/', (req, res) => {
+  console.log('req.body of PUT request: ', req.body);
+  if (req.isAuthenticated()) {
+    const queryText = `
+    UPDATE "ideas"
+    SET
+    "name" = $2,
+    "details" = $3,
+    "style" = $4,
+    "placement" = $5
+    WHERE "id" = $1;`;
+    pool
+      .query(queryText, [
+        req.body.id,
+        req.body.name,
+        req.body.details,
+        req.body.style,
+        req.body.placement
+      ])
+      .then ((result) => {
+        console.log('result from PUT: ', result);
+        res.sendStatus(204);
+      })
+      .catch((error) => {
+        console.log('error in PUT: ', error);
+        res.sendStatus(500);
+      })
+  } else {
+    res.sendStatus(403);
+  }
+});
+
 
 // DELETE route code here:
 router.delete('/:id', (req, res) => {

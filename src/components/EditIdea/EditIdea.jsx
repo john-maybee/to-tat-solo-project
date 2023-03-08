@@ -9,7 +9,6 @@ function EditIdea() {
     const idea = useSelector((store) => store.thisIdea);
 
 
-    const ideaId = idea.id;
     const [name, setName] = useState(idea.name);
     const [details, setDetails] = useState(idea.details);
     const [style, setStyle] = useState(idea.style); // should I be putting this getter value somwhere in the return?
@@ -31,7 +30,7 @@ function EditIdea() {
         event.preventDefault();
           dispatch({
             type: 'EDIT_IDEA',
-            payload: {ideaId, name, details, style, placement}
+            payload: {id, name, details, style, placement}
           }); 
           // history.push back to the ideas page
           history.push('/ideas');
@@ -53,10 +52,14 @@ function EditIdea() {
                         <form className="edit-idea-form" onSubmit={submitUpdate}>
 
                             <section className="edit-idea-name">
-                            <input value={name} id="name" placeholder={idea.name} onChange={(event) => setName(event.target.value)}/>
+                                <label htmlFor="name">Tattoo Name: </label>
+                                <br/>
+                                <input value={name} id="name" placeholder={idea.name} onChange={(event) => setName(event.target.value)}/>
                             </section>
                     
                             <section className="edit-idea-details">
+                                <label htmlFor="details">Details: </label>
+                                <br/>
                                 <input value={details} id="details" placeholder={idea.details} onChange={(event) => setDetails(event.target.value)} />
                             </section>
                     
