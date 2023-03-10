@@ -8,15 +8,13 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
-      <h2>{user.username}'s Ink Pad</h2>
-      <p>Create</p>
-      <Link to="/create"><button className="btn_stretched">Enter New Idea</button></Link>
-      <br />
-      <p>View</p>
-      <Link to="/ideas"><button className="btn_stretched">Tattoo Ideas</button></Link>
+      <h2 className="header_pad" >{user.username}'s Ink Pad</h2>
+      <Link to="/create"><button className="btn_stretched">Create New Tattoo</button></Link>
       <br />
       <br />
-      <LogOutButton className="btn" />
+      <Link to="/ideas"><button className="btn_stretched">My Tattoo Ideas</button></Link>
+      <br />
+      <br />
     </div>
   );
 }

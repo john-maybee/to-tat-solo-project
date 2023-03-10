@@ -41,7 +41,7 @@ function IdeasPage() {
 
   return (
     <div className="container">
-      <h2>{user.username}'s Tattoo Ideas</h2>
+      <h2 className="header_ideas">{user.username}'s Tattoo Ideas</h2>
       <section className="ideas-container">
 
         {ideas.map(idea => {
