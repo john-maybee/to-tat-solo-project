@@ -47,23 +47,26 @@ function IdeasPage() {
         {ideas.map(idea => {
           return(
             <div key={idea.id} className="thisIdea">
+
               <section className="thisIdeaHeader">
                 <button className="btn" onClick={() => editIdea(idea)}>edit</button>
                 <h3 className="ideas_names">{idea.name}</h3>
                 <button className="btn" onClick={() => deleteIdea(idea)}>delete</button>
               </section>
+             
+              <section className="thisIdeaStyle">
+                <p>Style: {idea.style}</p>
+              </section>
+
+              <section className="thisIdeaPlacement">
+                <p>Placement: {idea.placement}</p>
+              </section>
+
               <section className="thisIdeaDetails">
-                <h4>Details: (change colon to icon or tat gun)</h4>
+                <p>Details: (change colon to icon or tat gun)</p>
                 <p>{idea.details}</p>
               </section>
-              <section className="thisIdeaStyle">
-                <h4>Style:</h4>
-                <p>{idea.style}</p>
-              </section>
-              <section className="thisIdeaPlacement">
-                <h4>On my: </h4>
-                <p>{idea.placement}</p>
-              </section>
+              
             </div>
           );
         })}
