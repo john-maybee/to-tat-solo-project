@@ -7,6 +7,7 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  color: #282828;
 }
 
 img {
@@ -26,6 +27,7 @@ Container
 Button
 -------------------------------------------------------------------------------- */
 
+/* change to a material ui button and make it the standard header color to fit the theme and make sure to adjust the hover colors for the other buttons below if I keep any. */
 .btn {
   display: inline-block;
   padding: 10px 20px;
@@ -37,7 +39,7 @@ Button
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
-}
+} 
 
 .btn_sizeMin {
   min-height: 50px;

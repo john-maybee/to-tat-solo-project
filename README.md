@@ -176,3 +176,10 @@ Customize this ReadMe and the code comments in this project to read less like a 
 - Trash Polka
 - Watercolor
 - Embroidery (not including to start)
+
+## HEX numbers for color palette styles to include:
+
+- #FFEECA (Mine Shaft)
+- #005249 (Aqua Deep)
+- #E1AD01 (corn)
+- #282828 (charcoal)

@@ -23,7 +23,7 @@ function Nav() {
         {!user.id && (
           // If there's no user, show login/registration links
           <Link className="navLink" to="/login">
-            <AppRegistration />
+            <AppRegistration fontSize="small" sx={{ color: 'rgba(40, 40, 40, 1)'}}/>
           </Link>
         )}
 
@@ -31,13 +31,13 @@ function Nav() {
         {user.id && (
           <>
             <Link className="navLink" to="/user">
-              <Cottage />
+              <Cottage fontSize="small" sx={{ color: 'rgba(40, 40, 40, 1)'}} />
             </Link>
           </>
         )}
 
         <Link className="navLink" to="/about">
-          <InfoOutlined />
+          <InfoOutlined fontSize="small" sx={{ color: 'rgba(40, 40, 40, 1)'}}/>
         </Link>
 
         {user.id && (

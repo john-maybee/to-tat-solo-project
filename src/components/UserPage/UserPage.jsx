@@ -9,7 +9,6 @@ function UserPage() {
   return (
     <div className="container">
       <h2>{user.username}'s Ink Pad</h2>
-      <p>ID: {user.id}</p>
       <p>Create</p>
       <Link to="/create"><button>Enter New Idea</button></Link>
       <br />
