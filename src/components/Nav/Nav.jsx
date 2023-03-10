@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
+import './logo.svg';
 import { useSelector } from 'react-redux';
+import { Cottage, InfoOutlined, AppRegistration } from "@mui/icons-material";
 
 function Nav() {
   const user = useSelector((store) => store.user); // const representing the store.user to help with navigation depending on whether there is a user or not.
@@ -10,14 +12,18 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">To Tat</h2>
+        {/* <body><img src="tat2.png" alt="To Tat"/></body> */}
+        {/* <h2 className="nav-title">To Tat</h2> */}
+      
+        <img src="logo.svg" alt="Logo for To Tat mobile website" role="img" />
+        
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (
           // If there's no user, show login/registration links
           <Link className="navLink" to="/login">
-            Login / Register
+            <AppRegistration />
           </Link>
         )}
 
@@ -25,24 +31,21 @@ function Nav() {
         {user.id && (
           <>
             <Link className="navLink" to="/user">
-              Home
+              <Cottage />
             </Link>
-
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-
-            <Link className="navLink" to="/ideas">
-              Tattoo Ideas
-            </Link>
-
-            <LogOutButton className="navLink" />
           </>
         )}
 
         <Link className="navLink" to="/about">
-          About
+          <InfoOutlined />
         </Link>
+
+        {user.id && (
+          <>
+            <LogOutButton className="navLink" />
+          </>
+        )}
+
       </div>
     </div>
   );
