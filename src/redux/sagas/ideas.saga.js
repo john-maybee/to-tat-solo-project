@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 
-function* ideasSaga() {
+function* ideasSaga(props) {
   yield takeLatest('FETCH_IDEAS', fetchIdeas);
   yield takeEvery('POST_IDEA', postIdea);
   yield takeEvery('DELETE_IDEA', deleteIdea);
@@ -39,7 +39,7 @@ function* fetchThisIdea(action) {
   try {
     const thisIdea = yield axios.get(`/api/ideas/${id}`);
 
-    yield put({ type: 'SET_THIS_IDEA', payload: thisIdea.data});
+    yield put({ type: 'SET_THIS_IDEA', payload: thisIdea.data[0]});
   } catch (error) {
     console.log('This Idea get request failed: ', error);
   };
@@ -79,16 +79,32 @@ function* deleteIdea(action) {
   };
 }; // end of deleteIdea function
 
+
+
 // worker Saga: fired off on "EDIT_IDEA" action
 // send the updated information for thisIdea to the server
 function* editIdea(action) {
   console.log('idea being edited: ', action.payload.id);
   const id = action.payload.id;
   try {
-    const editedIdea = yield axios.put(`/api/edit/${id}`, action.payload);
+    yield axios.put(`/api/ideas/${id}`, {
+      name: action.payload.name,
+      details: action.payload.details,
+      style: action.payload.style,
+      placement: action.payload.placement
+    });
   } catch (error) {
     console.log('Error editing idea', error);
   };
 };
+
+// function* editOnChange(action){
+//   try {
+//   yield axios.put(`/api/ideas/${action.payload.id}`, {name: action.payload.name});
+
+//   } catch (error) {
+//   console.log('Error editing idea', error);
+// };
+// }
 
 export default ideasSaga;

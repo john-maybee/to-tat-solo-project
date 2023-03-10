@@ -82,24 +82,24 @@ router.post('/', (req, res) => {
 
 // route for PUT thisIdea after submitting the edit request
 router.put('/:id', (req, res) => {
-  console.log('req.body of PUT request: ', req.body);
+  console.log('req.body of PUT request: ', req.body, req.params.id);
   if (req.isAuthenticated()) {
     const id = req.params.id;
     const queryText = `
     UPDATE "ideas"
     SET
-    "name" = $1,
-    "details" = $2,
-    "style" = $3,
-    "placement" = $4
-    WHERE "id" = $5;`;
+    "name" = $2,
+    "details" = $3,
+    "style" = $4,
+    "placement" = $5
+    WHERE "id" = $1;`;
     pool
       .query(queryText, [
+        id,
         req.body.name,
         req.body.details,
         req.body.style,
-        req.body.placement,
-        req.body.id
+        req.body.placement
       ])
       .then (result => {
         console.log('result from PUT: ', result);

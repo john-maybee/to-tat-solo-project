@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './EditIdea.css';
 
 
-const EditIdea = () =>{
+const EditIdea = (props) => {
     const dispatch = useDispatch();
     const history = useHistory();
     
@@ -12,47 +12,30 @@ const EditIdea = () =>{
     const thisIdea = useSelector((store) => store.thisIdea);
     
     const { id } = useParams();
-    const [name, setName] = useState({name:''});
-    const [details, setDetails] = useState({details:''});
-    const [style, setStyle] = useState({style:''}); // should I be putting this getter value somwhere in the return?
-    const [placement, setPlacement] = useState({placement:''}); // should I be putting this getter value somwhere in the return?
+    const [name, setName] = useState(thisIdea.name);
+    const [details, setDetails] = useState(thisIdea.details);
+    const [style, setStyle] = useState(thisIdea.style); // should I be putting this getter value somwhere in the return?
+    const [placement, setPlacement] = useState(thisIdea.placement); // should I be putting this getter value somwhere in the return?
 
-    console.log('asdfghjdfghjdfghj', id);
+    console.log('asdfghjdfghjdfghj', thisIdea);
 
     useEffect(() => {
         dispatch({
             type: "FETCH_THIS_IDEA",
             payload: id
         });
-    }, [id]);
+    }, [id]); 
 
-    useEffect(() => {
-        setName(thisIdea.name);
-        setDetails(thisIdea.details);
-        setStyle(thisIdea.style);
-        setPlacement(thisIdea.placement);
-    }, [thisIdea]);
-
-    const updateTattooIdea = () => {
-        const nameUpdate = name;
-        const detailsUpdate = details;
-        const styleUpdate = style;
-        const placementUpdate = placement;
-        setName(nameUpdate);
-        setDetails(detailsUpdate);
-        setStyle(styleUpdate);
-        setPlacement(placementUpdate);
-    } // do I need the ... before the params?
 
     const submitUpdate = (event) => {
         event.preventDefault();
-        console.log('submitting the payload: ', name, details, style, placement, id);
+        console.log('submitting the payload: ', id, name, details, style, placement);
         const editedIdea = {
+            id,
             name,
             details,
             style,
-            placement,
-            id,
+            placement, 
         }
         console.log('editedIdea const: ', editedIdea);
           dispatch({
@@ -63,54 +46,87 @@ const EditIdea = () =>{
           setDetails({details: ''});
           setStyle({style: ''});
           setPlacement({placement: ''});
-          // should I set each param back to ''? 
-          // or does clicking the edit idea button on the ideas page change this page on load anyway?
-          // history.back to the ideas page/previous page
+          
           history.goBack();
     };
-    
+
+    const changeName = (event) => {
+        console.log('updated name: ', event.target.value);
+        dispatch({
+            type: "EDIT_NAME_ONCHANGE",
+            payload: {property: 'name', value: event.target.value}
+        });
+    }
+
+    const changeDetails = (event) => {
+        console.log('updated details: ', event.target.value);
+        dispatch({
+            type: "EDIT_DETAILS_ONCHANGE",
+            payload: {property: 'details', value: event.target.value}
+        });
+    }
+
+    const changeStyle = (event) => {
+        console.log('updated style: ', event.target.value);
+        dispatch({
+            type: "EDIT_STYLE_ONCHANGE",
+            payload: {property: 'style', value: event.target.value}
+        });
+    }
+
+    const changePlacement = (event) => {
+        console.log('updated placement: ', event.target.value);
+        dispatch({
+            type: "EDIT_PLACEMENT_ONCHANGE",
+            payload: {property: 'placement', value: event.target.value}
+        });
+    }
 
     return (
         <div className="container">
             
-            <section className="edit-idea-header">
-                <h2>{user.username}'s Tattoo Editor</h2> 
-            </section>
+            <div className="edit-idea-header">
+                {user.username 
+                ? <h2>{user.username}'s Tattoo Editor</h2> 
+                : null
+                }
+            </div>
 
             <section className="edit-idea-container">
-                        {/* <div className="edit-idea"> */}
                             <form onSubmit={submitUpdate}>
-                                  
-                            {thisIdea.map(thisIdea => {
-                                return(
-                                    <div key={thisIdea.id} className="edit-idea">
-                                            <label htmlFor="name">Tattoo Name: {thisIdea.name}</label><br/>
+                            <div className="idea-editor">
+                           
+                                    <div key={thisIdea.id} className="edit">
+                                            <label htmlFor="title">Tattoo Name:</label><br/>
                                             <input 
                                                 key={thisIdea.name}
-                                                value={name}
+                                                defaultValue={thisIdea.name}
                                                 id="name"
                                                 placeholder="Update Name"
-                                                onChange={(event) => setName(event.target.value)} 
+                                                onChange={(event) => changeName(event)} 
                                             />
+                                    
+                        
+                                    
+                                            
                                             <br/>
 
-                                            <label htmlFor="details">Details: {thisIdea.details}</label><br/>
+                                            <label htmlFor="details">Details:</label><br/>
                                             <input 
-                                                key={thisIdea.details}
-                                                value={details} id="details"
-                                                placeholder="Update Details"
-                                                onChange={(event) => setDetails(event.target.value)}
+                                            key={thisIdea.details}
+                                            defaultValue={thisIdea.details} id="details"
+                                            placeholder="Update Details"
+                                            onChange={(event) => changeDetails(event)}
                                             />                         
                                             <br/>
 
                                             <label htmlFor="style">Style [choose one]:</label>
                                             &nbsp; &nbsp;
                                             <select 
-                                                key={thisIdea.style}
-                                                value={style}
-                                                onChange={(event) => setStyle(event.target.value)}
+                                            key={thisIdea.style}
+                                            defaultValue={thisIdea.style}
+                                            onChange={(event) => changeStyle(event)}
                                             >
-                                                <option value={thisIdea.style}>{thisIdea.style}</option>
                                                 <option value="Undecided">Undecided</option>
                                                 <option value="American Traditional">American Traditional</option>
                                                 <option value="Black and Grey">Black and Grey</option>
@@ -137,11 +153,10 @@ const EditIdea = () =>{
                                             <label htmlFor="placement">Desired Placement [choose one]:</label>
                                             &nbsp; &nbsp;
                                             <select 
-                                                key={thisIdea.placement}
-                                                value={placement}
-                                                onChange={(event) => setPlacement(event.target.value)}
-                                            >
-                                                <option value={thisIdea.placement}>{thisIdea.placement}</option>
+                                            key={thisIdea.placement}
+                                            defaultValue={thisIdea.placement}
+                                            onChange={(event) => changePlacement(event)}
+                                            >   
                                                 <option value="Undecided">Undecided</option>
                                                 <option value="Upper Arm - Right">Upper Arm - Right</option>
                                                 <option value="Upper Arm - Left">Upper Arm - Left</option>
@@ -165,18 +180,9 @@ const EditIdea = () =>{
                                                 <option value="Butt">Butt</option>
                                                 <option value="Head">Head</option>
                                             </select>
-                                        
                                         <br />
-                                        </div>
-                                        )
-                            })}
-                                <button 
-                                    onClick={updateTattooIdea}
-                                    type="button"
-                                    className="save-button"
-                                >
-                                    Save Changes
-                                </button>
+                                    </div>
+                           
 
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -187,8 +193,9 @@ const EditIdea = () =>{
                                     Send update to my tattoos
                                 </button>
 
-                            </form>  
-                        {/* </div> */}
+                        </div>
+                    </form> 
+           
             </section>
         </div>
       );
