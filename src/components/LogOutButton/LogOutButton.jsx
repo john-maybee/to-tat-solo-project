@@ -12,7 +12,7 @@ function LogOutButton(props) {
       className={props.className}
       onClick={() => dispatch({ type: 'LOGOUT' })}
     >
-      <Logout fontSize="small" sx={{ color: 'rgba(40, 40, 40, 1)'}}/>
+      <Logout fontSize="small" sx={{ color: '#005249'}}/>
     </button>
   );
 }

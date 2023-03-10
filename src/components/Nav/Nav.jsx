@@ -4,7 +4,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import './logo.svg';
 import { useSelector } from 'react-redux';
-import { Cottage, InfoOutlined, AppRegistration } from "@mui/icons-material";
+import { CottageTwoTone, InfoOutlined, AppRegistration } from "@mui/icons-material";
 
 function Nav() {
   const user = useSelector((store) => store.user); // const representing the store.user to help with navigation depending on whether there is a user or not.
@@ -38,7 +38,7 @@ function Nav() {
         {!user.id && (
           // If there's no user, show login/registration links
           <Link className="navLink" to="/login">
-            <AppRegistration fontSize="small" sx={{ color: 'rgba(40, 40, 40, 1)'}}/>
+            <AppRegistration fontSize="small" sx={{ color: '#005249'}}/>
           </Link>
         )}
 
@@ -46,13 +46,13 @@ function Nav() {
         {user.id && (
           <>
             <Link className="navLink" to="/user">
-              <Cottage fontSize="small" sx={{ color: 'rgba(40, 40, 40, 1)'}} />
+              <CottageTwoTone fontSize="small" sx={{ color: '#005249'}} />
             </Link>
           </>
         )}
 
         <Link className="navLink" to="/about">
-          <InfoOutlined fontSize="small" sx={{ color: 'rgba(40, 40, 40, 1)'}}/>
+          <InfoOutlined fontSize="small" sx={{ color: '#005249'}}/>
         </Link>
 
         {user.id && (
