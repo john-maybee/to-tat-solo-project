@@ -48,9 +48,9 @@ function IdeasPage() {
           return(
             <div key={idea.id} className="thisIdea">
               <section className="thisIdeaHeader">
-                <button onClick={() => editIdea(idea)}>edit</button>
-                <h3>"{idea.name}"</h3>
-                <button onClick={() => deleteIdea(idea)}>delete</button>
+                <button className="btn" onClick={() => editIdea(idea)}>edit</button>
+                <h3 className="ideas_names">{idea.name}</h3>
+                <button className="btn" onClick={() => deleteIdea(idea)}>delete</button>
               </section>
               <section className="thisIdeaDetails">
                 <h4>Details: (change colon to icon or tat gun)</h4>

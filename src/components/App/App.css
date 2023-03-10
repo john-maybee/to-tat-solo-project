@@ -8,6 +8,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0px;
   color: #282828;
+  background-color: #FFEECA;
 }
 
 img {
@@ -39,6 +40,20 @@ Button
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
+} 
+
+.btn_stretched {
+  display: inline-block;
+  padding: 10px 20px;
+  border-color: rgba(40, 40, 40, .40);
+  border-width: 1px 1px 3px;
+  border-radius: 4px;
+  background-color: #e1ad01;
+  color: #282828;
+  font-size: 1.1rem;
+  outline: 0;
+  cursor: pointer;
+  width: 100%;
 } 
 
 .btn_sizeMin {
@@ -112,4 +127,12 @@ input {
   margin: 5px;
   margin-bottom: 10px;
   background-color: rgb(255, 238, 202);
+}
+
+/* --------------------------------------------------------------------------------
+UserPage Treatment
+-------------------------------------------------------------------------------- */
+
+.ideas_names{
+  margin: auto;
 }

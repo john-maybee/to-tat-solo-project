@@ -1,5 +1,6 @@
 .thisIdea{
-    border: 1px solid black;
+    border: 1px solid #282828;
+    border-radius: 3%;
 }
 
 .thisIdeaHeader{

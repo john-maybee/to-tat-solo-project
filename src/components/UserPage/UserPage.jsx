@@ -10,10 +10,10 @@ function UserPage() {
     <div className="container">
       <h2>{user.username}'s Ink Pad</h2>
       <p>Create</p>
-      <Link to="/create"><button>Enter New Idea</button></Link>
+      <Link to="/create"><button className="btn_stretched">Enter New Idea</button></Link>
       <br />
       <p>View</p>
-      <Link to="/ideas"><button className="link">Tattoo Ideas</button></Link>
+      <Link to="/ideas"><button className="btn_stretched">Tattoo Ideas</button></Link>
       <br />
       <br />
       <LogOutButton className="btn" />
