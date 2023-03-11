@@ -179,7 +179,7 @@ Customize this ReadMe and the code comments in this project to read less like a 
 
 ## HEX numbers for color palette styles to include:
 
-- #f6e6b3 (corn at 70% lighter tint)
+- #fcf7e6 (corn at 70% lighter tint)
 - #005249 (Aqua Deep)
 - #E1AD01 (corn)
 - #282828 (Mine Shaft)
