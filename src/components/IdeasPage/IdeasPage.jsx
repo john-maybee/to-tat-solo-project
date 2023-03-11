@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
+import { Button } from '@mui/material';
+import { Delete, Edit } from '@mui/icons-material';
 
 import './IdeasPage.css';
 
@@ -49,9 +51,13 @@ function IdeasPage(props) {
             <div key={idea.id} className="thisIdea">
 
               <section className="thisIdeaHeader">
-                <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button>
+                {/* <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#005249", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditIdea(idea)}><Edit /></Button> */}
+                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#005249", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => deleteIdea(idea)}><Delete /></Button>
+                {/* <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button> */}
                 <h3 className="ideas_names">{idea.name}</h3>
-                <button className="btn" onClick={() => deleteIdea(idea)}>delete</button>
+                
+                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#005249", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditIdea(idea)}><Edit /></Button>
+                {/* <button className="btn" onClick={() => deleteIdea(idea)}>delete</button> */}
               </section>
              
               <section className="thisIdeaStyle">
@@ -67,6 +73,7 @@ function IdeasPage(props) {
                 <p>{idea.details}</p>
               </section>
               
+              
             </div>
           );
         })}
@@ -78,9 +85,3 @@ function IdeasPage(props) {
 // also add a link to the CreateIdeaPage
 
 export default IdeasPage;
-
-// Questions:
-// What do we need to include in the InfoPage, and how is this different from the AboutPage?
-// Is this just where we are supposed to display all of the data that is in the database?
-
-// Tools utilized:  {JSON.stringify(ideas)}
