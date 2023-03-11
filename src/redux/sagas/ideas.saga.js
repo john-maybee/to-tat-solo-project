@@ -93,6 +93,7 @@ function* editIdea(action) {
       style: action.payload.style,
       placement: action.payload.placement
     });
+    yield fetchIdeas({ type: 'FETCH_IDEAS', payload: action.payload});
   } catch (error) {
     console.log('Error editing idea', error);
   };

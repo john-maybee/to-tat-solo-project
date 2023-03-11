@@ -27,13 +27,10 @@ const EditIdea = (props) => {
     // }, [id]); 
 
 
-    const submitUpdate = () => {
+    const submitUpdate = (event) => {
         event.preventDefault();
         console.log('submitting the payload: ', thisIdea.name, );
-        // const editedIdea = {
-        //     thisIdea
-        // }
-        // console.log('editedIdea const: ', editedIdea);
+   
           dispatch({
             type: "EDIT_IDEA",
             payload: thisIdea
