@@ -133,13 +133,13 @@ Customize this ReadMe and the code comments in this project to read less like a 
 - [X] Pool and Router starters | estimated hours: 1 | Due: 3/2 | Base | Complete with work to add for other pools
 - [X] Research correct names for tattoo styles | estimated hours: 1 | Due: 3/1 | Base | Complete
 - [X] Home onClick (follows App title header) | estimated hours: 1 | Due: 3/7 | Base | Complete
-- [X] POST - tattoo idea to database onClick of post/save button | estimated hours: 12 | Due: 3/7 | Base | Complete
+- [X] POST - tattoo idea to database onClick of post/save button | estimated hours: 10 | Due: 3/7 | Base | Complete
 - [X] Create an edit component | estimated hours: 2 | Due: 3/7 | Base | Complete
 - [X] DELETE - ability to remove idea | estimated hours: 3 | Due: 3/7 | Base | Complete
-- [] PUT - edit idea button brings you back to the add idea page | estimated hours: 4 | Due: 3/7 | Base | to-do
-- [] Import material-ui/icons | estimated hours: 3 | Due: 3/7 | Base | to-do
+- [X] PUT - edit idea button brings you back to the edit page and sends back an edited object | estimated hours: 6 | Due: 3/7 | Base | Complete
+- [X] Import material-ui/icons | estimated hours: 3 | Due: 3/7 | Base | Complete
 - [X] Insert Index.js updates to utilize sagas and to create store for the reducers | estimated hours: 3 | Due: 3/8 | Base | Complete
-- [] Styling via CSS | estimated hours: 30 | Due: 3/20 | Base | to-do
+- [] Styling via CSS | estimated hours: 30 | Due: 3/20 | Base | In progress
 
 ## STRETCH Milestones
 - [X] Create a new table in postico to hold the artists | estimated hours: .5 | Stretch | Complete
@@ -179,7 +179,7 @@ Customize this ReadMe and the code comments in this project to read less like a 
 
 ## HEX numbers for color palette styles to include:
 
-- #f6e6b3 (Mine Shaft)
+- #f6e6b3 (corn at 70% lighter tint)
 - #005249 (Aqua Deep)
 - #E1AD01 (corn)
-- #282828 (charcoal)
+- #282828 (Mine Shaft)
