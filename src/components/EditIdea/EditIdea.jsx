@@ -19,68 +19,60 @@ const EditIdea = (props) => {
 
     console.log('asdfghjdfghjdfghj', thisIdea);
 
-    useEffect(() => {
-        dispatch({
-            type: "FETCH_THIS_IDEA",
-            payload: id
-        });
-    }, [id]); 
+    // useEffect(() => {
+    //     dispatch({
+    //         type: "FETCH_THIS_IDEA",
+    //         payload: id
+    //     });
+    // }, [id]); 
 
 
-    const submitUpdate = (event) => {
+    const submitUpdate = () => {
         event.preventDefault();
-        console.log('submitting the payload: ', id, name, details, style, placement);
-        const editedIdea = {
-            id,
-            name,
-            details,
-            style,
-            placement, 
-        }
-        console.log('editedIdea const: ', editedIdea);
+        console.log('submitting the payload: ', thisIdea.name, );
+        // const editedIdea = {
+        //     thisIdea
+        // }
+        // console.log('editedIdea const: ', editedIdea);
           dispatch({
             type: "EDIT_IDEA",
-            payload: editedIdea
+            payload: thisIdea
           });
-          setName({name: ''});
-          setDetails({details: ''});
-          setStyle({style: ''});
-          setPlacement({placement: ''});
-          
-          history.goBack();
+
+          history.push('/ideas');
     };
 
     const changeName = (event) => {
         console.log('updated name: ', event.target.value);
         dispatch({
-            type: "EDIT_NAME_ONCHANGE",
+            type: 'EDIT_NAME_ONCHANGE',
             payload: {property: 'name', value: event.target.value}
         });
     }
 
-    const changeDetails = (event) => {
-        console.log('updated details: ', event.target.value);
-        dispatch({
-            type: "EDIT_DETAILS_ONCHANGE",
-            payload: {property: 'details', value: event.target.value}
-        });
-    }
+    // const changeDetails = (event) => {
+    //     console.log('updated details: ', event.target.value);
+    //     dispatch({
+    //         type: "EDIT_DETAILS_ONCHANGE",
+    //         payload: {property: 'details', value: event.target.value}
+    //     });
+    // }
 
-    const changeStyle = (event) => {
-        console.log('updated style: ', event.target.value);
-        dispatch({
-            type: "EDIT_STYLE_ONCHANGE",
-            payload: {property: 'style', value: event.target.value}
-        });
-    }
+    // const changeStyle = (event) => {
+    //     console.log('updated style: ', event.target.value);
+    //     dispatch({
+    //         type: "EDIT_STYLE_ONCHANGE",
+    //         payload: {property: 'style', value: event.target.value}
+    //     });
+    // }
 
-    const changePlacement = (event) => {
-        console.log('updated placement: ', event.target.value);
-        dispatch({
-            type: "EDIT_PLACEMENT_ONCHANGE",
-            payload: {property: 'placement', value: event.target.value}
-        });
-    }
+    // const changePlacement = (event) => {
+    //     console.log('updated placement: ', event.target.value);
+    //     dispatch({
+    //         type: "EDIT_PLACEMENT_ONCHANGE",
+    //         payload: {property: 'placement', value: event.target.value}
+    //     });
+    // }
 
     return (
         <div className="container">
@@ -99,7 +91,7 @@ const EditIdea = (props) => {
                                     <div key={thisIdea.id} className="edit">
                                             <label htmlFor="title">Tattoo Name:</label><br/>
                                             <input 
-                                                key={thisIdea.name}
+                                                // key={thisIdea.name}
                                                 defaultValue={thisIdea.name}
                                                 id="name"
                                                 placeholder="Update Name"
@@ -109,7 +101,7 @@ const EditIdea = (props) => {
                         
                                     
                                             
-                                            <br/>
+                                            {/* <br/>
 
                                             <label htmlFor="details">Details:</label><br/>
                                             <input 
@@ -179,7 +171,7 @@ const EditIdea = (props) => {
                                                 <option value="Face">Face</option>
                                                 <option value="Butt">Butt</option>
                                                 <option value="Head">Head</option>
-                                            </select>
+                                            </select> */}
                                         <br />
                                     </div>
                            

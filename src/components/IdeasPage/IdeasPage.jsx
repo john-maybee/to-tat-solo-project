@@ -9,11 +9,11 @@ import './IdeasPage.css';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is
 
-function IdeasPage() {
+function IdeasPage(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const ideas = useSelector(store => store.ideas);
+  const ideas = useSelector((store) => store.ideas);
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
@@ -29,13 +29,13 @@ function IdeasPage() {
     })
   }
 
-  const editIdea = (idea) => {
-    console.log(idea);
+  const handleEditIdea = (idea) => {
+    console.log('in editIdea const on ideas page');
     dispatch({
       type: 'SET_THIS_IDEA',
-      payload: idea.id
+      payload: idea
     });
-    history.push(`/edit/${idea.id}`); // does this need to be idea.id?
+    history.push(`/edit`); // does this need to be idea.id?
     // will need to add a history.push to the edit page once I create an edit page.
   }
 
@@ -49,7 +49,7 @@ function IdeasPage() {
             <div key={idea.id} className="thisIdea">
 
               <section className="thisIdeaHeader">
-                <button className="btn" onClick={() => editIdea(idea)}>edit</button>
+                <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button>
                 <h3 className="ideas_names">{idea.name}</h3>
                 <button className="btn" onClick={() => deleteIdea(idea)}>delete</button>
               </section>
