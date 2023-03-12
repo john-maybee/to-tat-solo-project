@@ -144,3 +144,8 @@ UserPage Treatment
 .header_ideas{
   text-align: center;
 }
+
+.mui_link{
+  color: #282828;
+  text-decoration: none;
+}
