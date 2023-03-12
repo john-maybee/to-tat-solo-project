@@ -7,7 +7,7 @@ import './Footer.css';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 function Footer() {
-  return <footer>&copy; Maybee Made<br/><div className="svg_container">
+  return <footer>&copy; Maybee Made<div className="svg_container">
     
 
 
@@ -33,7 +33,7 @@ function Footer() {
       </defs>
     </svg>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
 
     <svg className="svg_github" width="527" height="172" viewBox="0 0 527 172" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d_42_87)">
