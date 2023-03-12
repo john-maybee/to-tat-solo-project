@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   console.log('in the server GET artists router');
   console.log('user is: ', req.user);
   if (req.isAuthenticated()) {
-    const queryText = `SELECT * FROM "artists" WHERE "user_id" = $1 ORDER BY "id" DESC;`; // changed this to order by the id to show newest ideas at the top of the list. changed back
+    const queryText = `SELECT * FROM "artists" WHERE "user_id" = $1 ORDER BY "id" DESC;`; // changed this to order by the id to show newest artists at the top of the list. changed back
     pool.query(queryText, [req.user.id])
       .then((result) => {
         res.send(result.rows);
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
   }  
 });
 
-// route for GET thisIdea for editing
+// route for GET thisArtist for editing
 router.get('/:id', (req,res) => {
   if (req.isAuthenticated()) {
     console.log('get artist id:', req.params.id);
