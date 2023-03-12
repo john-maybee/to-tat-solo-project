@@ -15,60 +15,66 @@ function ArtistsPage(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const ideas = useSelector((store) => store.ideas);
+  const artists = useSelector((store) => store.artists);
   const user = useSelector((store) => store.user);
 
   useEffect(() => {
-    dispatch({ type: 'FETCH_IDEAS' });
+    dispatch({ type: 'FETCH_ARTISTS' });
   }, []);
 
-  const deleteIdea = (idea) => {
+  const deleteArtist = (artist) => {
     dispatch({
-      type: 'DELETE_IDEA',
+      type: 'DELETE_ARTIST',
       payload: {
-        id: idea.id
+        id: artist.id
       }
     })
   }
 
-  const handleEditIdea = (idea) => {
-    console.log('in editIdea const on ideas page');
+  const handleEditArtist = (artist) => {
+    console.log('in handleEditArtist const on artists page');
     dispatch({
-      type: 'SET_THIS_IDEA',
-      payload: idea
+      type: 'SET_THIS_ARTIST',
+      payload: artist
     });
-    history.push(`/edit`); 
+    history.push(`/editartist`); 
   }
 
   return (
     <div className="container">
-      <h2 className="header_ideas">{user.username}'s Tattoo Ideas</h2>
-      <section className="ideas-container">
+      <h2 className="header_artists">{user.username}'s Saved Artists</h2>
+      <section className="artists-container">
 
-        {ideas.map(idea => {
+        {artists.map(artist => {
           return(
-            <div key={idea.id} className="thisIdea">
+            <div key={artist.id} className="thisArtist">
 
-              <section className="thisIdeaHeader">
-                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => deleteIdea(idea)}><Delete /></Button>
-                {/* <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button> */}
-                <h3 className="ideas_names">{idea.name}</h3>
+              <section className="thisArtistHeader">
+                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => deleteArtist(artist)}><Delete /></Button>
+              
+                <h3 className="artists_names">{artist.name}</h3>
                 
-                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditIdea(idea)}><Edit /></Button>
-                {/* <button className="btn" onClick={() => deleteIdea(idea)}>delete</button> */}
+                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditArtist(artist)}><Edit /></Button>
+               
               </section>
              
-              <section className="thisIdeaStyle">
-                <p>Style: {idea.style}</p>
+              <section className="thisArtistShop">
+                <p>Home Shop: {artist.shop}</p>
               </section>
 
-              <section className="thisIdeaPlacement">
-                <p>Placement: {idea.placement}</p>
+              <section className="thisArtistInstagram">
+                <p>Instagram Handle: @{artist.instagram_handle}</p>
               </section>
 
-              <section className="thisIdeaDetails">
-                <p>Details: (change colon to icon or tat gun)</p>
-                <p>{idea.details}</p>
+              <section className="thisArtistStyle">
+                <p>Primary Style: {artist.primary_style}</p>
+              </section>
+
+              
+
+              <section className="thisArtistDetails">
+                <p>Other Details: </p>
+                <p>{artist.details}</p>
               </section>
               
               
@@ -80,6 +86,6 @@ function ArtistsPage(props) {
     </div>
   );
 };
-// also add a link to the CreateIdeaPage
+// also add a link to the CreateArtistPage
 
 export default ArtistsPage;
