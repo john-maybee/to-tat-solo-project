@@ -50,6 +50,7 @@ function ArtistsPage(props) {
             <div key={artist.id} className="thisArtist">
 
               <section className="thisArtistHeader">
+                
                 <Button 
                     className="mui_btn" 
                     variant="contained" 
@@ -92,15 +93,12 @@ function ArtistsPage(props) {
 
               <section className="thisArtistStyle">
                 <p>Primary Style: {artist.primary_style}</p>
-              </section>
-
-              
+              </section>            
 
               <section className="thisArtistDetails">
                 <p>Other Details: </p>
                 <p>{artist.details}</p>
-              </section>
-              
+              </section>            
               
             </div>
           );

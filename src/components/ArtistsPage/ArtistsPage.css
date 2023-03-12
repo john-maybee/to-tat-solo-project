@@ -1,0 +1,22 @@
+.thisArtist{
+    border-top: 3px solid #005249;
+    border-left: 4px dotted #E1AD01;
+    border-right: 4px dotted #E1AD01;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
+}
+
+.thisArtistHeader{
+    display: flex;
+    padding: 2px;
+}
+
+p, h4{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* .mui_btn{
+    color:#E1AD01;
+} */

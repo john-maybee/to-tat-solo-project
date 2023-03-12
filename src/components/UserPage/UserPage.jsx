@@ -54,6 +54,27 @@ function UserPage() {
           </Link>
       </Button>
 
+      <br />
+      <br />
+
+      <Button 
+        className="mui_btn" 
+        variant="contained"
+        endIcon={<ArrowForwardIosRounded />}
+        sx={{ 
+  
+          border: "1px dotted #282828", 
+          backgroundColor: '#E1AD01', 
+          color: "#282828", 
+          width: "100%", 
+          "&:active": {backgroundColor: "#fcf7e6"}, 
+          "&:hover": {backgroundColor:"#80a9a4"} 
+        }}>
+          <Link className="mui_link" to="/artists">
+            View My Saved Artists
+          </Link>
+      </Button>
+
       {/* <br />
       <br /> */}
       
