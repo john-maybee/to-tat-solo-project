@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import { Button } from '@mui/material';
+import { Add } from '@mui/icons-material';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -15,7 +16,8 @@ function UserPage() {
 
       <Button 
         className="mui_btn" 
-        variant="contained" 
+        variant="contained"
+        startIcon={<Add />} 
         sx={{ 
           border: "1px solid #282828", 
           backgroundColor: '#E1AD01', 
@@ -25,6 +27,7 @@ function UserPage() {
           "&:hover": {backgroundColor:"#80a9a4"} 
         }}>
           <Link className="mui_link" to="/create">
+            &nbsp;&nbsp;
             Create New Tattoo
           </Link>
       </Button>
