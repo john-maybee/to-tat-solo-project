@@ -90,8 +90,8 @@ function* editArtist(action) {
     yield axios.put(`/api/artists/${id}`, {
       name: action.payload.name,
       shop: action.payload.shop,
-      instagram_handle: action.payload.instagram_handle,
-      primary_style: action.payload.primary_style,
+      instagram: action.payload.instagram,
+      style: action.payload.style,
       details: action.payload.details
     });
     yield fetchArtists({ type: 'FETCH_ARTISTS', payload: action.payload});

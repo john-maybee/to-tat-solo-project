@@ -44,7 +44,7 @@ const EditArtist = () => {
         console.log('updated primary style: ', event.target.value);
         dispatch({
             type: "EDIT_ARTISTSTYLE_ONCHANGE",
-            payload: {property: 'primary_style', value: event.target.value}
+            payload: {property: 'style', value: event.target.value}
         });
     }
 
@@ -57,10 +57,10 @@ const EditArtist = () => {
     }
 
     const changeInstagram = (event) => {
-        console.log('updated instagram handle: ', event.target.value);
+        console.log('updated instagram: ', event.target.value);
         dispatch({
             type: "EDIT_INSTAGRAM_ONCHANGE",
-            payload: {property: 'instagram_handle', value: event.target.value}
+            payload: {property: 'instagram', value: event.target.value}
         });
     }
 
@@ -100,8 +100,8 @@ const EditArtist = () => {
                                 <br/>
 
                                 <input 
-                                    defaultValue={thisArtist.instagram_handle}
-                                    id="instagram_handle"
+                                    defaultValue={thisArtist.instagram}
+                                    id="instagram"
                                     placeholder="Update Instagram Handle"
                                     onChange={(event) => changeInstagram(event)} 
                                 />                                                                                               
@@ -110,11 +110,11 @@ const EditArtist = () => {
 
                                 
 
-                                <label htmlFor="primary_style">Primary Style [choose one]:</label>
+                                <label htmlFor="style">Primary Style [choose one]:</label>
                                 &nbsp; &nbsp;
                                 <select 
                                 
-                                defaultValue={thisArtist.primary_style}
+                                defaultValue={thisArtist.style}
                                 onChange={(event) => changeStyle(event)}
                                 >
                                     <option value="Undecided">Undecided</option>

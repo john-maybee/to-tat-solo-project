@@ -24,7 +24,7 @@ import CreateIdeaPage from '../CreateIdeaPage/CreateIdeaPage';
 import EditIdea from '../EditIdea/EditIdea';
 import ArtistsPage from '../ArtistsPage/ArtistsPage';
 import EditArtist from '../EditArtist/EditArtist';
-import CreateArtistPage from '../CreateArtist/CreateArtistPage';
+import CreateArtistPage from '../CreateArtistPage/CreateArtistPage';
 
 import './App.css';
 

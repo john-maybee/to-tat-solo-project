@@ -38,7 +38,7 @@ CREATE TABLE "artists" (
     "user_id" INT REFERENCES "user",
     "name" VARCHAR (80),
 	"shop" VARCHAR (100),
-	"city" VARCHAR (80),
+	"instagram" VARCHAR (100),
 	"style" VARCHAR (100),
 	"details" VARCHAR (1000)
 );

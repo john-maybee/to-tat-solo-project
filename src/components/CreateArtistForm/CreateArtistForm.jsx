@@ -7,8 +7,8 @@ function CreateArtistForm() {
   
   const [name, setName] = useState('');
   const [details, setDetails] = useState('');
-  const [primaryStyle, setPrimaryStyle] = useState('');
-  const [instagramHandle, setInstagramHandle] = useState('');
+  const [style, setStyle] = useState('');
+  const [instagram, setInstagram] = useState('');
   const [shop, setShop] = useState('');
   
   const history = useHistory();
@@ -19,8 +19,8 @@ function CreateArtistForm() {
     const newArtist = {
       name,
       shop,
-      instagramHandle,
-      primaryStyle,
+      instagram,
+      style,
       details,
     }
     
@@ -45,13 +45,13 @@ function CreateArtistForm() {
         </section>
 
         <section className="new-artist-instagram">
-          <input value={instagramHandle} id="instagram_handle" placeholder="Instagram Handle" onChange={(event) => setInstagramHandle(event.target.value)} />
+          <input value={instagram} id="instagram" placeholder="Instagram Handle" onChange={(event) => setInstagram(event.target.value)} />
         </section>
 
         <section className="new-artist-style">
-            <label htmlFor="primary_style">Primary Style [choose one]:</label>
+            <label htmlFor="style">Primary Style [choose one]:</label>
             &nbsp; &nbsp;
-            <select onChange={(event) => setPrimaryStyle(event.target.value)}>
+            <select onChange={(event) => setStyle(event.target.value)}>
                 <option value="Undecided">Undecided</option>
                 <option value="American Traditional">American Traditional</option>
                 <option value="Black and Grey">Black and Grey</option>

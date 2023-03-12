@@ -88,11 +88,11 @@ function ArtistsPage(props) {
               </section>
 
               <section className="thisArtistInstagram">
-                <p>Instagram Handle: @{artist.instagram_handle}</p>
+                <p>Instagram Handle: @{artist.instagram}</p>
               </section>
 
               <section className="thisArtistStyle">
-                <p>Primary Style: {artist.primary_style}</p>
+                <p>Primary Style: {artist.style}</p>
               </section>            
 
               <section className="thisArtistDetails">

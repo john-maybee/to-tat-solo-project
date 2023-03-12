@@ -60,6 +60,27 @@ function UserPage() {
       <Button 
         className="mui_btn" 
         variant="contained"
+        endIcon={<AddRounded />} 
+        sx={{ 
+       
+          border: "1px dotted #282828", 
+          backgroundColor: '#E1AD01', 
+          color: "#282828", 
+          width: "100%", 
+          "&:active": {backgroundColor: "#fcf7e6"}, 
+          "&:hover": {backgroundColor:"#80a9a4"} 
+        }}>
+          <Link className="mui_link" to="/createartist">
+            Add New Artist
+          </Link>
+      </Button>
+
+      <br />
+      <br />
+
+      <Button 
+        className="mui_btn" 
+        variant="contained"
         endIcon={<ArrowForwardIosRounded />}
         sx={{ 
   

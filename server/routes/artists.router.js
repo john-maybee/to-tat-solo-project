@@ -49,8 +49,8 @@ router.post('/', (req, res) => {
   
   const name = req.body.newArtist.name;
   const shop = req.body.newArtist.shop;
-  const instagram_handle = req.body.newArtist.instagram_handle;
-  const primary_style = req.body.newArtist.primary_style;
+  const instagram = req.body.newArtist.instagram;
+  const style = req.body.newArtist.style;
   const details = req.body.newArtist.details;
   const user_id = req.user.id;
   console.log('req.body', req.body);
@@ -61,11 +61,11 @@ router.post('/', (req, res) => {
   // only allow this POST if the user is authenticated
   if (req.isAuthenticated()){
     const queryText = `
-    INSERT INTO "artists" ("user_id", "name", "shop", "instagram_handle", "primary_style", "details")
+    INSERT INTO "artists" ("user_id", "name", "shop", "instagram", "style", "details")
     VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING "id";` // RETURNING "id" will give you back the id of the new artist // Need to also insert the user_id somehow.
     pool
-      .query(queryText, [user_id, name, shop, instagram_handle, primary_style, details]) //, user_id removed this when the other user_id fields were removed. Trying to get back to the state that at least sent the other information. Should I replace that with req.user.id here? That's how it's done above.
+      .query(queryText, [user_id, name, shop, instagram, style, details]) //, user_id removed this when the other user_id fields were removed. Trying to get back to the state that at least sent the other information. Should I replace that with req.user.id here? That's how it's done above.
       .then(result => {
         console.log('New artist id: ', result.rows[0].id)
         res.send({id: result.rows[0].id});
@@ -90,8 +90,8 @@ router.put('/:id', (req, res) => {
     SET
     "name" = $2,
     "shop" = $3,
-    "instagram_handle" = $4,
-    "primary_style" = $5,
+    "instagram" = $4,
+    "style" = $5,
     "details" = $6
     WHERE "id" = $1;`;
     pool
@@ -99,8 +99,8 @@ router.put('/:id', (req, res) => {
         id,
         req.body.name,
         req.body.shop,
-        req.body.instagram_handle,
-        req.body.primary_style,
+        req.body.instagram,
+        req.body.style,
         req.body.details,
       ])
       .then (result => {
