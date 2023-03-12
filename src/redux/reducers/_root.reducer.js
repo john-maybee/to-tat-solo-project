@@ -4,6 +4,7 @@ import user from './user.reducer';
 import ideas from './ideas.reducer';
 import thisIdea from './this.idea.reducer';
 import artists from './artists.reducer';
+import thisArtist from './this.artist.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   ideas,
   thisIdea, 
   artists,
+  thisArtist,
 });
 
 export default rootReducer;
