@@ -50,11 +50,35 @@ function ArtistsPage(props) {
             <div key={artist.id} className="thisArtist">
 
               <section className="thisArtistHeader">
-                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => deleteArtist(artist)}><Delete /></Button>
+                <Button 
+                    className="mui_btn" 
+                    variant="contained" 
+                    sx={{ 
+                        backgroundColor: '#E1AD01', 
+                        color: "#282828", 
+                        "&:active": {backgroundColor: "#fcf7e6"}, 
+                        "&:hover": {backgroundColor:"#80a9a4"} 
+                    }} 
+                    onClick={() => deleteArtist(artist)}
+                >
+                    <Delete />
+                </Button>
               
                 <h3 className="artists_names">{artist.name}</h3>
                 
-                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditArtist(artist)}><Edit /></Button>
+                <Button 
+                    className="mui_btn" 
+                    variant="contained" 
+                    sx={{ 
+                        backgroundColor: '#E1AD01', 
+                        color: "#282828", 
+                        "&:active": {backgroundColor: "#fcf7e6"}, 
+                        "&:hover": {backgroundColor:"#80a9a4"} 
+                    }} 
+                    onClick={() => handleEditArtist(artist)}
+                >
+                    <Edit />
+                </Button>
                
               </section>
              
