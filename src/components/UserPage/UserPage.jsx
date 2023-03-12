@@ -1,5 +1,4 @@
 import React from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
