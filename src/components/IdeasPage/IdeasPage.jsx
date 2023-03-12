@@ -50,11 +50,11 @@ function IdeasPage(props) {
             <div key={idea.id} className="thisIdea">
 
               <section className="thisIdeaHeader">
-                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#005249", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => deleteIdea(idea)}><Delete /></Button>
+                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => deleteIdea(idea)}><Delete /></Button>
                 {/* <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button> */}
                 <h3 className="ideas_names">{idea.name}</h3>
                 
-                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#005249", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditIdea(idea)}><Edit /></Button>
+                <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditIdea(idea)}><Edit /></Button>
                 {/* <button className="btn" onClick={() => deleteIdea(idea)}>delete</button> */}
               </section>
              

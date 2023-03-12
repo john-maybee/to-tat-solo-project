@@ -20,9 +20,9 @@ function UserPage() {
         endIcon={<AddRounded />} 
         sx={{ 
        
-          border: "1px solid #282828", 
+          border: "1px dotted #282828", 
           backgroundColor: '#E1AD01', 
-          color: "#005249", 
+          color: "#282828", 
           width: "100%", 
           "&:active": {backgroundColor: "#fcf7e6"}, 
           "&:hover": {backgroundColor:"#80a9a4"} 
@@ -41,9 +41,9 @@ function UserPage() {
         endIcon={<ArrowForwardIosRounded />}
         sx={{ 
   
-          border: "1px solid #282828", 
+          border: "1px dotted #282828", 
           backgroundColor: '#E1AD01', 
-          color: "#005249", 
+          color: "#282828", 
           width: "100%", 
           "&:active": {backgroundColor: "#fcf7e6"}, 
           "&:hover": {backgroundColor:"#80a9a4"} 
