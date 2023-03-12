@@ -81,6 +81,14 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
+            // logged in shows ArtistsPage else shows LoginPage
+            exact
+            path="/artists"
+          >
+            <ArtistsPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             // logged in shows create Page else shows LoginPage
             exact
             path="/create"
