@@ -23,6 +23,7 @@ import IdeasPage from '../IdeasPage/IdeasPage';
 import CreateIdeaPage from '../CreateIdeaPage/CreateIdeaPage';
 import EditIdea from '../EditIdea/EditIdea';
 import ArtistsPage from '../ArtistsPage/ArtistsPage';
+import EditArtist from '../EditArtist/EditArtist';
 
 import './App.css';
 
@@ -102,6 +103,14 @@ function App() {
             path="/edit"
           >
             <EditIdea />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows editartist Page else shows LoginPage
+            exact
+            path="/editartist"
+          >
+            <EditArtist />
           </ProtectedRoute>
 
           <Route
