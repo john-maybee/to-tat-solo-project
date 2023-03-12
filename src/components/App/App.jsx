@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import IdeasPage from '../IdeasPage/IdeasPage';
 import CreateIdeaPage from '../CreateIdeaPage/CreateIdeaPage';
 import EditIdea from '../EditIdea/EditIdea';
+import ArtistsPage from '../ArtistsPage/ArtistsPage';
 
 import './App.css';
 
