@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import { Button } from '@mui/material';
-import { Add } from '@mui/icons-material';
+import { AddRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
@@ -17,18 +17,18 @@ function UserPage() {
       <Button 
         className="mui_btn" 
         variant="contained"
-        startIcon={<Add />} 
+        endIcon={<AddRounded />} 
         sx={{ 
+       
           border: "1px solid #282828", 
           backgroundColor: '#E1AD01', 
-          color: "#282828", 
+          color: "#005249", 
           width: "100%", 
           "&:active": {backgroundColor: "#fcf7e6"}, 
           "&:hover": {backgroundColor:"#80a9a4"} 
         }}>
           <Link className="mui_link" to="/create">
-            &nbsp;&nbsp;
-            Create New Tattoo
+            Add New Tattoo Idea
           </Link>
       </Button>
 
@@ -37,17 +37,20 @@ function UserPage() {
 
       <Button 
         className="mui_btn" 
-        variant="contained" 
+        variant="contained"
+        endIcon={<ArrowForwardIosRounded />}
         sx={{ 
+  
           border: "1px solid #282828", 
           backgroundColor: '#E1AD01', 
-          color: "#282828", 
+          color: "#005249", 
           width: "100%", 
           "&:active": {backgroundColor: "#fcf7e6"}, 
           "&:hover": {backgroundColor:"#80a9a4"} 
         }}>
           <Link className="mui_link" to="/ideas">
-            My Tattoo Ideas
+            View My Tattoo Ideas
+            
           </Link>
       </Button>
 

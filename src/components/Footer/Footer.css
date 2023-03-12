@@ -1,5 +1,5 @@
 footer {
-  margin-top: 80px;
+  margin-top: 70px;
   padding: 20px;
   text-align: center;
   color: #282828;
@@ -7,3 +7,17 @@ footer {
   font-size: 14px;
   border-top: 4px dotted #E1AD01;
 }
+
+.svg_github{
+  width: 40%;
+
+}
+
+.svg_linkedin{
+  width:50%;
+}
+
+/* .svg_container{
+  flex-direction: column;
+
+} */
