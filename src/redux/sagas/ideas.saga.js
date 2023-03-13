@@ -99,13 +99,4 @@ function* editIdea(action) {
   };
 };
 
-// function* editOnChange(action){
-//   try {
-//   yield axios.put(`/api/ideas/${action.payload.id}`, {name: action.payload.name});
-
-//   } catch (error) {
-//   console.log('Error editing idea', error);
-// };
-// }
-
 export default ideasSaga;

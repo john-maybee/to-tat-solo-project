@@ -136,12 +136,19 @@ UserPage Treatment
 .ideas_names{
   margin: auto;
 }
+.artists_names{
+  margin: auto;
+}
 
 .header_pad{
   text-align: center;
 }
 
 .header_ideas{
+  text-align: center;
+}
+
+.header_artists{
   text-align: center;
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
-import './logo.svg';
 import { useSelector } from 'react-redux';
 import { CottageTwoTone, InfoOutlined, AppRegistration } from "@mui/icons-material";
 
