@@ -143,9 +143,9 @@ Customize this ReadMe and the code comments in this project to read less like a 
 
 ## STRETCH Milestones
 - [X] Create a new table in postico to hold the artists | estimated hours: .5 | Stretch | Complete
-- [] DELETE - ability to remove artist | estimated hours: 2 | Stretch | to-do
-- [] POST - artist added to database onClick of post/save button | estimated hours: 2 | Stretch | to-do
-- [] PUT - Edit artist button brings you back to the add artist page | estimated hours: 4 | Stretch | to-do
+- [X] DELETE - ability to remove artist | estimated hours: 2 | Stretch | to-do
+- [X] POST - artist added to database onClick of post/save button | estimated hours: 2 | Stretch | to-do
+- [X] PUT - Edit artist button brings you back to the add artist page | estimated hours: 4 | Stretch | to-do
 - [] PUT - completed idea button changes the tatted field to completed | estimated hours: 4 | Stretch | to-do
 - [] API - utilize google Maps, so the tattoo shop locations can be mapped | estimated hours: 5 | Stretch | to-do
 - [] Link artist style to tattoo idea style - make a joiner table that links the tattoo idea style with the artist style. | estimated hours: 4 | Stretch | to-do
