@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux'; // id I end up including the useSelector for the user store, then keep the useSelector here.
 import { useHistory } from 'react-router-dom';
 import { TextField, Button } from '@mui/material';
+import { PushPinOutlined } from '@mui/icons-material';
 
 
 function CreateArtistForm() {
@@ -90,7 +91,7 @@ function CreateArtistForm() {
           className="mui_submit_btn"
           type="submit"
           variant="contained"
-          // endIcon={<AddRounded />} 
+          endIcon={<PushPinOutlined />} 
           sx={{ 
             border: "1px dotted #282828", 
             backgroundColor: '#E1AD01', 

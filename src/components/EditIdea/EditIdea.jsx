@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 import './EditIdea.css';
+import { Button } from '@mui/material';
+import { PushPinOutlined } from '@mui/icons-material';
 
 
 const EditIdea = () => {
@@ -124,6 +126,7 @@ const EditIdea = () => {
                                     <option value="Watercolor">Watercolor</option>
                                 </select>
                                 <br/>
+                                <br/>
 
                                 <label htmlFor="placement">Desired Placement [choose one]:</label>
                                 &nbsp; &nbsp;
@@ -157,15 +160,25 @@ const EditIdea = () => {
                                 </select>
                             <br />
                         </div>
-                           
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <button 
-                            className="submit-button"
+                        <br/>
+
+                        <Button 
+                            className="mui_submit_btn"
                             type="submit"
+                            variant="contained"
+                            endIcon={<PushPinOutlined />} 
+                            sx={{ 
+                                border: "1px dotted #282828", 
+                                backgroundColor: '#E1AD01', 
+                                color: "#282828", 
+                                width: "100%", 
+                                "&:active": {backgroundColor: "#fcf7e6"}, 
+                                "&:hover": {backgroundColor:"#80a9a4"} 
+                            }}
                         >
-                        Send update to my tattoos
-                        </button>
+                            Update To Tat List
+                        </Button>
 
                     </div>
                 </form> 

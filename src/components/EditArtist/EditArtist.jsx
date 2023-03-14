@@ -2,6 +2,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 import './EditArtist.css';
+import { Button } from '@mui/material';
+import { PushPinOutlined } from '@mui/icons-material';
 
 
 const EditArtist = () => {
@@ -153,12 +155,22 @@ const EditArtist = () => {
                            
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <button 
-                            className="submit-button"
+                        <Button 
+                            className="mui_submit_btn"
                             type="submit"
+                            variant="contained"
+                            endIcon={<PushPinOutlined />} 
+                            sx={{ 
+                                border: "1px dotted #282828", 
+                                backgroundColor: '#E1AD01', 
+                                color: "#282828", 
+                                width: "100%", 
+                                "&:active": {backgroundColor: "#fcf7e6"}, 
+                                "&:hover": {backgroundColor:"#80a9a4"} 
+                            }}
                         >
-                        Send update to my artist list
-                        </button>
+                            Save Artist Update
+                        </Button>
 
                     </div>
                 </form> 
