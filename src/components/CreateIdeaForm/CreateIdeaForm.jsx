@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux'; // id I end up including the useSelector for the user store, then keep the useSelector here.
 import { useHistory } from 'react-router-dom';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import { PushPinOutlined } from '@mui/icons-material';
 
 
@@ -54,7 +54,7 @@ function CreateIdeaForm() {
 
         <br/>
 
-        <section className="new-idea-style">
+        {/* <section className="new-idea-style">
             <label htmlFor="style">Style [choose one]:</label>
             &nbsp; &nbsp;
             <select onChange={(event) => setStyle(event.target.value)}>
@@ -79,6 +79,42 @@ function CreateIdeaForm() {
                 <option value="Trash Polka">Trash Polka</option>
                 <option value="Watercolor">Watercolor</option>
             </select>
+        </section> */}
+
+        <section>
+          <FormControl fullWidth>
+            <InputLabel id="mui_select_label" color="success" >Tattoo Style</InputLabel>
+            <Select
+              labelId="mui_select_label"
+              id="demo-simple-select"
+              value={style}
+              label="Tattoo Style"
+              color="success"
+              onChange={(event) => setStyle(event.target.value)}
+            >
+              <MenuItem value="Undecided">Undecided</MenuItem>
+              <MenuItem value="American Traditional">American Traditional</MenuItem>
+              <MenuItem value="Black and Grey">Black and Grey</MenuItem>
+              <MenuItem value="Neo-Traditional">Neo-Traditional</MenuItem>
+              <MenuItem value="Realism">Realism</MenuItem>
+              <MenuItem value="New School">New School</MenuItem>
+              <MenuItem value="Fine Line">Fine Line</MenuItem>
+              <MenuItem value="Japanese Traditional">Japanese Traditional</MenuItem>
+              <MenuItem value="Tribal">Tribal</MenuItem>
+              <MenuItem value="Illustrative">Illustrative</MenuItem>
+              <MenuItem value="Ornamental">Ornamental</MenuItem>
+              <MenuItem value="Abstract">Abstract</MenuItem>
+              <MenuItem value="Blackwork">Blackwork</MenuItem>
+              <MenuItem value="Cartoon/Anime">Cartoon/Anime</MenuItem>
+              <MenuItem value="Continuous Line Contour">Continuous Line Contour</MenuItem>
+              <MenuItem value="Geometric">Geometric</MenuItem>
+              <MenuItem value="Script/Lettering">Script/Lettering</MenuItem>
+              <MenuItem value="Surrealism">Surrealism</MenuItem>
+              <MenuItem value="Trash Polka">Trash Polka</MenuItem>
+              <MenuItem value="Watercolor">Watercolor</MenuItem>
+              <MenuItem value="Other">Other</MenuItem>
+            </Select>
+          </FormControl>
         </section>
 
         <section className="new-idea-placement">
@@ -108,7 +144,7 @@ function CreateIdeaForm() {
                 <option value="Butt">Butt</option>
                 <option value="Head">Head</option>
             </select>
-        </section>
+            </section>
         <br />
         
         {/* <button className="submit-button" type="submit">Save Idea</button> */}
