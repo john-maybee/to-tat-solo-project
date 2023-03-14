@@ -113,20 +113,20 @@ function CreateIdeaForm() {
         
         {/* <button className="submit-button" type="submit">Save Idea</button> */}
         <Button 
-        className="mui_submit_btn"
-        type="submit"
-        variant="contained"
-        // endIcon={<AddRounded />} 
-        sx={{ 
-          border: "1px dotted #282828", 
-          backgroundColor: '#E1AD01', 
-          color: "#282828", 
-          width: "100%", 
-          "&:active": {backgroundColor: "#fcf7e6"}, 
-          "&:hover": {backgroundColor:"#80a9a4"} 
-        }}>
-            Save To Tattoo Idea List
-      </Button>
+          className="mui_submit_btn"
+          type="submit"
+          variant="contained"
+          // endIcon={<AddRounded />} 
+          sx={{ 
+            border: "1px dotted #282828", 
+            backgroundColor: '#E1AD01', 
+            color: "#282828", 
+            width: "100%", 
+            "&:active": {backgroundColor: "#fcf7e6"}, 
+            "&:hover": {backgroundColor:"#80a9a4"} 
+          }}>
+              Save To Tattoo Idea List
+        </Button>
     </form>
     </>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux'; // id I end up including the useSelector for the user store, then keep the useSelector here.
 import { useHistory } from 'react-router-dom';
-import { TextField } from '@mui/material';
+import { TextField, Button } from '@mui/material';
 
 
 function CreateArtistForm() {
@@ -85,7 +85,22 @@ function CreateArtistForm() {
             <TextField fullWidth className="new_artist_textfield" color="success" value={details} id="details" label="Other Details" onChange={(event) => setDetails(event.target.value)} />
         </section>
         <br/>
-        <button className="submit-button" type="submit">Save Artist</button>
+        {/* <button className="submit-button" type="submit">Save Artist</button> */}
+        <Button 
+          className="mui_submit_btn"
+          type="submit"
+          variant="contained"
+          // endIcon={<AddRounded />} 
+          sx={{ 
+            border: "1px dotted #282828", 
+            backgroundColor: '#E1AD01', 
+            color: "#282828", 
+            width: "100%", 
+            "&:active": {backgroundColor: "#fcf7e6"}, 
+            "&:hover": {backgroundColor:"#80a9a4"} 
+          }}>
+              Save To Tattoo Artist List
+        </Button>
 
     </form>
     </>
