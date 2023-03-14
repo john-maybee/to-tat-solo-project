@@ -161,3 +161,10 @@ UserPage Treatment
 SVG Link Treatment
 -------------------------------------------------------------------------------- */
 
+.svg_bottom{
+  text-align: center;
+}
+
+.svg_lightning{
+  width: 50%;
+}
