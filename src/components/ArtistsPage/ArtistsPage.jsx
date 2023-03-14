@@ -65,7 +65,7 @@ function ArtistsPage(props) {
                     <Delete />
                 </Button>
               
-                <h3 className="artists_names">{artist.name}</h3>
+                <h3 className="artists_names"><strong>{artist.name}</strong></h3>
                 
                 <Button 
                     className="mui_btn" 
@@ -84,19 +84,19 @@ function ArtistsPage(props) {
               </section>
              
               <section className="thisArtistShop">
-                <p>Home Shop: {artist.shop}</p>
+                <p><strong>Home Shop:</strong> {artist.shop}</p>
               </section>
 
               <section className="thisArtistInstagram">
-                <p>Instagram Handle: @{artist.instagram}</p>
+                <p><strong>Instagram Handle:</strong> @{artist.instagram}</p>
               </section>
 
               <section className="thisArtistStyle">
-                <p>Primary Style: {artist.style}</p>
+                <p><strong>Primary Style:</strong> {artist.style}</p>
               </section>            
 
               <section className="thisArtistDetails">
-                <p>Other Details: </p>
+                <p><strong>Other Details Below:</strong> </p>
                 <p>{artist.details}</p>
               </section>            
               

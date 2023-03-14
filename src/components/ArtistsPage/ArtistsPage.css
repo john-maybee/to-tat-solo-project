@@ -1,9 +1,11 @@
 .thisArtist{
-    border-top: 3px solid #005249;
+    /* border-top: 3px solid #005249;
     border-left: 4px dotted #E1AD01;
     border-right: 4px dotted #E1AD01;
-    border-top-left-radius: 3%;
-    border-top-right-radius: 3%;
+    border-top-left-radius: 3%; */
+    /* border-top-right-radius: 3%; */
+    border-top: 2px dotted #E1AD01;
+    padding-top: 5px;
 }
 
 .thisArtistHeader{
