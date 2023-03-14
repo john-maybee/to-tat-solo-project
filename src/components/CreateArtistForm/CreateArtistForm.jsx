@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux'; // id I end up including the useSelector for the user store, then keep the useSelector here.
 import { useHistory } from 'react-router-dom';
+import { TextField } from '@mui/material';
 
 
 function CreateArtistForm() {
@@ -37,16 +38,19 @@ function CreateArtistForm() {
     <form className="artist-form" onSubmit={postArtist}>
        
         <section className="new-artist-name">
-          <input value={name} id="name" placeholder="Artist Name" onChange={(event) => setName(event.target.value)} />
+          <TextField fullWidth value={name} color="success" id="name" label="Artist's Name" onChange={(event) => setName(event.target.value)} />
         </section>
+        <br/>
 
         <section className="new-artist-shop">
-          <input value={shop} id="shop" placeholder="Home Shop" onChange={(event) => setShop(event.target.value)} />
+          <TextField fullWidth value={shop} color="success" id="shop" label="Home Shop" onChange={(event) => setShop(event.target.value)} />
         </section>
+        <br/>
 
         <section className="new-artist-instagram">
-          <input value={instagram} id="instagram" placeholder="Instagram Handle" onChange={(event) => setInstagram(event.target.value)} />
+          <TextField fullWidth value={instagram} color="success" id="instagram" label="Instagram Handle @" placeholder="Instagram Handle" onChange={(event) => setInstagram(event.target.value)} />
         </section>
+        <br/>
 
         <section className="new-artist-style">
             <label htmlFor="style">Primary Style [choose one]:</label>
@@ -78,9 +82,9 @@ function CreateArtistForm() {
         <br />
 
         <section className="new-artist-details">
-            <input value={details} id="details" placeholder="Other Details" onChange={(event) => setDetails(event.target.value)} />
+            <TextField fullWidth className="new_artist_textfield" color="success" value={details} id="details" label="Other Details" onChange={(event) => setDetails(event.target.value)} />
         </section>
-        
+        <br/>
         <button className="submit-button" type="submit">Save Artist</button>
 
     </form>

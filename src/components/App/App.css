@@ -199,3 +199,7 @@ CreateArtist Treatment
 .artist-form{
   padding-top: 10px;
 }
+
+.new_artist_textfield{
+  border-color: #005249;
+}
