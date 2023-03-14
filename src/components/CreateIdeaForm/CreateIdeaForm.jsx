@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux'; // id I end up including the useSelector for the user store, then keep the useSelector here.
 import { useHistory } from 'react-router-dom';
+import { TextField, Button } from '@mui/material';
+
 
 
 function CreateIdeaForm() {
@@ -41,12 +43,16 @@ function CreateIdeaForm() {
           <h2>{user.username}'s New Tattoo Idea</h2>
         </section> */}
         <section className="new-idea-name">
-          <input value={name} id="name" placeholder="Tattoo Name" onChange={(event) => setName(event.target.value)} />
+          <TextField fullWidth value={name} id="name" label="Name of Tattoo Idea" color="success" onChange={(event) => setName(event.target.value)} />
         </section>
 
+        <br/>
+
         <section className="new-idea-details">
-            <input value={details} id="details" placeholder="Tattoo Details" onChange={(event) => setDetails(event.target.value)} />
+            <TextField fullWidth value={details} id="details" label="Tattoo Details" color="success" onChange={(event) => setDetails(event.target.value)} />
         </section>
+
+        <br/>
 
         <section className="new-idea-style">
             <label htmlFor="style">Style [choose one]:</label>
@@ -105,8 +111,22 @@ function CreateIdeaForm() {
         </section>
         <br />
         
-        <button className="submit-button" type="submit">Save Idea</button>
-
+        {/* <button className="submit-button" type="submit">Save Idea</button> */}
+        <Button 
+        className="mui_submit_btn"
+        type="submit"
+        variant="contained"
+        // endIcon={<AddRounded />} 
+        sx={{ 
+          border: "1px dotted #282828", 
+          backgroundColor: '#E1AD01', 
+          color: "#282828", 
+          width: "100%", 
+          "&:active": {backgroundColor: "#fcf7e6"}, 
+          "&:hover": {backgroundColor:"#80a9a4"} 
+        }}>
+            Save To Tattoo Idea List
+      </Button>
     </form>
     </>
   );
