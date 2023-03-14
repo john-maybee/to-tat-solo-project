@@ -168,3 +168,34 @@ SVG Link Treatment
 .svg_lightning{
   width: 50%;
 }
+
+
+/* --------------------------------------------------------------------------------
+CreateIdea Treatment
+-------------------------------------------------------------------------------- */
+.new-idea-container{
+  border-top: 2px dotted #E1AD01;
+}
+
+.new-idea-header{
+  text-align: center;
+}
+
+.idea-form{
+  padding-top: 10px;
+}
+
+/* --------------------------------------------------------------------------------
+CreateArtist Treatment
+-------------------------------------------------------------------------------- */
+.new-artist-container{
+  border-top: 2px dotted #E1AD01;
+}
+
+.new-artist-header{
+  text-align: center;
+}
+
+.artist-form{
+  padding-top: 10px;
+}
