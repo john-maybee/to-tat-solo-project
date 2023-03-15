@@ -5,7 +5,7 @@ import { Button } from '@mui/material';
 import { AddRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 
 function UserPage() {
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
+
   const user = useSelector((store) => store.user);
   return (
     <div className="container">
@@ -94,16 +94,11 @@ function UserPage() {
           <Link className="mui_link" to="/artists">
             View My Saved Artists
           </Link>
-      </Button>
-
-      {/* <br />
-      <br /> */}
+      </Button>     
       
     </div>
   );
 }
 
-// this allows us to use <App /> in index.js
 export default UserPage;
 
-// Have two commented out breaks that will be used if the stretch goal of adding artists is reached.
