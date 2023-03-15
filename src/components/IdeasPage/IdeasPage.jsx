@@ -83,7 +83,7 @@ function IdeasPage(props) {
                 <p>{idea.details}</p>
               </section>
               
-              
+              <br/>
             </div>
           );
         })}

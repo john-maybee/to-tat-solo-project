@@ -12,10 +12,14 @@ function AboutPage() {
     <div className="container">
       <h2>About "To Tat":</h2>
       <div>
-        <p>This application will help you keep track of, and expand upon, your own tattoo design ideas. 
-        There will also be a place to record the names of tattoo artists and shops you hear about (upcoming). 
-        On top of this, users will be able to select which part of the body they would like the tattoo placed.</p>
-        <p>The goal is to help people keep track of these designs and curate a list of tattooists with correlating art styles.</p>
+        <p>This application will help users keep track of, and expand upon, their own tattoo design ideas.</p>
+        <p>There will also be a place within "To Tat" for users to record the names of tattoo artists they enjoy for future tattoo ideas.</p>
+      </div>
+      <br/>
+      <div>
+        <h3>Website Creator's Name and Links:</h3>
+        <p>John Maybee</p>
+        {/* place QR code next to the name */}
       </div>
       <div className="svg_container">
         <a href="https://www.linkedin.com/in/john-d-maybee/" id="linkedin">

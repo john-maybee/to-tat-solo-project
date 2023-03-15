@@ -99,7 +99,7 @@ function ArtistsPage(props) {
                 <p><strong>Other Details Below:</strong> </p>
                 <p>{artist.details}</p>
               </section>            
-              
+              <br/>
             </div>
           );
         })}
