@@ -13,7 +13,7 @@ function CreateArtistPage() {
         <div className="container">
             
             <section className="new-artist-header">
-                <h2>{user.username}'s New Tattoo Artist</h2> 
+                <h2>{user.username}'s New Artist</h2> 
             </section>
             <section className="new-artist-container">
                 <CreateArtistForm /> 
