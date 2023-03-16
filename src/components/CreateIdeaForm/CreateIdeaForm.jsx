@@ -141,7 +141,6 @@ function CreateIdeaForm() {
               <MenuItem value="Lower Leg - Left">Lower Leg - Left</MenuItem>
               <MenuItem value="Side - Right">Side - Right</MenuItem>
               <MenuItem value="Side - Left">Side - Left</MenuItem>
-              <MenuItem value="Abstract">Abstract</MenuItem>
               <MenuItem value="Back">Back</MenuItem>
               <MenuItem value="Chest">Chest</MenuItem>
               <MenuItem value="Abdomen">Abdomen</MenuItem>

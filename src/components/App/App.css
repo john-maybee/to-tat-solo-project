@@ -204,3 +204,16 @@ CreateArtist Treatment
 .new_artist_textfield{
   border-color: #005249;
 }
+
+/* --------------------------------------------------------------------------------
+EditIdea Treatment
+-------------------------------------------------------------------------------- */
+
+.edit-idea-header{
+  text-align: center;
+}
+
+.edit-idea-container{
+  border-top: 2px dotted #E1AD01;
+  padding-top: 10px;
+}
