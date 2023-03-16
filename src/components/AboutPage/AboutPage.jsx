@@ -16,9 +16,8 @@ function AboutPage() {
         <p>There will also be a place within "To Tat" for users to record the names of tattoo artists they enjoy for future tattoo ideas.</p>
         <p><strong>Technologies Utilized -</strong> React, Redux, Express, Node, and Figma.</p>
       </div>
-      <br/>
       <div>
-        <h3>Website Creator's Name and Links:</h3>
+        <h3>Site Developer's Information:</h3>
         <p>John Maybee</p>
         {/* place QR code next to the name */}
       </div>
