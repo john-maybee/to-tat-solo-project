@@ -78,12 +78,24 @@ const EditIdea = () => {
                 
                         <div key={thisIdea.id} className="edit">
                                 
-                                <TextField fullWidth defaultValue={thisIdea.name} id="name" label="Name of Tattoo Idea" color="success" onChange={(event) => changeName(event)} />                                                                                  
+                                <TextField fullWidth 
+                                    defaultValue={thisIdea.name} 
+                                    id="name" 
+                                    label="Name of Tattoo Idea" 
+                                    color="success" 
+                                    onChange={(event) => changeName(event)} 
+                                />                                                                                  
                                 
                                 <br/>
                                 <br/>
                                 
-                                <TextField fullWidth defaultValue={thisIdea.details} id="details" label="Tattoo Details" color="success" onChange={(event) => changeDetails(event)} />                   
+                                <TextField fullWidth 
+                                    defaultValue={thisIdea.details} 
+                                    id="details" 
+                                    label="Tattoo Details" 
+                                    color="success" 
+                                    onChange={(event) => changeDetails(event)} 
+                                />                   
                                 
                                 <br/>
                                 <br/>  

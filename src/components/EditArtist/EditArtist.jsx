@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import React from 'react';
 import './EditArtist.css';
-import { Button } from '@mui/material';
+import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import { PushPinOutlined } from '@mui/icons-material';
 
 
@@ -12,7 +12,7 @@ const EditArtist = () => {
     const user = useSelector((store) => store.user);
     const thisArtist = useSelector((store) => store.thisArtist);
 
-    console.log('asdfghjdfghjdfghj', thisArtist);
+    // console.log('asdfghjdfghjdfghj', thisArtist);
 
     const submitUpdate = (event) => {
         event.preventDefault();
@@ -82,37 +82,44 @@ const EditArtist = () => {
                     <div className="artist-editor">
                 
                         <div key={thisArtist.id} className="edit">
-                                <label htmlFor="title">Artist Name:</label><br/>
+                                {/* <label htmlFor="title">Artist Name:</label><br/>
                                 <input 
                                     defaultValue={thisArtist.name}
                                     id="name"
                                     placeholder="Update Name"
                                     onChange={(event) => changeName(event)} 
-                                />                                                                                               
-                                
+                                />                                                                                                */}
+                                <TextField fullWidth defaultValue={thisArtist.name} color="success" id="name" label="Artist's Name" onChange={(event) => changeName(event)} />
+
+                                <br/>
                                 <br/>
 
-                                <input 
+                                {/* <input 
                                     defaultValue={thisArtist.shop}
                                     id="shop"
                                     placeholder="Update Shop"
                                     onChange={(event) => changeShop(event)} 
-                                />                                                                                               
+                                />      */}
+
+                                <TextField fullWidth defaultValue={thisArtist.shop} color="success" id="shop" label="Home Shop" onChange={(event) => changeShop(event)} />                                                                                          
                                 
                                 <br/>
+                                <br/>
 
-                                <input 
+                                {/* <input 
                                     defaultValue={thisArtist.instagram}
                                     id="instagram"
                                     placeholder="Update Instagram Handle"
                                     onChange={(event) => changeInstagram(event)} 
-                                />                                                                                               
+                                />     */}
+
+                                <TextField fullWidth defaultValue={thisArtist.instagram} color="success" id="instagram" label="Instagram Handle @" placeholder="Instagram Handle" onChange={(event) => changeInstagram(event)} />                                                                                           
                                 
                                 <br/>
-
+                                <br/>
                                 
 
-                                <label htmlFor="style">Primary Style [choose one]:</label>
+                                {/* <label htmlFor="style">Primary Style [choose one]:</label>
                                 &nbsp; &nbsp;
                                 <select 
                                 
@@ -139,21 +146,60 @@ const EditArtist = () => {
                                     <option value="Surrealism">Surrealism</option>
                                     <option value="Trash Polka">Trash Polka</option>
                                     <option value="Watercolor">Watercolor</option>
-                                </select>
+                                </select> */}
+
+                                <FormControl fullWidth>
+                                    <InputLabel id="mui_select_artist_style_label" color="success" >Artist's Primary Style</InputLabel>
+                                    <Select
+                                    labelId="mui_select_artist_style_label"
+                                    id="style"
+                                    defaultValue={thisArtist.style}
+                                    label="Artist's Primary Style"
+                                    color="success"
+                                    onChange={(event) => changeStyle(event)}
+                                    >
+                                        <MenuItem value="Undecided">Undecided</MenuItem>
+                                        <MenuItem value="American Traditional">American Traditional</MenuItem>
+                                        <MenuItem value="Black and Grey">Black and Grey</MenuItem>
+                                        <MenuItem value="Neo-Traditional">Neo-Traditional</MenuItem>
+                                        <MenuItem value="Realism">Realism</MenuItem>
+                                        <MenuItem value="New School">New School</MenuItem>
+                                        <MenuItem value="Fine Line">Fine Line</MenuItem>
+                                        <MenuItem value="Japanese Traditional">Japanese Traditional</MenuItem>
+                                        <MenuItem value="Tribal">Tribal</MenuItem>
+                                        <MenuItem value="Illustrative">Illustrative</MenuItem>
+                                        <MenuItem value="Ornamental">Ornamental</MenuItem>
+                                        <MenuItem value="Abstract">Abstract</MenuItem>
+                                        <MenuItem value="Blackwork">Blackwork</MenuItem>
+                                        <MenuItem value="Cartoon/Anime">Cartoon/Anime</MenuItem>
+                                        <MenuItem value="Continuous Line Contour">Continuous Line Contour</MenuItem>
+                                        <MenuItem value="Geometric">Geometric</MenuItem>
+                                        <MenuItem value="Script/Lettering">Script/Lettering</MenuItem>
+                                        <MenuItem value="Surrealism">Surrealism</MenuItem>
+                                        <MenuItem value="Trash Polka">Trash Polka</MenuItem>
+                                        <MenuItem value="Watercolor">Watercolor</MenuItem>
+                                        <MenuItem value="Other">Other</MenuItem>
+                                    </Select>
+                                </FormControl>
+
+                                <br/>
                                 <br/>
 
-                            <label htmlFor="details">Other Details:</label><br/>
+                            {/* <label htmlFor="details">Other Details:</label><br/>
                             <input 
                             
                             defaultValue={thisArtist.details} 
                             id="details"
                             placeholder="Update Details"
                             onChange={(event) => changeDetails(event)}
-                            />                         
+                            /> */}
+
+                            <TextField fullWidth className="new_artist_textfield" color="success" defaultValue={thisArtist.details} id="details" label="Other Details" onChange={(event) => changeDetails(event)} />
+
+
                             <br/>
                         </div>
-                           
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <br/>
 
                         <Button 
                             className="mui_submit_btn"

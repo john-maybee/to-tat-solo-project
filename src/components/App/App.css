@@ -217,3 +217,16 @@ EditIdea Treatment
   border-top: 2px dotted #E1AD01;
   padding-top: 10px;
 }
+
+/* --------------------------------------------------------------------------------
+EditIdea Treatment
+-------------------------------------------------------------------------------- */
+
+.edit-artist-header{
+  text-align: center;
+}
+
+.edit-artist-container{
+  border-top: 2px dotted #E1AD01;
+  padding-top: 10px;
+}
