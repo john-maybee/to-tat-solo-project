@@ -9,10 +9,10 @@ import { PushPinOutlined } from '@mui/icons-material';
 const EditIdea = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const user = useSelector((store) => store.user);
-    const thisIdea = useSelector((store) => store.thisIdea);
+    const user = useSelector((store) => store.user); // const user created
+    const thisIdea = useSelector((store) => store.thisIdea); // const thisIdea created
 
-    console.log('asdfghjdfghjdfghj', thisIdea);
+    // console.log('asdfghjdfghjdfghj', thisIdea);
 
     const submitUpdate = (event) => {
         event.preventDefault();
@@ -24,7 +24,7 @@ const EditIdea = () => {
           });
 
           history.push('/ideas');
-    };
+    }; // end of submitUpdate handler. This dispatches an edit for thisIdea and sends any changes to the ideas database.
 
 
     const changeName = (event) => {
@@ -33,7 +33,7 @@ const EditIdea = () => {
             type: 'EDIT_NAME_ONCHANGE',
             payload: {property: 'name', value: event.target.value}
         });
-    }
+    } // end of changeName handler. Dispatches a name update on change that updates the dom as you type.
 
 
     const changeDetails = (event) => {
@@ -42,7 +42,7 @@ const EditIdea = () => {
             type: "EDIT_DETAILS_ONCHANGE",
             payload: {property: 'details', value: event.target.value}
         });
-    }
+    } // end of changeDetails handler. Dispatches a details update on change that updates the dom as you type.
 
     const changeStyle = (event) => {
         console.log('updated style: ', event.target.value);
@@ -50,7 +50,7 @@ const EditIdea = () => {
             type: "EDIT_STYLE_ONCHANGE",
             payload: {property: 'style', value: event.target.value}
         });
-    }
+    } // end of changeStyle handler. Dispatches a style update on change that updates the dom as you type.
 
 
     const changePlacement = (event) => {
@@ -59,7 +59,7 @@ const EditIdea = () => {
             type: "EDIT_PLACEMENT_ONCHANGE",
             payload: {property: 'placement', value: event.target.value}
         });
-    }
+    } // end of changePlacement handler. Dispatches a placement update on change that updates the dom as you type.
 
 
     return (
@@ -77,7 +77,7 @@ const EditIdea = () => {
                     <div className="idea-editor">
                 
                         <div key={thisIdea.id} className="edit">
-                                
+                            
                                 <TextField fullWidth 
                                     defaultValue={thisIdea.name} 
                                     id="name" 
@@ -200,7 +200,7 @@ const EditIdea = () => {
             </section>
         </div>
       );
-}
+} // end of EditIdea function. This allows users to update each aspect of thisIdea that is fetched and displayed into the form.
 
 export default EditIdea;
 

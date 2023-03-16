@@ -9,8 +9,8 @@ import { PushPinOutlined } from '@mui/icons-material';
 const EditArtist = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const user = useSelector((store) => store.user);
-    const thisArtist = useSelector((store) => store.thisArtist);
+    const user = useSelector((store) => store.user); // const user created
+    const thisArtist = useSelector((store) => store.thisArtist); // const thisArtist created
 
     // console.log('asdfghjdfghjdfghj', thisArtist);
 
@@ -24,7 +24,7 @@ const EditArtist = () => {
           });
 
           history.push('/artists');
-    };
+    }; // end of submitUpdate handler. This dispatches an edit for thisArtist and sends any changes to the artists database.
 
     const changeName = (event) => {
         console.log('updated name: ', event.target.value);
@@ -32,7 +32,7 @@ const EditArtist = () => {
             type: 'EDIT_ARTISTNAME_ONCHANGE',
             payload: {property: 'name', value: event.target.value}
         });
-    }
+    } // end of changeName handler. Dispatches a name update on change that updates the dom as you type.
 
     const changeDetails = (event) => {
         console.log('updated artist details: ', event.target.value);
@@ -40,7 +40,7 @@ const EditArtist = () => {
             type: "EDIT_ARTISTDETAILS_ONCHANGE",
             payload: {property: 'details', value: event.target.value}
         });
-    }
+    } // end of changeDetails handler. Dispatches a details update on change that updates the dom as you type.
 
     const changeStyle = (event) => {
         console.log('updated primary style: ', event.target.value);
@@ -48,7 +48,7 @@ const EditArtist = () => {
             type: "EDIT_ARTISTSTYLE_ONCHANGE",
             payload: {property: 'style', value: event.target.value}
         });
-    }
+    } // end of changeStyle handler. Dispatches a style update on change that updates the dom as you type.
 
     const changeShop = (event) => {
         console.log('updated shop: ', event.target.value);
@@ -56,7 +56,7 @@ const EditArtist = () => {
             type: "EDIT_SHOP_ONCHANGE",
             payload: {property: 'shop', value: event.target.value}
         });
-    }
+    } // end of changeShop handler. Dispatches a shop update on change that updates the dom as you type.
 
     const changeInstagram = (event) => {
         console.log('updated instagram: ', event.target.value);
@@ -64,7 +64,7 @@ const EditArtist = () => {
             type: "EDIT_INSTAGRAM_ONCHANGE",
             payload: {property: 'instagram', value: event.target.value}
         });
-    }
+    } // end of changeInstagram handler. Dispatches a instagram handle update on change that updates the dom as you type.
 
 
     return (
@@ -82,71 +82,39 @@ const EditArtist = () => {
                     <div className="artist-editor">
                 
                         <div key={thisArtist.id} className="edit">
-                                {/* <label htmlFor="title">Artist Name:</label><br/>
-                                <input 
-                                    defaultValue={thisArtist.name}
-                                    id="name"
-                                    placeholder="Update Name"
+                                
+                                <TextField fullWidth 
+                                    defaultValue={thisArtist.name} 
+                                    color="success" 
+                                    id="name" 
+                                    label="Artist's Name" 
                                     onChange={(event) => changeName(event)} 
-                                />                                                                                                */}
-                                <TextField fullWidth defaultValue={thisArtist.name} color="success" id="name" label="Artist's Name" onChange={(event) => changeName(event)} />
+                                />
 
                                 <br/>
                                 <br/>
 
-                                {/* <input 
-                                    defaultValue={thisArtist.shop}
-                                    id="shop"
-                                    placeholder="Update Shop"
+                                <TextField fullWidth 
+                                    defaultValue={thisArtist.shop} 
+                                    color="success" 
+                                    id="shop" 
+                                    label="Home Shop" 
                                     onChange={(event) => changeShop(event)} 
-                                />      */}
-
-                                <TextField fullWidth defaultValue={thisArtist.shop} color="success" id="shop" label="Home Shop" onChange={(event) => changeShop(event)} />                                                                                          
+                                />                                                                                          
                                 
                                 <br/>
-                                <br/>
+                                <br/>                            
 
-                                {/* <input 
-                                    defaultValue={thisArtist.instagram}
-                                    id="instagram"
-                                    placeholder="Update Instagram Handle"
+                                <TextField fullWidth 
+                                    defaultValue={thisArtist.instagram} 
+                                    color="success" id="instagram" 
+                                    label="Instagram Handle @" 
+                                    placeholder="Instagram Handle" 
                                     onChange={(event) => changeInstagram(event)} 
-                                />     */}
-
-                                <TextField fullWidth defaultValue={thisArtist.instagram} color="success" id="instagram" label="Instagram Handle @" placeholder="Instagram Handle" onChange={(event) => changeInstagram(event)} />                                                                                           
+                                />                                                                                           
                                 
                                 <br/>
                                 <br/>
-                                
-
-                                {/* <label htmlFor="style">Primary Style [choose one]:</label>
-                                &nbsp; &nbsp;
-                                <select 
-                                
-                                defaultValue={thisArtist.style}
-                                onChange={(event) => changeStyle(event)}
-                                >
-                                    <option value="Undecided">Undecided</option>
-                                    <option value="American Traditional">American Traditional</option>
-                                    <option value="Black and Grey">Black and Grey</option>
-                                    <option value="Neo-Traditional">Neo-Traditional</option>
-                                    <option value="Realism">Realism</option>
-                                    <option value="New School">New School</option>
-                                    <option value="Fine Line">Fine Line</option>
-                                    <option value="Japanese Traditional">Japanese Traditional</option>
-                                    <option value="Tribal">Tribal</option>
-                                    <option value="Illustrative">Illustrative</option>
-                                    <option value="Ornamental">Ornamental</option>
-                                    <option value="Abstract">Abstract</option>
-                                    <option value="Blackwork">Blackwork</option>
-                                    <option value="Cartoon/Anime">Cartoon/Anime</option>
-                                    <option value="Continuous Line Contour">Continuous Line Contour</option>
-                                    <option value="Geometric">Geometric</option>
-                                    <option value="Script/Lettering">Script/Lettering</option>
-                                    <option value="Surrealism">Surrealism</option>
-                                    <option value="Trash Polka">Trash Polka</option>
-                                    <option value="Watercolor">Watercolor</option>
-                                </select> */}
 
                                 <FormControl fullWidth>
                                     <InputLabel id="mui_select_artist_style_label" color="success" >Artist's Primary Style</InputLabel>
@@ -185,17 +153,14 @@ const EditArtist = () => {
                                 <br/>
                                 <br/>
 
-                            {/* <label htmlFor="details">Other Details:</label><br/>
-                            <input 
-                            
-                            defaultValue={thisArtist.details} 
-                            id="details"
-                            placeholder="Update Details"
-                            onChange={(event) => changeDetails(event)}
-                            /> */}
-
-                            <TextField fullWidth className="new_artist_textfield" color="success" defaultValue={thisArtist.details} id="details" label="Other Details" onChange={(event) => changeDetails(event)} />
-
+                                <TextField fullWidth 
+                                    className="new_artist_textfield" 
+                                    color="success" 
+                                    defaultValue={thisArtist.details} 
+                                    id="details" 
+                                    label="Other Details" 
+                                    onChange={(event) => changeDetails(event)} 
+                                />
 
                             <br/>
                         </div>
@@ -224,6 +189,68 @@ const EditArtist = () => {
             </section>
         </div>
       );
-}
+} // end of EditIdea function. This allows users to update each aspect of thisIdea that is fetched and displayed into the form.
 
 export default EditArtist;
+
+// previously used inputs and dropdowns:
+
+{/* <label htmlFor="title">Artist Name:</label><br/>
+<input 
+    defaultValue={thisArtist.name}
+    id="name"
+    placeholder="Update Name"
+    onChange={(event) => changeName(event)} 
+/>   */}
+
+{/* <input 
+    defaultValue={thisArtist.shop}
+    id="shop"
+    placeholder="Update Shop"
+    onChange={(event) => changeShop(event)} 
+/>      */}
+
+{/* <input 
+    defaultValue={thisArtist.instagram}
+    id="instagram"
+    placeholder="Update Instagram Handle"
+    onChange={(event) => changeInstagram(event)} 
+/>     */}
+
+{/* <label htmlFor="style">Primary Style [choose one]:</label>
+&nbsp; &nbsp;
+<select 
+
+defaultValue={thisArtist.style}
+onChange={(event) => changeStyle(event)}
+>
+    <option value="Undecided">Undecided</option>
+    <option value="American Traditional">American Traditional</option>
+    <option value="Black and Grey">Black and Grey</option>
+    <option value="Neo-Traditional">Neo-Traditional</option>
+    <option value="Realism">Realism</option>
+    <option value="New School">New School</option>
+    <option value="Fine Line">Fine Line</option>
+    <option value="Japanese Traditional">Japanese Traditional</option>
+    <option value="Tribal">Tribal</option>
+    <option value="Illustrative">Illustrative</option>
+    <option value="Ornamental">Ornamental</option>
+    <option value="Abstract">Abstract</option>
+    <option value="Blackwork">Blackwork</option>
+    <option value="Cartoon/Anime">Cartoon/Anime</option>
+    <option value="Continuous Line Contour">Continuous Line Contour</option>
+    <option value="Geometric">Geometric</option>
+    <option value="Script/Lettering">Script/Lettering</option>
+    <option value="Surrealism">Surrealism</option>
+    <option value="Trash Polka">Trash Polka</option>
+    <option value="Watercolor">Watercolor</option>
+</select> */}
+
+{/* <label htmlFor="details">Other Details:</label><br/>
+    <input 
+    
+    defaultValue={thisArtist.details} 
+    id="details"
+    placeholder="Update Details"
+    onChange={(event) => changeDetails(event)}
+/> */}
