@@ -16,7 +16,7 @@ const EditIdea = () => {
 
     const submitUpdate = (event) => {
         event.preventDefault();
-        console.log('submitting the payload: ', thisIdea.name, );
+        console.log('submitting the payload: ', thisIdea.name );
    
           dispatch({
             type: "EDIT_IDEA",

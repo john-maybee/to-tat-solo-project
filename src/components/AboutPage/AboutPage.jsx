@@ -14,6 +14,7 @@ function AboutPage() {
       <div>
         <p>This application will help users keep track of, and expand upon, their own tattoo design ideas.</p>
         <p>There will also be a place within "To Tat" for users to record the names of tattoo artists they enjoy for future tattoo ideas.</p>
+        <p><strong>Technologies Utilized -</strong> React, Redux, Express, Node, and Figma.</p>
       </div>
       <br/>
       <div>
