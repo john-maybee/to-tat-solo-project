@@ -16,7 +16,7 @@ function* fetchArtists() {
     const config = {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
-    }; // do I need to add action into the fetchIdeas function?
+    }; 
 
     // the config includes credentials which
     // allow the server session to recognize the user
@@ -100,6 +100,8 @@ function* editArtist(action) {
   };
 };
 
+export default artistsSaga;
+
 // function* editOnChange(action){
 //   try {
 //   yield axios.put(`/api/ideas/${action.payload.id}`, {name: action.payload.name});
@@ -108,5 +110,3 @@ function* editArtist(action) {
 //   console.log('Error editing idea', error);
 // };
 // }
-
-export default artistsSaga;

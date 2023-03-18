@@ -19,7 +19,7 @@ function CreateIdeaPage() {
                 <CreateIdeaForm /> 
             </section> 
         </div>
-    ); // Previously removed the header section and put it into the form component and it broke what was working
+    ); 
   }; 
   
   export default CreateIdeaPage;

@@ -12,7 +12,7 @@ const EditIdea = () => {
     const user = useSelector((store) => store.user); // const user created
     const thisIdea = useSelector((store) => store.thisIdea); // const thisIdea created
 
-    // console.log('asdfghjdfghjdfghj', thisIdea);
+    
 
     const submitUpdate = (event) => {
         event.preventDefault();
@@ -207,6 +207,7 @@ export default EditIdea;
 
 // previously used buttons and fields on the form:
 
+// console.log('asdfghjdfghjdfghj', thisIdea);
 {/* <label htmlFor="title">Tattoo Name:</label><br/> */}
 {/* <input 
     defaultValue={thisIdea.name}

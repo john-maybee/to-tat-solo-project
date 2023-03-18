@@ -16,9 +16,9 @@ import artistsSaga from './artists.saga';
 export default function* rootSaga() {
   yield all([
     loginSaga(), // login saga is now registered
-    registrationSaga(),
-    userSaga(),
-    ideasSaga(),
-    artistsSaga(),
+    registrationSaga(), // registration saga is now registered
+    userSaga(), // user saga is now registered
+    ideasSaga(), // ideas saga is now registered
+    artistsSaga(), // artists saga is now registered
   ]);
 }

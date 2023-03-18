@@ -8,7 +8,6 @@ import { CottageTwoTone, InfoOutlined, AppRegistration } from "@mui/icons-materi
 function Nav() {
   const user = useSelector((store) => store.user); // const representing the store.user to help with navigation depending on whether there is a user or not.
 
-// className="svg_logo"
 
   return (
     <div className="nav">
@@ -67,10 +66,3 @@ function Nav() {
 }
 
 export default Nav;
-
-
-// Check class notes on authorization and authentication to make sure this file is correct.
-// Is this where I should import the material-ui Icons that link to different pages? Yes
-// Once working on the styling, make sure to insert the home icon on this page, along with the logout icon.
-
-// 

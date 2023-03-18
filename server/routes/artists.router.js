@@ -54,7 +54,6 @@ router.post('/', (req, res) => {
   const details = req.body.newArtist.details;
   const user_id = req.user.id;
   console.log('req.body', req.body);
-  // console.log('new artist name:', name);
   console.log('in the server POST artists for: ', req.user);
   console.log('is authenticated: ', req.isAuthenticated());
   // RETURNING "id" will give you back the id of the new artist
@@ -142,8 +141,3 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
-
-
-// information on how to complete this get request would be in the last lecture from the 2/28 class
-
-// could use number 7 from the sql-joins-syntax-basics-heroes assignment

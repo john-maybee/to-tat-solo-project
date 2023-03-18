@@ -6,11 +6,6 @@ import { Delete, Edit } from '@mui/icons-material';
 
 import './ArtistsPage.css';
 
-// This is one of our simplest components
-// It doesn't have local state
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is
-
 function ArtistsPage(props) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -121,6 +116,6 @@ function ArtistsPage(props) {
     </div>
   );
 };
-// also add a link to the CreateArtistPage
+// also could add a link to the CreateArtistPage
 
 export default ArtistsPage;

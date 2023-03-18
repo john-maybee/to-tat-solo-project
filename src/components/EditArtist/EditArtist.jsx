@@ -12,7 +12,7 @@ const EditArtist = () => {
     const user = useSelector((store) => store.user); // const user created
     const thisArtist = useSelector((store) => store.thisArtist); // const thisArtist created
 
-    // console.log('asdfghjdfghjdfghj', thisArtist);
+    
 
     const submitUpdate = (event) => {
         event.preventDefault();
@@ -195,6 +195,7 @@ export default EditArtist;
 
 // previously used inputs and dropdowns:
 
+// console.log('asdfghjdfghjdfghj', thisArtist);
 {/* <label htmlFor="title">Artist Name:</label><br/>
 <input 
     defaultValue={thisArtist.name}

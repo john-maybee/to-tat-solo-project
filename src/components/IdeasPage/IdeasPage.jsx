@@ -6,11 +6,6 @@ import { Delete, Edit } from '@mui/icons-material';
 
 import './IdeasPage.css';
 
-// This is one of our simplest components
-// It doesn't have local state
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is
-
 function IdeasPage(props) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -51,11 +46,11 @@ function IdeasPage(props) {
 
               <section className="thisIdeaHeader">
                 <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => deleteIdea(idea)}><Delete /></Button>
-                {/* <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button> */}
+                
                 <h3 className="ideas_names"><strong>{idea.name}</strong></h3>
                 
                 <Button className="mui_btn" variant="contained" sx={{ backgroundColor: '#E1AD01', color: "#282828", "&:active": {backgroundColor: "#fcf7e6"}, "&:hover": {backgroundColor:"#80a9a4"} }} onClick={() => handleEditIdea(idea)}><Edit /></Button>
-                {/* <button className="btn" onClick={() => deleteIdea(idea)}>delete</button> */}
+               
               </section>
               <div className="svg_bottom">
               <svg width="91" height="6" viewBox="0 0 91 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,6 +88,12 @@ function IdeasPage(props) {
     </div>
   );
 };
-// also add a link to the CreateIdeaPage
+// also could add a link to the CreateIdeaPage
 
 export default IdeasPage;
+
+// Previously used code:
+
+{/* <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button> */}
+
+ {/* <button className="btn" onClick={() => deleteIdea(idea)}>delete</button> */}

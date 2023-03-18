@@ -50,6 +50,3 @@ function AboutPage() {
 }
 
 export default AboutPage;
-
-// Need to figure out what you would like to include in this about page. Is this where we put the elevator pitch/story?
-// Or should I just include the "what this app does"

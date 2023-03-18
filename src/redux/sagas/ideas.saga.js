@@ -16,7 +16,7 @@ function* fetchIdeas() {
     const config = {
       headers: { 'Content-Type': 'application/json' },
       withCredentials: true,
-    }; // do I need to add action into the fetchIdeas function?
+    }; 
 
     // the config includes credentials which
     // allow the server session to recognize the user

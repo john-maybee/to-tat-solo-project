@@ -53,7 +53,6 @@ router.post('/', (req, res) => {
   const placement = req.body.newIdea.placement;
   const user_id = req.user.id;
   console.log('req.body', req.body);
-  // console.log('new idea name:', name);
   console.log('in the server POST ideas for: ', req.user);
   console.log('is authenticated: ', req.isAuthenticated());
   // RETURNING "id" will give you back the id of the new idea
@@ -68,7 +67,6 @@ router.post('/', (req, res) => {
       .then(result => {
         console.log('New idea id: ', result.rows[0].id)
         res.send({id: result.rows[0].id});
-        // res.sendStatus(201) Is this really where it was messed up?
       })
       .catch(err => {
         console.log('router.post idea error: ', err);
@@ -140,8 +138,3 @@ router.delete('/:id', (req, res) => {
 });
 
 module.exports = router;
-
-
-// information on how to complete this get request would be in the last lecture from the 2/28 class
-
-// could use number 7 from the sql-joins-syntax-basics-heroes assignment

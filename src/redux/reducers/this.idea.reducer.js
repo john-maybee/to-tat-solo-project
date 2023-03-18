@@ -33,4 +33,3 @@ const thisIdeaReducer = (state = {}, action) => {
   // user will be on the redux state at:
   // state.user
   export default thisIdeaReducer;
-  // changed the state to curly brackets to be an object being passed in.
