@@ -42,7 +42,7 @@ function CreateIdeaForm() {
         <br/>
 
         <section className="new-idea-details">
-            <TextField fullWidth value={details} id="details" label="Tattoo Details" color="success" onChange={(event) => setDetails(event.target.value)} />
+            <TextField fullWidth multiline value={details} id="details" label="Tattoo Details" color="success" onChange={(event) => setDetails(event.target.value)} />
         </section>
 
         <br/>

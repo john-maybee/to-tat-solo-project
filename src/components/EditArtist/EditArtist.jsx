@@ -153,7 +153,7 @@ const EditArtist = () => {
                                 <br/>
                                 <br/>
 
-                                <TextField fullWidth 
+                                <TextField fullWidth multiline 
                                     className="new_artist_textfield" 
                                     color="success" 
                                     defaultValue={thisArtist.details} 

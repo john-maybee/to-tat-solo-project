@@ -39,17 +39,36 @@ function CreateArtistForm() {
     <form className="artist-form" onSubmit={postArtist}>
        
         <section className="new-artist-name">
-          <TextField fullWidth value={name} color="success" id="name" label="Artist's Name" onChange={(event) => setName(event.target.value)} />
+          <TextField fullWidth 
+            value={name} 
+            color="success" 
+            id="name" 
+            label="Artist's Name" 
+            onChange={(event) => setName(event.target.value)} 
+          />
         </section>
         <br/>
 
         <section className="new-artist-shop">
-          <TextField fullWidth value={shop} color="success" id="shop" label="Home Shop" onChange={(event) => setShop(event.target.value)} />
+          <TextField fullWidth 
+            value={shop} 
+            color="success" 
+            id="shop" 
+            label="Home Shop" 
+            onChange={(event) => setShop(event.target.value)} 
+          />
         </section>
         <br/>
 
         <section className="new-artist-instagram">
-          <TextField fullWidth value={instagram} color="success" id="instagram" label="Instagram Handle @" placeholder="Instagram Handle" onChange={(event) => setInstagram(event.target.value)} />
+          <TextField fullWidth 
+            value={instagram} 
+            color="success" 
+            id="instagram" 
+            label="Instagram Handle @" 
+            placeholder="Instagram Handle" 
+            onChange={(event) => setInstagram(event.target.value)} 
+          />
         </section>
         <br/>
 
@@ -92,7 +111,14 @@ function CreateArtistForm() {
         <br />
 
         <section className="new-artist-details">
-            <TextField fullWidth className="new_artist_textfield" color="success" value={details} id="details" label="Other Details" onChange={(event) => setDetails(event.target.value)} />
+            <TextField fullWidth multiline 
+              className="new_artist_textfield" 
+              color="success" 
+              value={details} 
+              id="details" 
+              label="Other Details" 
+              onChange={(event) => setDetails(event.target.value)} 
+            />
         </section>
         <br/>
         

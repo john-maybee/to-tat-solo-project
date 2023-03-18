@@ -89,7 +89,7 @@ const EditIdea = () => {
                                 <br/>
                                 <br/>
                                 
-                                <TextField fullWidth 
+                                <TextField fullWidth multiline 
                                     defaultValue={thisIdea.details} 
                                     id="details" 
                                     label="Tattoo Details" 
