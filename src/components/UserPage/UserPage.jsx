@@ -17,6 +17,7 @@ function UserPage() {
       <Button 
         className="mui_btn" 
         variant="contained"
+        size="large"
         endIcon={<AddRounded />} 
         sx={{ 
        
@@ -38,6 +39,7 @@ function UserPage() {
       <Button 
         className="mui_btn" 
         variant="contained"
+        size="large"
         endIcon={<AddRounded />} 
         sx={{ 
        
@@ -59,6 +61,7 @@ function UserPage() {
       <Button 
         className="mui_btn" 
         variant="contained"
+        size="large"
         endIcon={<ArrowForwardIosRounded />}
         sx={{ 
   
@@ -81,6 +84,7 @@ function UserPage() {
       <Button 
         className="mui_btn" 
         variant="contained"
+        size="large"
         endIcon={<ArrowForwardIosRounded />}
         sx={{ 
   
