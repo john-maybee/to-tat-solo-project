@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import "@fontsource/roboto";
 
 
 import CreateIdeaForm from '../CreateIdeaForm/CreateIdeaForm';

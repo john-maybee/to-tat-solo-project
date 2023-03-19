@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { Button } from '@mui/material';
 import { Delete, Edit } from '@mui/icons-material';
+import "@fontsource/roboto";
 
 import './IdeasPage.css';
 

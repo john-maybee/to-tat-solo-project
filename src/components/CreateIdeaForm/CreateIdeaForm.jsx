@@ -3,6 +3,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import { PushPinOutlined } from '@mui/icons-material';
+import "@fontsource/roboto";
 
 
 function CreateIdeaForm() {

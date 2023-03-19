@@ -11,11 +11,13 @@
 .thisArtistHeader{
     display: flex;
     padding: 2px;
+    font-family: "Roboto", sans-serif;
 }
 
 p, h4{
     padding-left: 5px;
     padding-right: 5px;
+    font-family: "Roboto", sans-serif;
 }
 
 

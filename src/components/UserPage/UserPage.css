@@ -1,0 +1,12 @@
+.add_section{
+    /* border-top: 2px dotted #E1AD01; */
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.view_section{
+    border-top: 2px dotted #E1AD01;
+    padding-top: 15px;
+}
+
+

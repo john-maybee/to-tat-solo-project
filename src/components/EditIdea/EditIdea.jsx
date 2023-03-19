@@ -4,6 +4,7 @@ import React from 'react';
 import './EditIdea.css';
 import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@mui/material';
 import { PushPinOutlined } from '@mui/icons-material';
+import "@fontsource/roboto";
 
 
 const EditIdea = () => {
