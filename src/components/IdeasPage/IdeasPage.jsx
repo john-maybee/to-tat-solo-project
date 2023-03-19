@@ -67,15 +67,15 @@ function IdeasPage(props) {
               </div>
              
               <section className="thisIdeaStyle">
-                <p><strong>Style:</strong> {idea.style}</p>
+                <p><strong>Style |</strong> {idea.style}</p>
               </section>
 
               <section className="thisIdeaPlacement">
-                <p><strong>Placement:</strong> {idea.placement}</p>
+                <p><strong>Placement |</strong> {idea.placement}</p>
               </section>
 
               <section className="thisIdeaDetails">
-                <p><strong>Tattoo Idea Details Below:</strong></p>
+                <p><strong>Other Details Below:</strong></p>
                 <p>{idea.details}</p>
               </section>
               

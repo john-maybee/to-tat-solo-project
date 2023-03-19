@@ -93,19 +93,19 @@ function ArtistsPage(props) {
               </div>
              
               <section className="thisArtistShop">
-                <p><strong>Home Shop:</strong> {artist.shop}</p>
+                <p><strong>Home Shop |</strong> {artist.shop}</p>
               </section>
 
               <section className="thisArtistInstagram">
-                <p><strong>Instagram Handle:</strong> @{artist.instagram}</p>
+                <p><strong>Instagram Handle |</strong> @{artist.instagram}</p>
               </section>
 
               <section className="thisArtistStyle">
-                <p><strong>Primary Style:</strong> {artist.style}</p>
+                <p><strong>Primary Style |</strong> {artist.style}</p>
               </section>            
 
               <section className="thisArtistDetails">
-                <p><strong>Other Details Below:</strong> </p>
+                <p><strong>Other Artist Details Below:</strong> </p>
                 <p>{artist.details}</p>
               </section>            
               <br/>
