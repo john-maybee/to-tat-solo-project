@@ -5,3 +5,8 @@
 .svg_container{
     text-align: center;
 }
+
+.qr_code{
+    height: 150px;
+    text-align: center;
+}

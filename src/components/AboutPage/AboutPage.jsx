@@ -17,11 +17,24 @@ function AboutPage() {
         <p><strong>Technologies Utilized |</strong> React, Redux, Express, Node, and Figma.</p>
       </div>
       <div>
-        <h3>Site Developer's Information:</h3>
-        <p>John Maybee</p>
-        {/* place QR code next to the name */}
+        <h2>About The Developer:</h2>
+        <p><strong>Name |</strong> John Maybee</p>
+        <p><strong>E-mail |</strong> John.D.Maybee@gmail.com</p>
       </div>
-      <div className="svg_container">
+      <div className="qr_code">
+        <img  height="150px" src="https://qrcgcustomers.s3.eu-west-1.amazonaws.com/account24595142/qrcodes/62130516.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYMOAQO23FRHUYI4Q%2F20230319%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20230319T185028Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=6943b34723afe87283da09413b49a18c99e465a237b6ed561466195b66789aa9" alt="QR Code to the developer's LinkedIn and GitHub" />
+      </div>
+      
+    </div>
+  );
+}
+
+export default AboutPage;
+
+
+// SVG that has been made into a link to my linkedin:
+
+{/* <div className="svg_container">
         <a href="https://www.linkedin.com/in/john-d-maybee/" id="linkedin">
           <svg className="svg_linkedin" width="605" height="172" viewBox="0 0 605 172" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_43_94)">
@@ -44,9 +57,4 @@ function AboutPage() {
             </defs>
           </svg>
           </a>
-      </div>
-    </div>
-  );
-}
-
-export default AboutPage;
+      </div> */}
