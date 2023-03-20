@@ -1,7 +1,7 @@
 
 # To Tat Solo Project 
 
-## List of utilized programs and dependencies
+### List of utilized programs and dependencies
 - React
 - Redux
 - Express
@@ -11,7 +11,7 @@
 
 (a full list of dependencies can be found in `package.json`).
 
-## APP Milestones and Schedule
+### APP Milestones and Schedule
 - [X] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | Complete
 - [X] Create the Index.js start | estimated hours: 2 | Due: 3/1 | Base | Complete
 - [X] Make tables on Postico | estimated hours: 2 | Due: 3/2 | Base | Complete
@@ -28,7 +28,7 @@
 - [X] Insert Index.js updates to utilize sagas and to create store for the reducers | estimated hours: 3 | Due: 3/8 | Base | Complete
 - [X] Styling via CSS | estimated hours: 30 | Due: 3/20 | Base | In progress
 
-## STRETCH Milestones
+### STRETCH Milestones
 - [X] Create a new table in postico to hold the artists | estimated hours: .5 | Stretch | Complete
 - [X] DELETE - ability to remove artist | estimated hours: 2 | Stretch | Complete
 - [X] POST - artist added to database onClick of post/save button | estimated hours: 2 | Stretch | Complete
@@ -39,7 +39,7 @@
 - [] Link artist style to tattoo idea style - make a joiner table that links the tattoo idea style with the artist style. | estimated hours: 4 | Stretch | to-do
 - [] Create an input field on the Add Tattoo Idea page that allows users to store a URL that links to an image for idea reinforcement. If this goal is reached, an 8th property would be added to the ideas table. This property would be named image. | estimated hours: 4 | Stretch | to-do
 
-## Tattoo styles to include:
+### Tattoo styles to include:
 
 - Undecided (default this one)
 - American Traditional (most common)
@@ -64,7 +64,7 @@
 - Watercolor
 - Embroidery (not including to start)
 
-## Tattoo placements to include:
+### Tattoo placements to include:
 
 - Undecided
 - Upper Arm - Right
@@ -90,14 +90,14 @@
 - Head
 - Other
 
-## HEX numbers for color palette styles to include:
+### HEX numbers for color palette styles to include:
 
 - #fcf7e6 (corn at 70% lighter tint)
 - #005249 (Aqua Deep)
 - #E1AD01 (corn)
 - #282828 (Mine Shaft)
 
-## Lay of the Land
+### Lay of the Land
 
 - `src/` contains the React application
 - `public/` contains static assets for the client-side
@@ -105,7 +105,7 @@
 
 # Other Setup performed at the beginning:
 
-## Development Setup
+### Development Setup
 
 - [X] change the localhost to 5001. (searched for all occurences of 5000 and changed all to 5001).
 - [X] Run `npm install`
@@ -115,7 +115,7 @@
 - [X] Run `npm run client`
 - [X] Navigate to `localhost:3000`
 
-## Testing Routes with Postman
+### Testing Routes with Postman
 
 1. [X] Start the server - `npm run server`
 2. [X] Import the sample routes JSON file [v2](./PostmanPrimeSoloRoutesv2.json) by clicking `Import` in Postman. Select the file.
@@ -126,7 +126,7 @@
 
 # Deployment
 
-## Future Deployment (if desired)
+### Future Deployment (if desired)
 
 1. Create a new Heroku project
 1. Link the Heroku project to the project GitHub Repo
