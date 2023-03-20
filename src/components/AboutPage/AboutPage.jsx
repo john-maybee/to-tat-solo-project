@@ -23,7 +23,7 @@ function AboutPage() {
         <p><strong>E-mail |</strong> John.D.Maybee@gmail.com</p>
       </div>
       <div className="qr_code">
-        <img  height="150px" src="https://qrcgcustomers.s3.eu-west-1.amazonaws.com/account24595142/qrcodes/62130516.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYMOAQO23FRHUYI4Q%2F20230320%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20230320T023853Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=f3f2e1c26aa73313f5bff51089375388811e5ed539a2ed6b4e1f3098848eae49" alt="QR Code to the developer's LinkedIn and GitHub" />
+        <img  height="150px" src="https://qrcgcustomers.s3.eu-west-1.amazonaws.com/account24595142/qrcodes/62130516.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYMOAQO23FRHUYI4Q%2F20230320%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20230320T153822Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=3b26c222103bbee994195f31c6ae77bab221b128754f7c7ec5c4d9e7fcff7713" alt="QR Code to the developer's LinkedIn and GitHub" />
       </div>
       
     </div>
