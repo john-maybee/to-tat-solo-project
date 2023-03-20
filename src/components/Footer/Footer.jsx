@@ -6,6 +6,7 @@ import './Footer.css';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
 
+///////////////////////////////////Footer function///////////////////////////////////////
 function Footer() {
   return <footer>&copy; Maybee Made<div className="svg_container">
 
@@ -34,6 +35,6 @@ function Footer() {
 
   </div>
   </footer>;
-}
+} // end of the footer function that has a linked svg to the developers GitHub and an &copy
 
 export default Footer;

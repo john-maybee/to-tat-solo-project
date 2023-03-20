@@ -88,7 +88,7 @@ function IdeasPage(props) {
       </section>
  
     </div>
-  );
+  ); // end of the returned container
 }; // end of IdeasPage function that allows the user to see their saved ideas.
 
 export default IdeasPage;

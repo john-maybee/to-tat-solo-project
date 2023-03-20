@@ -5,14 +5,14 @@ import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@m
 import { PushPinOutlined } from '@mui/icons-material';
 import "@fontsource/roboto";
 
-
+///////////////////////////////////CreateArtistForm function///////////////////////////////////////
 function CreateArtistForm() {
   
-  const [name, setName] = useState('');
-  const [details, setDetails] = useState('');
-  const [style, setStyle] = useState('');
-  const [instagram, setInstagram] = useState('');
-  const [shop, setShop] = useState('');
+  const [name, setName] = useState(''); // getter and setter for the artist name that starts as a blank string
+  const [details, setDetails] = useState(''); // getter and setter for the artist details that starts as a blank string
+  const [style, setStyle] = useState(''); // getter and setter for the style that starts as a blank string
+  const [instagram, setInstagram] = useState(''); // getter and setter for the instagram handle that starts as a blank string
+  const [shop, setShop] = useState(''); // getter and setter for the shop name that starts as a blank string
   
   const history = useHistory();
   const dispatch = useDispatch();
@@ -30,10 +30,11 @@ function CreateArtistForm() {
     dispatch({
       type: 'POST_ARTIST',
       payload: {newArtist}
-    }); 
+    }); // end of POST_ARTIST dispatch that is sending the new artist object 
+    // information that was created as the payload.
     
     history.push('/artists');
-  }; // end postArtist
+  }; // end postArtist function that takes in the onSubmit event then pushes to the /artists page
 
   return (
     <>
@@ -141,10 +142,14 @@ function CreateArtistForm() {
 
     </form>
     </>
-  );
-}
+  );// end of the returned artist form that has all of the inputs as textfields and mui select dropdowns
+}  // end of the CreateArtistForm function that gets displayed on the CreateArtistPage
 
 export default CreateArtistForm;
+
+
+
+
 
 // Previously used code including buttons, inputs, and other:
 

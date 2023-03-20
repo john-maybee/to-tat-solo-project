@@ -5,7 +5,7 @@ import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@m
 import { PushPinOutlined } from '@mui/icons-material';
 import "@fontsource/roboto";
 
-
+///////////////////////////////////CreateIdeaForm function///////////////////////////////////////
 function CreateIdeaForm() {
   
   const [name, setName] = useState('');
@@ -27,10 +27,11 @@ function CreateIdeaForm() {
     dispatch({
       type: 'POST_IDEA',
       payload: {newIdea}
-    }); // end of postIdea function
+    });
     
     history.push('/ideas');
-  }; // end postIdea
+  }; // end postIdea function that is triggered by an onSubmit event that is taking in 
+  // the newIdea object and sending it as the payload to get posted to the ideas database
 
   return (
     <>
@@ -145,8 +146,8 @@ function CreateIdeaForm() {
         </Button>
     </form>
     </>
-  );
-}
+  ); // end of the returned idea form that has all of the inputs as textfields and mui select dropdowns
+} // end of the CreateIdeasForm function that gets displayed on the CreateIdeasPage
 
 export default CreateIdeaForm;
 

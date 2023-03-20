@@ -29,6 +29,8 @@ import CreateArtistPage from '../CreateArtistPage/CreateArtistPage';
 
 import './App.css';
 
+
+///////////////////////////////////App function///////////////////////////////////////
 function App() {
   const dispatch = useDispatch();
 
@@ -174,6 +176,8 @@ function App() {
       </div>
     </Router>
   );
-}
+} // End of the App Function that contains all of the 
+// routes utilized and displays all of them onto the dom. 
+// This function also contains protected routes that provide the user some protection
 
 export default App;

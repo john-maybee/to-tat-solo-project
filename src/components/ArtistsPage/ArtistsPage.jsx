@@ -7,16 +7,18 @@ import "@fontsource/roboto";
 
 import './ArtistsPage.css';
 
+
+///////////////////////////////////ArtistsPage function///////////////////////////////////////
 function ArtistsPage(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const artists = useSelector((store) => store.artists);
-  const user = useSelector((store) => store.user);
+  const artists = useSelector((store) => store.artists); // creates a const that represents the list of artists and their information that are associated with the current user.
+  const user = useSelector((store) => store.user); // creates a const that represents the current user's infromation from the store
 
   useEffect(() => {
     dispatch({ type: 'FETCH_ARTISTS' });
-  }, []);
+  }, []); // dispatch that gets all of the artists that are saved by this user
 
   const deleteArtist = (artist) => {
     dispatch({
@@ -25,7 +27,7 @@ function ArtistsPage(props) {
         id: artist.id
       }
     })
-  }
+  } // end of the dispatch that handles the delete request
 
   const handleEditArtist = (artist) => {
     console.log('in handleEditArtist const on artists page');
@@ -34,7 +36,8 @@ function ArtistsPage(props) {
       payload: artist
     });
     history.push(`/editartist`); 
-  }
+  } // end of the handler for the edit icon onSubmit click event that 
+  //takes in the associated artist and pushes to the /editartist page
 
   return (
     <div className="container">
@@ -115,8 +118,11 @@ function ArtistsPage(props) {
 
       </section> 
     </div>
-  );
-};
-// also could add a link to the CreateArtistPage
+  ); // end of the returned div container that is displayed on the dom when on the artists page. 
+  // This div contains the mapping of the artists that are associated with the user. 
+  // This div also contains multiple buttons that set off onClick events as 
+  // described by the handler comments above the return.
+}; // end of the ArtistsPage function
+
 
 export default ArtistsPage;

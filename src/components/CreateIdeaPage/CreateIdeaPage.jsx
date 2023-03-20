@@ -5,6 +5,7 @@ import "@fontsource/roboto";
 
 import CreateIdeaForm from '../CreateIdeaForm/CreateIdeaForm';
 
+//////////////////////////////////CreateIdeaPage function///////////////////////////////////////
 function CreateIdeaPage() {
     
     const user = useSelector((store) => store.user); // re-added this when I added the new-idea-header back into this component
@@ -20,7 +21,7 @@ function CreateIdeaPage() {
                 <CreateIdeaForm /> 
             </section> 
         </div>
-    ); 
-  }; 
+    ); // end of the returned container that also displays the CreateIdeaForm
+  }; // end of CreateIdeaPage function
   
   export default CreateIdeaPage;

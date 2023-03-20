@@ -5,10 +5,11 @@ import "@fontsource/roboto";
 
 import CreateArtistForm from '../CreateArtistForm/CreateArtistForm';
 
+///////////////////////////////////CreateArtistPage function///////////////////////////////////////
 function CreateArtistPage() {
     
-    const user = useSelector((store) => store.user); // re-added this when I added the new-artist-header back into this component
-  
+    const user = useSelector((store) => store.user); // creates a const that represents the 
+    //current users information from the store.
     
     return (
         <div className="container">
@@ -20,7 +21,7 @@ function CreateArtistPage() {
                 <CreateArtistForm /> 
             </section> 
         </div>
-    );
-  }; 
+    ); // end of the container that is displayed on the DOM for the CreateArtistPage and displays the CreateArtistForm
+  }; // end of CreateArtistPage function 
   
   export default CreateArtistPage;

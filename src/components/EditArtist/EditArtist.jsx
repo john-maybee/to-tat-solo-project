@@ -6,12 +6,12 @@ import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@m
 import { PushPinOutlined } from '@mui/icons-material';
 import "@fontsource/roboto";
 
-
+///////////////////////////////////EditArtist function///////////////////////////////////////
 const EditArtist = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const user = useSelector((store) => store.user); // const user created
-    const thisArtist = useSelector((store) => store.thisArtist); // const thisArtist created
+    const user = useSelector((store) => store.user); // const user created by using the current users information from the store
+    const thisArtist = useSelector((store) => store.thisArtist); // const thisArtist created from the payload passed into the editartist page
 
     
 
@@ -190,7 +190,7 @@ const EditArtist = () => {
             </section>
         </div>
       );
-} // end of EditIdea function. This allows users to update each aspect of thisIdea that is fetched and displayed into the form.
+} // end of EditArtist function. This allows users to update each aspect of thisArtist that is fetched and displayed into the form.
 
 export default EditArtist;
 

@@ -6,12 +6,12 @@ import { TextField, Button, Select, MenuItem, InputLabel, FormControl } from '@m
 import { PushPinOutlined } from '@mui/icons-material';
 import "@fontsource/roboto";
 
-
+///////////////////////////////////EditIdea function///////////////////////////////////////
 const EditIdea = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const user = useSelector((store) => store.user); // const user created
-    const thisIdea = useSelector((store) => store.thisIdea); // const thisIdea created
+    const user = useSelector((store) => store.user); // const user created from this users information from the store
+    const thisIdea = useSelector((store) => store.thisIdea); // const thisIdea created from thisIdea that is being brought in as the payload
 
     
 
