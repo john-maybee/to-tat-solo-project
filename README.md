@@ -63,6 +63,32 @@ This version uses:
 - Watercolor
 - Embroidery (not including to start)
 
+## Tattoo placements to include:
+
+- Undecided
+- Upper Arm - Right
+- Upper Arm - Left
+- Forearm - Right
+- Forearm - Left
+- Upper Leg - Right
+- Upper Leg - Left
+- Lower Leg - Right
+- Lower Leg - Left
+- Side - Right
+- Side - Left
+- Back
+- Chest
+- Abdomen
+- Hand - Right>
+- Hand - Left
+- Foot - Right
+- Foot - Left
+- Neck
+- Face
+- Butt
+- Head
+- Other
+
 ## HEX numbers for color palette styles to include:
 
 - #fcf7e6 (corn at 70% lighter tint)
