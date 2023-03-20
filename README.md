@@ -1,6 +1,7 @@
 
 # To Tat Solo Project 
-This version uses:
+
+## List of utilized programs and dependencies
 - React
 - Redux
 - Express
@@ -96,13 +97,17 @@ This version uses:
 - #E1AD01 (corn)
 - #282828 (Mine Shaft)
 
+## Lay of the Land
 
-### Other Setup that was done at the beginning:
+- `src/` contains the React application
+- `public/` contains static assets for the client-side
+- `server/` contains the Express App
+
+# Other Setup performed at the beginning:
 
 ## Development Setup
 
-[X] change the localhost to 5001. (searched for all occurences of 5000 and changed all to 5001).
-
+- [X] change the localhost to 5001. (searched for all occurences of 5000 and changed all to 5001).
 - [X] Run `npm install`
 - [X] Create a `.env` file at the root of the project
 - [X] Start postgres if not running already
@@ -119,11 +124,7 @@ This version uses:
    2. [X] `POST /api/user/login` will login a user, see body to change username/password
    3. [X] `GET /api/user` will get user information, by default it's not very much
 
-## Lay of the Land
-
-- `src/` contains the React application
-- `public/` contains static assets for the client-side
-- `server/` contains the Express App
+# Deployment
 
 ## Future Deployment (if desired)
 
