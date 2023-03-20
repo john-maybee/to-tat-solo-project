@@ -2,6 +2,7 @@ import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
 
+///////////////////////////////////LoginPage function///////////////////////////////////////
 function LoginPage() {
   const history = useHistory();
 
@@ -22,7 +23,7 @@ function LoginPage() {
       </center>
     </div>
   );
-}
+} // end of LoginPage function that takes in the LoginForm and supplies a button that takes you to the registration page
 
 export default LoginPage;
 

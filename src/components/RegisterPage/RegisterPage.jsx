@@ -3,6 +3,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
+///////////////////////////////////RegisterPage function///////////////////////////////////////
 function RegisterPage() {
   const history = useHistory();
 
@@ -23,7 +24,7 @@ function RegisterPage() {
       </center>
     </div>
   );
-}
+} // end of RegisterPage function
 
 export default RegisterPage;
 

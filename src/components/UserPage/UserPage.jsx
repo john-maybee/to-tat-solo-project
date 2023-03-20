@@ -6,6 +6,7 @@ import { AddRounded, ArrowForwardIosRounded } from '@mui/icons-material';
 import "@fontsource/roboto";
 import './UserPage.css';
 
+///////////////////////////////////UserPage function///////////////////////////////////////
 function UserPage() {
 
   const user = useSelector((store) => store.user);
@@ -104,7 +105,7 @@ function UserPage() {
       
     </div>
   );
-}
+} // end of UserPage function that includes buttons that act as links to other pages.
 
 export default UserPage;
 

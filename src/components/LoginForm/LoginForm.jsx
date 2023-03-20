@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
 
+///////////////////////////////////LoginForm function///////////////////////////////////////
 function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const errors = useSelector(store => store.errors);
+  const errors = useSelector(store => store.errors); //utilizes the errors reducer from the store
   const dispatch = useDispatch();
 
   const login = (event) => {
@@ -61,6 +62,6 @@ function LoginForm() {
       </div>
     </form>
   );
-}
+} // end of LoginForm function
 
 export default LoginForm;

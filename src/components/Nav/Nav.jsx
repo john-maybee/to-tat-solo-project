@@ -5,6 +5,7 @@ import './Nav.css';
 import { useSelector } from 'react-redux';
 import { CottageTwoTone, InfoOutlined, AppRegistration } from "@mui/icons-material";
 
+//////////////////////////////////Nav function///////////////////////////////////////
 function Nav() {
   const user = useSelector((store) => store.user); // const representing the store.user to help with navigation depending on whether there is a user or not.
 
@@ -63,6 +64,6 @@ function Nav() {
       </div>
     </div>
   );
-}
+} // end of Nav function that supplies the nav bar including links and a logout icon that acts as a button
 
 export default Nav;

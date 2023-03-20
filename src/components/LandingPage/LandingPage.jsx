@@ -5,6 +5,7 @@ import './LandingPage.css';
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
 
+///////////////////////////////////LandingPage function///////////////////////////////////////
 function LandingPage() {
   const [heading, setHeading] = useState('Welcome to To Tat');
   const history = useHistory();
@@ -31,9 +32,13 @@ function LandingPage() {
       </div>
     </div>
   );
-}
+} // end of LandingPage function
 
 export default LandingPage;
+
+
+
+// Previously used elements:
 
 {/* <h2>{heading}</h2> */}
 {/* <div className="grid-col grid-col_8">

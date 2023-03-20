@@ -7,16 +7,17 @@ import "@fontsource/roboto";
 
 import './IdeasPage.css';
 
+///////////////////////////////////IdeasPage function///////////////////////////////////////
 function IdeasPage(props) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const ideas = useSelector((store) => store.ideas);
-  const user = useSelector((store) => store.user);
+  const ideas = useSelector((store) => store.ideas); // selector that takes in the ideas that are associated with the current user by accessing the reducer
+  const user = useSelector((store) => store.user); // selector that takes in the user information to be used on the page
 
   useEffect(() => {
     dispatch({ type: 'FETCH_IDEAS' });
-  }, []);
+  }, []); // Fetches the current users saved ideas on page load.
 
   const deleteIdea = (idea) => {
     dispatch({
@@ -25,7 +26,7 @@ function IdeasPage(props) {
         id: idea.id
       }
     })
-  }
+  } // handler for the delete button click. Deletes the idea by taking in its id and dispatches a DELETE_IDEA event
 
   const handleEditIdea = (idea) => {
     console.log('in editIdea const on ideas page');
@@ -34,7 +35,7 @@ function IdeasPage(props) {
       payload: idea
     });
     history.push(`/edit`); 
-  }
+  } // handler for the edit button click. This takes the whole idea as the payload and pushes to the /edit page.
 
   return (
     <div className="container">
@@ -88,8 +89,7 @@ function IdeasPage(props) {
  
     </div>
   );
-};
-// also could add a link to the CreateIdeaPage
+}; // end of IdeasPage function that allows the user to see their saved ideas.
 
 export default IdeasPage;
 
