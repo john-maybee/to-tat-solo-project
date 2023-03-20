@@ -5,7 +5,6 @@
 - React
 - Redux
 - Express
-- Passport
 - PostgreSQL
 - Figma (where many of the SVGs were created) 
 

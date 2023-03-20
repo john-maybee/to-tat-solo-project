@@ -126,3 +126,17 @@ function ArtistsPage(props) {
 
 
 export default ArtistsPage;
+
+// Future buttons and alerts to use.
+
+ // Swal.fire({
+    //   title: 'Are you sure?',
+    //   text: "This cannont be reversed!",
+    //   icon: 'warning',
+    //   showCancelButton: true,
+    //   ConfirmButtonColor: '#005249',
+    //   cancelButtonColor: '#d33',
+    //   ConfirmButtonText: 'Yes, delete artist'
+    // });
+
+    // import { Swal } from 'sweetalert2';
