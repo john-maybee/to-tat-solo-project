@@ -102,6 +102,10 @@ function* editArtist(action) {
 
 export default artistsSaga;
 
+
+
+// Previously used function:
+
 // function* editOnChange(action){
 //   try {
 //   yield axios.put(`/api/ideas/${action.payload.id}`, {name: action.payload.name});

@@ -34,7 +34,8 @@ const thisArtistReducer = (state = {}, action) => {
         }
       }
         return state;
-    };
+    };// End of thisArtistReducer function. 
+    // Sets the specified artist and can also edit each value of that artist
     
     // user will be on the redux state at:
     // state.user

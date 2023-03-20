@@ -5,6 +5,6 @@ const artistsReducer = (state = [], action) => {
       default:
         return state;
     }
-  };
+  }; // end of artistsReducer function
 
   export default artistsReducer;

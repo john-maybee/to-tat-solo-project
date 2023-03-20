@@ -28,7 +28,8 @@ const thisIdeaReducer = (state = {}, action) => {
       }
     }
       return state;
-  };
+  }; // End of thisIdeaReducer function. 
+  // Sets the specified idea and can also edit each value of that idea
   
   // user will be on the redux state at:
   // state.user

@@ -5,7 +5,7 @@ const ideasReducer = (state = [], action) => {
     default:
       return state;
   }
-};
+}; // end of ideasReducer function
 
 // user will be on the redux state at:
 // state.user
