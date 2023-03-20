@@ -80,7 +80,7 @@
 - Back
 - Chest
 - Abdomen
-- Hand - Right>
+- Hand - Right
 - Hand - Left
 - Foot - Right
 - Foot - Left
@@ -120,9 +120,9 @@
 1. [X] Start the server - `npm run server`
 2. [X] Import the sample routes JSON file [v2](./PostmanPrimeSoloRoutesv2.json) by clicking `Import` in Postman. Select the file.
 3. [X] Click `Collections` and `Send` the following three calls in order:
-   1. [X] `POST /api/user/register` registers a new user, see body to change username/password
-   2. [X] `POST /api/user/login` will login a user, see body to change username/password
-   3. [X] `GET /api/user` will get user information, by default it's not very much
+   1. [X] `POST /api/user/register` registers a new user
+   2. [X] `POST /api/user/login` will login a user
+   3. [X] `GET /api/user` will get user information
 
 # Deployment
 
