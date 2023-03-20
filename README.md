@@ -1,6 +1,14 @@
 
 # To Tat Solo Project 
-This version uses React, Redux, Express, Passport, PostgreSQL, and Figma (where many of the SVGs were created). (a full list of dependencies can be found in `package.json`).
+This version uses:
+- React
+- Redux
+- Express
+- Passport
+- PostgreSQL
+- Figma (where many of the SVGs were created) 
+
+(a full list of dependencies can be found in `package.json`).
 
 ## APP Milestones and Schedule
 - [X] Create the App.js start | estimated hours: 2 | Due: 3/1 | Base | Complete
@@ -63,19 +71,9 @@ This version uses React, Redux, Express, Passport, PostgreSQL, and Figma (where 
 - #282828 (Mine Shaft)
 
 
-## Create database and table
+### Other Setup that was done at the beginning:
 
-[X] Create a new database called `to_tat` and create a `user` table:
-
-```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
-```
-
-## Development Setup Instructions
+## Development Setup
 
 [X] change the localhost to 5001. (searched for all occurences of 5000 and changed all to 5001).
 
@@ -86,16 +84,6 @@ CREATE TABLE "user" (
 - [X] Run `npm run client`
 - [X] Navigate to `localhost:3000`
 
-## Debugging
-
-[X] To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
-
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
-
-[X] Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
-
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
-
 ## Testing Routes with Postman
 
 1. [X] Start the server - `npm run server`
@@ -105,24 +93,13 @@ CREATE TABLE "user" (
    2. [X] `POST /api/user/login` will login a user, see body to change username/password
    3. [X] `GET /api/user` will get user information, by default it's not very much
 
-## Production Build
-
-<!-- [X] Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update. -->
-
-- [X] Run `npm start`
-- [X] Navigate to `localhost:5001`
-
 ## Lay of the Land
-
-Directory Structure:
 
 - `src/` contains the React application
 - `public/` contains static assets for the client-side
-- `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
 - `server/` contains the Express App
 
-
-## Deployment (if desired)
+## Future Deployment (if desired)
 
 1. Create a new Heroku project
 1. Link the Heroku project to the project GitHub Repo
