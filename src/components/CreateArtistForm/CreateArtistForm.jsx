@@ -146,38 +146,3 @@ function CreateArtistForm() {
 }  // end of the CreateArtistForm function that gets displayed on the CreateArtistPage
 
 export default CreateArtistForm;
-
-
-
-
-
-// Previously used code including buttons, inputs, and other:
-
-{/* <button className="submit-button" type="submit">Save Artist</button> */}
-
-{/* <section className="new-artist-style">
-            <label htmlFor="style">Primary Style [choose one]:</label>
-            &nbsp; &nbsp;
-            <select onChange={(event) => setStyle(event.target.value)}>
-                <option value="Undecided">Undecided</option>
-                <option value="American Traditional">American Traditional</option>
-                <option value="Black and Grey">Black and Grey</option>
-                <option value="Neo-Traditional">Neo-Traditional</option>
-                <option value="Realism">Realism</option>
-                <option value="New School">New School</option>
-                <option value="Fine Line">Fine Line</option>
-                <option value="Japanese Traditional">Japanese Traditional</option>
-                <option value="Tribal">Tribal</option>
-                <option value="Illustrative">Illustrative</option>
-                <option value="Ornamental">Ornamental</option>
-                <option value="Abstract">Abstract</option>
-                <option value="Blackwork">Blackwork</option>
-                <option value="Cartoon/Anime">Cartoon/Anime</option>
-                <option value="Continuous Line Contour">Continuous Line Contour</option>
-                <option value="Geometric">Geometric</option>
-                <option value="Script/Lettering">Script/Lettering</option>
-                <option value="Surrealism">Surrealism</option>
-                <option value="Trash Polka">Trash Polka</option>
-                <option value="Watercolor">Watercolor</option>
-            </select>
-        </section> */}

@@ -92,9 +92,3 @@ function IdeasPage(props) {
 }; // end of IdeasPage function that allows the user to see their saved ideas.
 
 export default IdeasPage;
-
-// Previously used code:
-
-{/* <button className="btn" onClick={() => handleEditIdea(idea)}>edit</button> */}
-
- {/* <button className="btn" onClick={() => deleteIdea(idea)}>delete</button> */}
