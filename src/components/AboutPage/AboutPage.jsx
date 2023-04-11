@@ -15,7 +15,7 @@ function AboutPage() {
       <div>
         <p>This application will help users keep track of, and expand upon, their own tattoo design ideas.</p>
         <p>There will also be a place within "To Tat" for users to record the names of tattoo artists they enjoy for future tattoo ideas.</p>
-        <p><strong>Technologies Utilized |</strong> React, Redux, Express, Node, and Figma.</p>
+        <p><strong>Technologies Utilized |</strong> HTML5, CSS3, React, Redux, Express, Axios, Node, PostgreSQL, MUI, and Figma.</p>
       </div>
       <div>
         <h2>About The Developer:</h2>
@@ -23,7 +23,7 @@ function AboutPage() {
         <p><strong>E-mail |</strong> John.D.Maybee@gmail.com</p>
       </div>
       <div className="qr_code">
-        <img  height="150px" src="https://qrcgcustomers.s3.eu-west-1.amazonaws.com/account24595142/qrcodes/62130516.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYMOAQO23FRHUYI4Q%2F20230323%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20230323T021111Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=6f79047e9c4712d9c3e7ebbd892b6fdbfca5b86e3c5b422661263ac019bb266a" alt="QR Code to the developer's LinkedIn and GitHub" />
+        <img  height="150px" src="https://qrcgcustomers.s3.eu-west-1.amazonaws.com/account24595142/qrcodes/62288179.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAYMOAQO23FRHUYI4Q%2F20230411%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20230411T023007Z&X-Amz-SignedHeaders=host&X-Amz-Expires=3600&X-Amz-Signature=52f469fc5d64a4c22e27eba8fea9048c11441278707d8f6847626d982c5068dd" alt="QR Code to the developer's LinkedIn and GitHub" />
       </div>
       
     </div>
