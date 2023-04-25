@@ -1,6 +1,18 @@
 
 # To Tat Solo Project 
 
+## Home Page Image
+![To Tat Main Page](images/tatuserpage.png)
+
+## Add Idea Page Image
+![Add Tattoo Page](images/tatcreateidea.png)
+
+## Ideas Page Image
+![Tattoo Idea Page](images/tatideaspage.png)
+
+## About Page Image
+![Tattoo About Page](images/tataboutpage.png)
+
 ### List of utilized programs and dependencies
 - React
 - Redux
