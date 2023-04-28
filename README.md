@@ -1,17 +1,12 @@
 
 # To Tat Solo Project 
 
-## Home Page Image
-<img src="images/tatuserpage.png" width="300" />
+## Home Page and About Page
+<img src="images/tatuserpage.png" width="300" /> <img src="images/tataboutpage.png" width="300" />
 
-## Add Idea Page Image
-<img src="images/tatcreateidea.png" width="300" />
+## Add Idea Page and Ideas Page Images
+<img src="images/tatcreateidea.png" width="300" /> <img src="images/tatideaspage.png" width="300" />
 
-## Ideas Page Image
-<img src="images/tatideaspage.png" width="300" />
-
-## About Page Image
-<img src="images/tataboutpage.png" width="300" />
 
 ### List of utilized programs and dependencies
 - React
