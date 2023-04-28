@@ -2,16 +2,16 @@
 # To Tat Solo Project 
 
 ## Home Page Image
-![To Tat Main Page]<img src="images/tatuserpage.png" width="300" />
+<img src="images/tatuserpage.png" width="300" />
 
 ## Add Idea Page Image
-![Add Tattoo Page](images/tatcreateidea.png)
+<img src="images/tatcreateidea.png" width="300" />
 
 ## Ideas Page Image
-![Tattoo Idea Page](images/tatideaspage.png)
+<img src="images/tatideaspage.png" width="300" />
 
 ## About Page Image
-![Tattoo About Page](images/tataboutpage.png)
+<img src="images/tataboutpage.png" width="300" />
 
 ### List of utilized programs and dependencies
 - React
