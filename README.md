@@ -2,7 +2,7 @@
 # To Tat Solo Project 
 
 ## Home Page Image
-![To Tat Main Page](images/tatuserpage.png)
+![To Tat Main Page](images/tatuserpage.png/250x503)
 
 ## Add Idea Page Image
 ![Add Tattoo Page](images/tatcreateidea.png)
